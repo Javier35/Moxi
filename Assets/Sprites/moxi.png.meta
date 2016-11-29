@@ -1,0 +1,1743 @@
+fileFormatVersion: 2
+guid: 7ba0d1254d2fe864586fc177f67615b1
+timeCreated: 1479712122
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: moxi_0
+    21300002: moxi_1
+    21300004: moxi_2
+    21300006: moxi_3
+    21300008: moxi_4
+    21300010: moxi_5
+    21300012: moxi_6
+    21300014: moxi_7
+    21300016: moxi_8
+    21300018: moxi_9
+    21300020: moxi_10
+    21300022: moxi_11
+    21300024: moxi_12
+    21300026: moxi_13
+    21300028: moxi_14
+    21300030: moxi_15
+    21300032: moxi_16
+    21300034: moxi_17
+    21300036: moxi_18
+    21300038: moxi_19
+    21300040: moxi_20
+    21300042: moxi_21
+    21300044: moxi_22
+    21300046: moxi_23
+    21300048: moxi_24
+    21300050: moxi_25
+    21300052: moxi_26
+    21300054: moxi_27
+    21300056: moxi_28
+    21300058: moxi_29
+    21300060: moxi_30
+    21300062: moxi_31
+    21300064: moxi_32
+    21300066: moxi_33
+    21300068: moxi_34
+    21300070: moxi_35
+    21300072: moxi_36
+    21300074: moxi_37
+    21300076: moxi_38
+    21300078: moxi_39
+    21300080: moxi_40
+    21300082: moxi_41
+    21300084: moxi_42
+    21300086: moxi_43
+    21300088: moxi_44
+    21300090: moxi_45
+    21300092: moxi_46
+    21300094: moxi_47
+    21300096: moxi_48
+    21300098: moxi_49
+    21300100: moxi_50
+    21300102: moxi_51
+    21300104: moxi_52
+    21300106: moxi_53
+    21300108: moxi_54
+    21300110: moxi_55
+    21300112: moxi_56
+    21300114: moxi_57
+    21300116: moxi_58
+    21300118: moxi_59
+    21300120: moxi_60
+    21300122: moxi_61
+    21300124: moxi_62
+    21300126: moxi_63
+    21300128: moxi_64
+    21300130: moxi_65
+    21300132: moxi_66
+    21300134: moxi_67
+    21300136: moxi_68
+    21300138: moxi_69
+    21300140: moxi_70
+    21300142: moxi_71
+    21300144: moxi_72
+    21300146: moxi_73
+    21300148: moxi_74
+    21300150: moxi_75
+    21300152: moxi_76
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: moxi_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 7}
+        - {x: -26, y: -1}
+        - {x: -26, y: -12}
+        - {x: -24, y: -15}
+        - {x: -9, y: -32}
+        - {x: 16, y: -32}
+        - {x: 16, y: 7}
+    - name: moxi_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 7}
+        - {x: -26, y: -2}
+        - {x: -27, y: -4}
+        - {x: -27, y: -16}
+        - {x: -12, y: -32}
+        - {x: 16, y: -32}
+        - {x: 16, y: 6}
+        - {x: 14, y: 7}
+    - name: moxi_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 7}
+        - {x: -24, y: -2}
+        - {x: -24, y: -28}
+        - {x: -11, y: -32}
+        - {x: 17, y: -32}
+        - {x: 17, y: -3}
+        - {x: 15, y: 7}
+    - name: moxi_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 8}
+        - {x: -24, y: -7}
+        - {x: -24, y: -27}
+        - {x: -22, y: -32}
+        - {x: 16, y: -32}
+        - {x: 16, y: 7}
+        - {x: 15, y: 8}
+    - name: moxi_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 7}
+        - {x: -16, y: 1}
+        - {x: -25, y: -14}
+        - {x: -25, y: -23}
+        - {x: -23, y: -28}
+        - {x: -8, y: -32}
+        - {x: 13, y: -32}
+        - {x: 16, y: -23}
+        - {x: 16, y: 1}
+        - {x: 12, y: 7}
+    - name: moxi_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 7}
+        - {x: -24, y: -8}
+        - {x: -24, y: -26}
+        - {x: -16, y: -32}
+        - {x: 13, y: -32}
+        - {x: 16, y: -31}
+        - {x: 16, y: -1}
+        - {x: 10, y: 7}
+    - name: moxi_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 7}
+        - {x: -24, y: -2}
+        - {x: -26, y: -7}
+        - {x: -26, y: -19}
+        - {x: -18, y: -30}
+        - {x: -10, y: -32}
+        - {x: 14, y: -32}
+        - {x: 16, y: -30}
+        - {x: 16, y: 3}
+        - {x: 9, y: 7}
+    - name: moxi_7
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 8}
+        - {x: -28, y: 4}
+        - {x: -28, y: -15}
+        - {x: -20, y: -32}
+        - {x: 13, y: -32}
+        - {x: 15, y: -31}
+        - {x: 15, y: 4}
+        - {x: 10, y: 8}
+    - name: moxi_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 8}
+        - {x: -10, y: 8}
+        - {x: -35, y: -5}
+        - {x: -35, y: -25}
+        - {x: -33, y: -30}
+        - {x: -29, y: -31}
+        - {x: 15, y: -31}
+        - {x: 16, y: -29}
+        - {x: 16, y: 1}
+    - name: moxi_9
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 8}
+        - {x: -35, y: 2}
+        - {x: -35, y: -14}
+        - {x: -33, y: -20}
+        - {x: -6, y: -32}
+        - {x: 18, y: -32}
+        - {x: 18, y: 1}
+        - {x: 12, y: 8}
+    - name: moxi_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 9}
+        - {x: -13, y: 0}
+        - {x: -13, y: -3}
+        - {x: -17, y: 2}
+        - {x: -32, y: 4}
+        - {x: -33, y: 2}
+        - {x: -33, y: -10}
+        - {x: -31, y: -16}
+        - {x: -10, y: -31}
+        - {x: -6, y: -32}
+        - {x: 7, y: -32}
+        - {x: 16, y: -30}
+        - {x: 16, y: 4}
+        - {x: 2, y: 9}
+    - name: moxi_11
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: -19}
+        - {x: -18, y: -32}
+        - {x: 15, y: -32}
+        - {x: 15, y: 1}
+        - {x: 13, y: 9}
+        - {x: -12, y: 9}
+        - {x: -32, y: -2}
+    - name: moxi_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 8}
+        - {x: -5, y: 8}
+        - {x: -13, y: 3}
+        - {x: -33, y: -11}
+        - {x: -33, y: -20}
+        - {x: -30, y: -25}
+        - {x: -12, y: -31}
+        - {x: 10, y: -31}
+        - {x: 12, y: -29}
+        - {x: 17, y: -9}
+        - {x: 17, y: -3}
+    - name: moxi_13
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 9}
+        - {x: -30, y: -5}
+        - {x: -35, y: -12}
+        - {x: -35, y: -23}
+        - {x: -26, y: -32}
+        - {x: 17, y: -32}
+        - {x: 17, y: -5}
+        - {x: 5, y: 9}
+    - name: moxi_14
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 9}
+        - {x: -32, y: 4}
+        - {x: -32, y: -14}
+        - {x: -9, y: -32}
+        - {x: 12, y: -32}
+        - {x: 15, y: -30}
+        - {x: 15, y: 4}
+        - {x: 12, y: 9}
+    - name: moxi_15
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 9}
+        - {x: -33, y: -4}
+        - {x: -33, y: -15}
+        - {x: -9, y: -32}
+        - {x: 14, y: -32}
+        - {x: 15, y: -26}
+        - {x: 15, y: 4}
+        - {x: 8, y: 9}
+    - name: moxi_16
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 7}
+        - {x: -29, y: -1}
+        - {x: -29, y: -17}
+        - {x: -20, y: -32}
+        - {x: 9, y: -32}
+        - {x: 13, y: -31}
+        - {x: 13, y: 1}
+        - {x: 9, y: 7}
+    - name: moxi_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: -9}
+        - {x: 16, y: -2}
+        - {x: 5, y: 6}
+        - {x: -9, y: 9}
+        - {x: -24, y: 9}
+        - {x: -24, y: -12}
+        - {x: -10, y: -32}
+        - {x: 12, y: -32}
+        - {x: 12, y: -31}
+        - {x: 14, y: -24}
+        - {x: 18, y: -15}
+    - name: moxi_18
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 8}
+        - {x: -5, y: 4}
+        - {x: -2, y: 8}
+        - {x: -1, y: 15}
+        - {x: -4, y: 16}
+        - {x: -12, y: 16}
+        - {x: -24, y: 12}
+        - {x: -24, y: -32}
+        - {x: 31, y: -32}
+        - {x: 37, y: -30}
+        - {x: 37, y: 0}
+        - {x: 20, y: 14}
+    - name: moxi_19
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 15}
+        - {x: -9, y: 15}
+        - {x: -20, y: 12}
+        - {x: -24, y: 4}
+        - {x: -24, y: -3}
+        - {x: -22, y: -5}
+        - {x: -16, y: -5}
+        - {x: -13, y: -15}
+        - {x: -11, y: -17}
+        - {x: -14, y: -15}
+        - {x: -18, y: -7}
+        - {x: -20, y: -5}
+        - {x: -24, y: -5}
+        - {x: -24, y: -9}
+        - {x: -22, y: -23}
+        - {x: -12, y: -32}
+        - {x: 35, y: -32}
+        - {x: 35, y: -12}
+        - {x: 31, y: -9}
+    - name: moxi_20
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 10}
+        - {x: -24, y: -26}
+        - {x: -13, y: -32}
+        - {x: 12, y: -32}
+        - {x: 19, y: -25}
+        - {x: 19, y: 0}
+        - {x: -1, y: 10}
+    - name: moxi_21
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 9}
+        - {x: -16, y: 9}
+        - {x: -21, y: 8}
+        - {x: -25, y: 2}
+        - {x: -25, y: -8}
+        - {x: -11, y: -32}
+        - {x: 13, y: -32}
+        - {x: 19, y: -24}
+        - {x: 20, y: -20}
+        - {x: 20, y: -4}
+    - name: moxi_22
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 15}
+        - {x: -25, y: 6}
+        - {x: -25, y: -4}
+        - {x: -19, y: -9}
+        - {x: -12, y: -12}
+        - {x: -17, y: -12}
+        - {x: -19, y: -15}
+        - {x: -14, y: -23}
+        - {x: -11, y: -25}
+        - {x: -9, y: -32}
+        - {x: 37, y: -32}
+        - {x: 37, y: 9}
+        - {x: 9, y: 15}
+    - name: moxi_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 7}
+        - {x: -11, y: 6}
+        - {x: -15, y: -12}
+        - {x: -15, y: -25}
+        - {x: -13, y: -32}
+        - {x: 35, y: -32}
+        - {x: 35, y: -8}
+        - {x: 23, y: 7}
+    - name: moxi_24
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 11}
+        - {x: -23, y: 0}
+        - {x: -23, y: -11}
+        - {x: -21, y: -12}
+        - {x: -14, y: -12}
+        - {x: -19, y: -13}
+        - {x: -21, y: -16}
+        - {x: -16, y: -32}
+        - {x: 20, y: -32}
+        - {x: 20, y: 0}
+        - {x: 6, y: 11}
+    - name: moxi_25
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 7}
+        - {x: -23, y: 1}
+        - {x: -30, y: -22}
+        - {x: -30, y: -31}
+        - {x: -28, y: -32}
+        - {x: 11, y: -32}
+        - {x: 11, y: 5}
+        - {x: 8, y: 7}
+    - name: moxi_26
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 13}
+        - {x: -27, y: 11}
+        - {x: -27, y: -32}
+        - {x: 14, y: -32}
+        - {x: 28, y: -19}
+        - {x: 28, y: 13}
+    - name: moxi_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 10}
+        - {x: 7, y: 9}
+        - {x: -19, y: 1}
+        - {x: -25, y: -10}
+        - {x: -25, y: -32}
+        - {x: 9, y: -32}
+        - {x: 25, y: -14}
+        - {x: 25, y: 5}
+        - {x: 20, y: 10}
+    - name: moxi_28
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1000
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 11}
+        - {x: -20, y: 7}
+        - {x: -25, y: -4}
+        - {x: -25, y: -32}
+        - {x: 14, y: -32}
+        - {x: 23, y: -16}
+        - {x: 23, y: 11}
+    - name: moxi_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 10}
+        - {x: 7, y: 9}
+        - {x: -19, y: 1}
+        - {x: -25, y: -7}
+        - {x: -25, y: -32}
+        - {x: 8, y: -32}
+        - {x: 25, y: -14}
+        - {x: 25, y: 5}
+        - {x: 20, y: 10}
+    - name: moxi_30
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 11}
+        - {x: -20, y: 7}
+        - {x: -25, y: -4}
+        - {x: -25, y: -32}
+        - {x: 14, y: -32}
+        - {x: 23, y: -16}
+        - {x: 23, y: 11}
+    - name: moxi_31
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 10}
+        - {x: 11, y: 10}
+        - {x: 7, y: 9}
+        - {x: -19, y: 1}
+        - {x: -25, y: -10}
+        - {x: -25, y: -24}
+        - {x: -23, y: -32}
+        - {x: 4, y: -32}
+        - {x: 8, y: -30}
+        - {x: 25, y: -14}
+        - {x: 25, y: 5}
+    - name: moxi_32
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 0}
+        - {x: -22, y: -1}
+        - {x: -22, y: -32}
+        - {x: 18, y: -32}
+        - {x: 18, y: -11}
+        - {x: 10, y: 0}
+    - name: moxi_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 7}
+        - {x: -26, y: -1}
+        - {x: -26, y: -12}
+        - {x: -24, y: -15}
+        - {x: -9, y: -32}
+        - {x: 16, y: -32}
+        - {x: 16, y: 7}
+    - name: moxi_34
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 22}
+        - {x: -26, y: 18}
+        - {x: -26, y: -25}
+        - {x: -23, y: -25}
+        - {x: -18, y: -20}
+        - {x: -15, y: -26}
+        - {x: -6, y: -32}
+        - {x: 12, y: -32}
+        - {x: 21, y: -29}
+        - {x: 21, y: 8}
+        - {x: 16, y: 22}
+    - name: moxi_35
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: 15}
+        - {x: -19, y: 15}
+        - {x: -20, y: 11}
+        - {x: -20, y: -24}
+        - {x: -18, y: -32}
+        - {x: 17, y: -32}
+        - {x: 19, y: -28}
+        - {x: 19, y: -11}
+        - {x: 6, y: 11}
+    - name: moxi_36
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 0}
+        - {x: -18, y: -8}
+        - {x: -20, y: -20}
+        - {x: -20, y: -30}
+        - {x: -18, y: -32}
+        - {x: 21, y: -32}
+        - {x: 21, y: -17}
+        - {x: 12, y: -6}
+        - {x: -3, y: 0}
+      - - {x: -16, y: 27}
+        - {x: -13, y: 28}
+        - {x: -13, y: 31}
+        - {x: -16, y: 32}
+        - {x: -18, y: 30}
+    - name: moxi_37
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -6}
+        - {x: -19, y: -8}
+        - {x: -19, y: -29}
+        - {x: -18, y: -32}
+        - {x: 18, y: -32}
+        - {x: 18, y: -22}
+        - {x: 15, y: -11}
+        - {x: 9, y: -4}
+        - {x: 2, y: -4}
+        - {x: -10, y: -5}
+    - name: moxi_38
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -6}
+        - {x: -19, y: -8}
+        - {x: -19, y: -29}
+        - {x: -18, y: -32}
+        - {x: 18, y: -32}
+        - {x: 18, y: -22}
+        - {x: 15, y: -11}
+        - {x: 9, y: -4}
+        - {x: 2, y: -4}
+        - {x: -10, y: -5}
+    - name: moxi_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -6}
+        - {x: -19, y: -8}
+        - {x: -19, y: -29}
+        - {x: -18, y: -32}
+        - {x: 18, y: -32}
+        - {x: 18, y: -22}
+        - {x: 15, y: -11}
+        - {x: 9, y: -4}
+        - {x: 2, y: -4}
+        - {x: -10, y: -5}
+    - name: moxi_40
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -6}
+        - {x: -19, y: -8}
+        - {x: -19, y: -29}
+        - {x: -18, y: -32}
+        - {x: 18, y: -32}
+        - {x: 18, y: -22}
+        - {x: 15, y: -11}
+        - {x: 9, y: -4}
+        - {x: 2, y: -4}
+        - {x: -10, y: -5}
+    - name: moxi_41
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -6}
+        - {x: -19, y: -8}
+        - {x: -19, y: -29}
+        - {x: -18, y: -32}
+        - {x: 18, y: -32}
+        - {x: 18, y: -22}
+        - {x: 15, y: -11}
+        - {x: 9, y: -4}
+        - {x: 2, y: -4}
+        - {x: -10, y: -5}
+    - name: moxi_42
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -6}
+        - {x: -19, y: -8}
+        - {x: -19, y: -29}
+        - {x: -18, y: -32}
+        - {x: 18, y: -32}
+        - {x: 18, y: -22}
+        - {x: 15, y: -11}
+        - {x: 9, y: -4}
+        - {x: 2, y: -4}
+        - {x: -10, y: -5}
+    - name: moxi_43
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -6}
+        - {x: -19, y: -8}
+        - {x: -19, y: -29}
+        - {x: -18, y: -32}
+        - {x: 18, y: -32}
+        - {x: 18, y: -22}
+        - {x: 15, y: -11}
+        - {x: 9, y: -4}
+        - {x: 2, y: -4}
+        - {x: -10, y: -5}
+    - name: moxi_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 10}
+        - {x: -15, y: 4}
+        - {x: -15, y: -43}
+        - {x: -11, y: -46}
+        - {x: -1, y: -46}
+        - {x: 19, y: -29}
+        - {x: 19, y: 0}
+        - {x: 9, y: 10}
+    - name: moxi_45
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 9}
+        - {x: -15, y: 3}
+        - {x: -15, y: -45}
+        - {x: -13, y: -49}
+        - {x: -3, y: -49}
+        - {x: 19, y: -42}
+        - {x: 19, y: 9}
+    - name: moxi_46
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 9}
+        - {x: -12, y: 8}
+        - {x: -15, y: 1}
+        - {x: -15, y: -50}
+        - {x: 4, y: -50}
+        - {x: 19, y: -36}
+        - {x: 19, y: -2}
+        - {x: 11, y: 9}
+    - name: moxi_47
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 11}
+        - {x: -22, y: -13}
+        - {x: -22, y: -20}
+        - {x: -8, y: -30}
+        - {x: 18, y: -30}
+        - {x: 21, y: -25}
+        - {x: 21, y: 4}
+        - {x: 10, y: 11}
+    - name: moxi_48
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: 14}
+        - {x: -18, y: 14}
+        - {x: -20, y: 7}
+        - {x: -20, y: -20}
+        - {x: -12, y: -29}
+        - {x: 15, y: -29}
+        - {x: 24, y: -24}
+        - {x: 24, y: -7}
+        - {x: 15, y: 13}
+    - name: moxi_49
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 16}
+        - {x: -21, y: 16}
+        - {x: -21, y: -9}
+        - {x: -16, y: -28}
+        - {x: 20, y: -28}
+        - {x: 25, y: -18}
+        - {x: 25, y: 0}
+    - name: moxi_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 10}
+        - {x: -19, y: 10}
+        - {x: -23, y: -6}
+        - {x: -23, y: -47}
+        - {x: -6, y: -47}
+        - {x: 20, y: -25}
+        - {x: 20, y: 2}
+    - name: moxi_51
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 9}
+        - {x: -18, y: -1}
+        - {x: -18, y: -47}
+        - {x: 15, y: -47}
+        - {x: 20, y: -34}
+        - {x: 20, y: 9}
+    - name: moxi_52
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 9}
+        - {x: -7, y: 9}
+        - {x: -12, y: 8}
+        - {x: -21, y: -8}
+        - {x: -21, y: -47}
+        - {x: -5, y: -47}
+        - {x: 20, y: -24}
+        - {x: 20, y: -10}
+        - {x: 18, y: 0}
+    - name: moxi_53
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -27, y: 0}
+        - {x: -27, y: -21}
+        - {x: -23, y: -29}
+        - {x: 22, y: -29}
+        - {x: 22, y: 4}
+        - {x: 3, y: 16}
+    - name: moxi_54
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 17}
+        - {x: -8, y: 17}
+        - {x: -13, y: 16}
+        - {x: -22, y: 12}
+        - {x: -23, y: 9}
+        - {x: -23, y: -9}
+        - {x: -15, y: -19}
+        - {x: -2, y: -31}
+        - {x: 15, y: -31}
+        - {x: 20, y: -30}
+        - {x: 24, y: -16}
+        - {x: 24, y: -4}
+    - name: moxi_55
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 17}
+        - {x: -5, y: 17}
+        - {x: -11, y: 16}
+        - {x: -9, y: 12}
+        - {x: -7, y: 10}
+        - {x: -4, y: 10}
+        - {x: -9, y: 10}
+        - {x: -9, y: 12}
+        - {x: -20, y: 15}
+        - {x: -21, y: 11}
+        - {x: -21, y: -18}
+        - {x: 2, y: -32}
+        - {x: 19, y: -32}
+        - {x: 24, y: -23}
+        - {x: 24, y: -2}
+    - name: moxi_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 15}
+        - {x: -8, y: 14}
+        - {x: -8, y: 7}
+        - {x: -23, y: 4}
+        - {x: -35, y: -3}
+        - {x: -35, y: -20}
+        - {x: -15, y: -32}
+        - {x: 16, y: -32}
+        - {x: 25, y: -23}
+        - {x: 25, y: 5}
+        - {x: 1, y: 15}
+      - - {x: -21, y: 30}
+        - {x: -20, y: 27}
+        - {x: -12, y: 27}
+        - {x: -10, y: 29}
+        - {x: -11, y: 32}
+        - {x: -19, y: 32}
+    - name: moxi_57
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 12}
+        - {x: -11, y: 11}
+        - {x: -11, y: -31}
+        - {x: -7, y: -32}
+        - {x: 25, y: -32}
+        - {x: 25, y: 12}
+    - name: moxi_58
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 12}
+        - {x: -5, y: 12}
+        - {x: -6, y: 11}
+        - {x: -11, y: 1}
+        - {x: -11, y: -26}
+        - {x: -9, y: -32}
+        - {x: 18, y: -32}
+        - {x: 21, y: -29}
+        - {x: 25, y: -18}
+        - {x: 25, y: 7}
+    - name: moxi_59
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 12}
+        - {x: -11, y: 11}
+        - {x: -11, y: -31}
+        - {x: -7, y: -32}
+        - {x: 25, y: -32}
+        - {x: 25, y: 12}
+    - name: moxi_60
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 12}
+        - {x: -5, y: 12}
+        - {x: -6, y: 11}
+        - {x: -11, y: 1}
+        - {x: -11, y: -26}
+        - {x: -9, y: -32}
+        - {x: 18, y: -32}
+        - {x: 21, y: -29}
+        - {x: 25, y: -18}
+        - {x: 25, y: 7}
+    - name: moxi_61
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 12}
+        - {x: -11, y: 11}
+        - {x: -11, y: -31}
+        - {x: -7, y: -32}
+        - {x: 25, y: -32}
+        - {x: 25, y: 12}
+    - name: moxi_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 12}
+        - {x: -5, y: 12}
+        - {x: -6, y: 11}
+        - {x: -11, y: 1}
+        - {x: -11, y: -26}
+        - {x: -9, y: -32}
+        - {x: 18, y: -32}
+        - {x: 21, y: -29}
+        - {x: 25, y: -18}
+        - {x: 25, y: 7}
+    - name: moxi_63
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 2}
+        - {x: -11, y: -9}
+        - {x: -11, y: -17}
+        - {x: -8, y: -21}
+        - {x: -5, y: -21}
+        - {x: -7, y: -21}
+        - {x: -11, y: -23}
+        - {x: -11, y: -27}
+        - {x: -9, y: -32}
+        - {x: 19, y: -32}
+        - {x: 26, y: -25}
+        - {x: 26, y: 1}
+        - {x: 24, y: 2}
+    - name: moxi_64
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 2}
+        - {x: -11, y: -9}
+        - {x: -11, y: -31}
+        - {x: -7, y: -32}
+        - {x: 23, y: -32}
+        - {x: 26, y: -26}
+        - {x: 26, y: 2}
+    - name: moxi_65
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 1}
+        - {x: 7, y: 2}
+        - {x: 0, y: 2}
+        - {x: -15, y: -5}
+        - {x: -16, y: -11}
+        - {x: -16, y: -24}
+        - {x: -8, y: -32}
+        - {x: 19, y: -32}
+        - {x: 22, y: -27}
+        - {x: 22, y: -13}
+        - {x: 17, y: -7}
+    - name: moxi_66
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: -8}
+        - {x: -5, y: 3}
+        - {x: -12, y: 3}
+        - {x: -24, y: -13}
+        - {x: -24, y: -22}
+        - {x: -19, y: -32}
+        - {x: 5, y: -32}
+        - {x: 7, y: -31}
+        - {x: 12, y: -17}
+        - {x: 12, y: -11}
+      - - {x: 7, y: -17}
+        - {x: 1, y: -20}
+        - {x: 1, y: -27}
+        - {x: 4, y: -31}
+        - {x: 24, y: -31}
+        - {x: 24, y: -21}
+        - {x: 19, y: -17}
+    - name: moxi_67
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: -9}
+        - {x: -19, y: -9}
+        - {x: -23, y: -12}
+        - {x: -23, y: -21}
+        - {x: -21, y: -28}
+        - {x: -13, y: -31}
+        - {x: 20, y: -31}
+        - {x: 21, y: -26}
+        - {x: 21, y: -18}
+        - {x: 8, y: -10}
+    - name: moxi_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: -10}
+        - {x: -21, y: -10}
+        - {x: -21, y: -32}
+        - {x: 19, y: -32}
+        - {x: 20, y: -30}
+        - {x: 20, y: -21}
+        - {x: 14, y: -14}
+    - name: moxi_69
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: -10}
+        - {x: 1, y: 3}
+        - {x: -6, y: 9}
+        - {x: -23, y: 9}
+        - {x: -25, y: 8}
+        - {x: -25, y: -22}
+        - {x: -23, y: -32}
+        - {x: 20, y: -32}
+        - {x: 20, y: -19}
+        - {x: 16, y: -12}
+        - {x: -4, y: -10}
+        - {x: -15, y: -14}
+    - name: moxi_70
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: -14}
+        - {x: -14, y: -17}
+        - {x: -19, y: -23}
+        - {x: -13, y: -12}
+        - {x: -11, y: -12}
+        - {x: -6, y: -10}
+        - {x: -5, y: -6}
+        - {x: -11, y: 2}
+        - {x: -19, y: 4}
+        - {x: -25, y: 4}
+        - {x: -31, y: -2}
+        - {x: -31, y: -32}
+        - {x: 20, y: -32}
+        - {x: 20, y: -19}
+        - {x: 17, y: -11}
+        - {x: -4, y: -10}
+    - name: moxi_71
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -10}
+        - {x: -34, y: -15}
+        - {x: -35, y: -21}
+        - {x: -35, y: -30}
+        - {x: -33, y: -32}
+        - {x: 20, y: -32}
+        - {x: 20, y: -17}
+        - {x: 18, y: -10}
+    - name: moxi_72
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 5}
+        - {x: -9, y: 5}
+        - {x: -31, y: -1}
+        - {x: -31, y: -18}
+        - {x: -20, y: -34}
+        - {x: 5, y: -34}
+        - {x: 10, y: -30}
+        - {x: 11, y: -24}
+        - {x: 11, y: 2}
+    - name: moxi_73
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: -18}
+        - {x: 17, y: -18}
+        - {x: 22, y: -13}
+        - {x: 23, y: -11}
+        - {x: 23, y: -7}
+        - {x: 16, y: 2}
+        - {x: 11, y: 4}
+        - {x: 5, y: 4}
+        - {x: -14, y: -5}
+        - {x: -18, y: -13}
+        - {x: -15, y: -16}
+        - {x: -7, y: -16}
+        - {x: -4, y: -15}
+        - {x: 1, y: -12}
+        - {x: 6, y: -11}
+        - {x: 4, y: -14}
+        - {x: 4, y: -17}
+        - {x: 4, y: -15}
+        - {x: 2, y: -12}
+        - {x: -3, y: -14}
+        - {x: -5, y: -17}
+        - {x: -8, y: -16}
+        - {x: -13, y: -16}
+        - {x: -19, y: -20}
+        - {x: -19, y: -27}
+        - {x: -17, y: -32}
+        - {x: 17, y: -32}
+        - {x: 22, y: -27}
+        - {x: 21, y: -22}
+        - {x: 17, y: -18}
+    - name: moxi_74
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 1}
+        - {x: 9, y: 2}
+        - {x: 2, y: 0}
+        - {x: -22, y: -5}
+        - {x: -24, y: -11}
+        - {x: -24, y: -20}
+        - {x: -18, y: -23}
+        - {x: -9, y: -22}
+        - {x: -2, y: -15}
+        - {x: 2, y: -14}
+        - {x: 7, y: -13}
+        - {x: 5, y: -16}
+        - {x: 5, y: -19}
+        - {x: 5, y: -17}
+        - {x: 4, y: -14}
+        - {x: 2, y: -14}
+        - {x: -5, y: -18}
+        - {x: -6, y: -22}
+        - {x: -16, y: -25}
+        - {x: -15, y: -28}
+        - {x: -11, y: -32}
+        - {x: 11, y: -32}
+        - {x: 23, y: -22}
+        - {x: 27, y: -18}
+        - {x: 27, y: -13}
+    - name: moxi_75
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 1}
+        - {x: -15, y: -3}
+        - {x: -17, y: -8}
+        - {x: -17, y: -22}
+        - {x: -12, y: -32}
+        - {x: 11, y: -32}
+        - {x: 20, y: -30}
+        - {x: 24, y: -20}
+        - {x: 24, y: -3}
+        - {x: 17, y: 1}
+    - name: moxi_76
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 7}
+        - {x: -21, y: -2}
+        - {x: -21, y: -29}
+        - {x: -18, y: -32}
+        - {x: 6, y: -32}
+        - {x: 16, y: -27}
+        - {x: 16, y: 4}
+        - {x: 15, y: 7}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
