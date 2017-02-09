@@ -11,13 +11,38 @@ public class KnockbackModule : MonoBehaviour {
 	public float knockDurX = 2F; //maximum duration of knockback in x axis
 	public float knockDurY = 1.2F; //maximum duration of knockback in y axis
 
+	private float force = 40f;
+	private float repeatRate = 10f;
+	private float deceleration = 5f;
+
+	private Rigidbody2D rbody;
+
 	// Use this for initialization
 	void Start () {
+		rbody = GetComponent<Rigidbody2D> ();
 	}
 
 	public void OtherKnockback(float knockbackDir, float xPower, float yPower){
-		Rigidbody2D rbody = GetComponent<Rigidbody2D> ();
 		rbody.velocity = new Vector2 (xPower * knockbackDir, yPower);
+		StartCoroutine(PushBackX (knockbackDir, 100, 1));
+	}
+
+	public IEnumerator PushBackX(float knockbackDir, float force, float counter1){
+
+		rbody.AddForce (new Vector2 (force * knockbackDir, 2));
+		new WaitForSeconds (0.05f);
+			
+		if (force > 0) {
+			new WaitForSeconds (0.6f);
+
+
+			if (counter1 < 4)
+				counter1++;
+			
+			force -= (10 + counter1);
+			StartCoroutine (PushBackX (knockbackDir, force, counter1));
+		}
+		yield return 0;
 	}
 
 	public IEnumerator Knockback(float knockbackDir){
@@ -30,34 +55,6 @@ public class KnockbackModule : MonoBehaviour {
 		}
 
 		yield return 0;
-	}
-
-	public IEnumerator KnockbackX(float knockbackDir){
-		float timer = 0;
-		while (knockDurX > timer) {
-			timer += Time.deltaTime;
-			Vector2 dir = new Vector2 (knockbackDir, 1);
-			Rigidbody2D rbody = GetComponent<Rigidbody2D> ();
-			rbody.AddForce (new Vector2 (dir.x * knockbackX, 0));
-		}
-		yield return 0;
-	}
-
-	public IEnumerator KnockbackY(float knockbackDir){
-		float timer = 0;
-		while (knockDurY > timer) {
-			timer += Time.deltaTime;
-			Vector2 dir = new Vector2 (1, knockbackDir);
-			Rigidbody2D rbody = GetComponent<Rigidbody2D> ();
-			rbody.AddForce (new Vector2 (0, dir.y * knockbackY));
-		}
-		yield return 0;
-	}
-
-	public void SimpleKnockback(float knockbackDir){
-			Vector2 dir = new Vector2 (knockbackDir, 1);
-			Rigidbody2D rbody = GetComponent<Rigidbody2D> ();
-			rbody.AddForce (new Vector2 (dir.x * knockbackX, dir.y * knockbackY));
 	}
 
 }

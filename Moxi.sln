@@ -1,11 +1,11 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{7C29ED3A-C572-AF4D-C759-761EB786B234}") = "Moxi", "Assembly-CSharp-firstpass.csproj", "{53199610-C3FB-3FC3-9A32-A482E63E11D3}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moxi", "Assembly-CSharp-firstpass.csproj", "{53199610-C3FB-3FC3-9A32-A482E63E11D3}"
 EndProject
-Project("{7C29ED3A-C572-AF4D-C759-761EB786B234}") = "Moxi", "Assembly-CSharp.csproj", "{87D0AFAB-F137-1875-4C04-06D33B33FC86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moxi", "Assembly-CSharp.csproj", "{87D0AFAB-F137-1875-4C04-06D33B33FC86}"
 EndProject
-Project("{7C29ED3A-C572-AF4D-C759-761EB786B234}") = "Moxi", "Assembly-CSharp-Editor.csproj", "{A8C7650A-38C2-1E27-BB02-F3B08D3BCD2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moxi", "Assembly-CSharp-Editor.csproj", "{A8C7650A-38C2-1E27-BB02-F3B08D3BCD2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

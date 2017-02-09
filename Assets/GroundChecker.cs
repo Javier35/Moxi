@@ -39,10 +39,12 @@ public class GroundChecker : MonoBehaviour {
 
 	private void RaycastGroundVectors(){
 
+		/*
 		Debug.DrawRay (rayStart1, Vector3.down, Color.red);
 		Debug.DrawRay (rayStart2, Vector3.down, Color.red);
 		Debug.DrawRay (rayStart3, Vector3.down, Color.red);
 		Debug.DrawRay (rayStart4, Vector3.down, Color.red);
+		*/
 
 		rayHit1 = Physics2D.Raycast (rayStart1, Vector3.down, rayLength, 1 << LayerMask.NameToLayer("Platform"));
 		rayHit2 = Physics2D.Raycast (rayStart2, Vector3.down, rayLength, 1 << LayerMask.NameToLayer("Platform"));
