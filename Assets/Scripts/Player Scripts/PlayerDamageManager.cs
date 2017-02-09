@@ -8,15 +8,12 @@ public class PlayerDamageManager : DamageManager {
 	private LevelManager levelManager;
 
 	private PlatformerCharacter2D player;
-	private KnockbackModule knockbackModule;
 	public BoxCollider2D attackBox;
 
 	// Use this for initialization
 	void Start () {
 		levelManager = FindObjectOfType<LevelManager> ();
-
 		player = GetComponent<PlatformerCharacter2D> ();
-		knockbackModule = GetComponent<KnockbackModule> ();
 	}
 	
 	// Update is called once per frame
@@ -77,14 +74,8 @@ public class PlayerDamageManager : DamageManager {
 	private void Knockback(){
 		var rbody = GetComponent<Rigidbody2D> ();
 		rbody.velocity = new Vector2 (0, 0);
-		if (player.m_FacingRight) {
-			knockbackModule.OtherKnockback (-1, 5, 5);
-		}
-			
-		else {
-			knockbackModule.OtherKnockback (1, 5, 5);
-		}
-}
+		player.WasDamaged ();
+	}
 
 	void DestroySelf(){
 		//Destroy (transform.parent.gameObject);

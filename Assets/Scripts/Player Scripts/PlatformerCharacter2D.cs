@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using System.Collections;
 
 public class PlatformerCharacter2D : MonoBehaviour
 {
@@ -8,6 +8,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
     [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
     [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
+	[SerializeField] private float m_KnockbackHeight = 300f;
 
 //    private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
     const float k_GroundedRadius = .15f; // Radius of the overlap circle to determine if grounded
@@ -20,6 +21,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     public Animator animator;            // Reference to the player's animator component.
     private Rigidbody2D m_Rigidbody2D;
     public bool m_FacingRight = true;  // For determining which way the player is currently facing.
+	private bool m_Damaged = false;
 
 	private GroundChecker groundchecker;
 
@@ -83,8 +85,10 @@ public class PlatformerCharacter2D : MonoBehaviour
 			if(move !=0){
 				animator.SetBool("Crouch",false);
 
-				if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") || animator.GetCurrentAnimatorStateInfo (0).IsName ("Death"))
+				if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") || animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
+
 					move = 0;
+				}
 
 				//if he is attacking, he shouldnt move
 				if ((animator.GetCurrentAnimatorStateInfo(0).IsName ("Attack") || animator.GetCurrentAnimatorStateInfo(0).IsName ("SecondAttack")) 
@@ -95,7 +99,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 					animator.SetBool ("Run", false);
 				}
 			}
-				
+
 
             // Move the character
             m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
@@ -112,6 +116,23 @@ public class PlatformerCharacter2D : MonoBehaviour
                 // ... flip the player.
                 Flip();
             }
+
+
+			//move back while damaged
+			if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") || animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) { 
+				if (m_FacingRight) {
+					m_Rigidbody2D.velocity = new Vector2 (-m_MaxSpeed, m_Rigidbody2D.velocity.y);
+				} else {
+					m_Rigidbody2D.velocity = new Vector2(m_MaxSpeed, m_Rigidbody2D.velocity.y);
+				}
+			}
+
+			//knockback if damaged
+			if(m_Damaged){
+				m_Damaged = false;
+				m_Rigidbody2D.AddForce (new Vector2 (0f, m_KnockbackHeight));
+			}
+
         }
         // If the player should jump...
 		if (m_Grounded && jump && animator.GetBool ("InGround")
@@ -150,5 +171,9 @@ public class PlatformerCharacter2D : MonoBehaviour
 //
 		m_FacingRight = !m_FacingRight;
     }
+
+	public void WasDamaged(){
+		m_Damaged = true;
+	}
 }
 
