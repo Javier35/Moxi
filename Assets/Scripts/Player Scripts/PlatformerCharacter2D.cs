@@ -119,7 +119,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 
 			//move back while damaged
-			if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") || animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) { 
+			if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage")) { 
 				if (m_FacingRight) {
 					m_Rigidbody2D.velocity = new Vector2 (-m_MaxSpeed, m_Rigidbody2D.velocity.y);
 				} else {
@@ -127,12 +127,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 				}
 			}
 
-			//knockback if damaged
+			//knockback up if damaged
 			if(m_Damaged){
 				m_Damaged = false;
 				m_Rigidbody2D.AddForce (new Vector2 (0f, m_KnockbackHeight));
 			}
-
         }
         // If the player should jump...
 		if (m_Grounded && jump && animator.GetBool ("InGround")

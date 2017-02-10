@@ -24,9 +24,8 @@ public class LevelManager : MonoBehaviour {
 			SceneManager.LoadScene("LT1");
 			return;
 		}
-		//fader.BeginFade (1);
-		player.GetComponent<PlayerDamageManager> ().Heal (10);
 		player.transform.position = currentCheckpoint.transform.position;
+		player.GetComponent<PlayerDamageManager> ().Heal (99);
 		player.GetComponent<PlayerDamageManager> ().BecomeInvincible (1.5f);
 		RespawnEnemies ();
 		RespawnCollectibles ();

@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\Enemy1.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyDamageManager.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyRespawn.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\ItemDropModule.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\CollisionManager.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\DamageManager.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\Float.cs" />

@@ -6,6 +6,7 @@ public class EnemyDamageManager : DamageManager {
 	public float deathTime = 1f;
 	private bool flickering = false;
 
+	private ItemDropModule itemDropper;
 	private Rigidbody2D rbody;
 	private KnockbackModule knockbackModule;
 	private LevelManager levelManager;
@@ -17,6 +18,7 @@ public class EnemyDamageManager : DamageManager {
 		knockbackModule = GetComponent<KnockbackModule> ();
 		levelManager = GameObject.Find ("LevelManager").GetComponent<LevelManager>();
 		anim = gameObject.GetComponent<Animator> ();
+		itemDropper = gameObject.GetComponent<ItemDropModule> ();
 	}
 
 	void FixedUpdate(){
@@ -24,6 +26,7 @@ public class EnemyDamageManager : DamageManager {
 			if (!anim.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
 				levelManager.GetComponent<LevelManager> ().enemiesToSpawn.Add (this.gameObject);
 				StartDeathAnim ();
+				itemDropper.DropItem ();
 				KnockbackWhenDead ();
 				Invoke ("DestroySelf", deathTime);
 				foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {

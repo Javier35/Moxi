@@ -61,7 +61,6 @@ public class PlayerDamageManager : DamageManager {
 
 				if (health <= 0) {
 					animator.SetTrigger("Death");
-					Debug.Log ("triggered");
 				}
 
 				Knockback ();

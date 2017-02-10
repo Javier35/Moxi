@@ -13,7 +13,10 @@ public class LifeCollectible : Collectible {
 		if (col.gameObject.tag == "Player") {
 			//levelManager.GetComponent<Inventory> ().lives++;
 			Inventory.GainALife();
-			levelManager.collectiblesToSpawn.Add (this.gameObject);
+
+			if(respawnable)
+				levelManager.collectiblesToSpawn.Add (this.gameObject);
+
 			gameObject.SetActive (false);
 		}
 	}
