@@ -8,6 +8,7 @@ public class Collectible : MonoBehaviour {
 	public string collectibleType = "";
 	private Collider2D thisCollider;
 	protected bool respawnable = true;
+	private bool bounced = false;
 
 	public void SetLevelManager(){
 		levelManager = GameObject.Find ("LevelManager").GetComponent<LevelManager>();
@@ -18,6 +19,14 @@ public class Collectible : MonoBehaviour {
 		if (col.gameObject.tag != "Platform") {
 			var otherCollider = col.gameObject.GetComponent<Collider2D> ();
 			Physics2D.IgnoreCollision (otherCollider, thisCollider);
+		} else {
+
+			if (!bounced) {
+				bounced = true;
+				Vector2 contactPoint = col.contacts[0].normal;
+
+				GetComponent<Rigidbody2D> ().AddForce (col.contacts[0].normal * 1.5f, ForceMode2D.Impulse );
+			}
 		}
 	}
 

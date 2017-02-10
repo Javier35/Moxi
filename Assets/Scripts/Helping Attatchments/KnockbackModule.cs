@@ -4,9 +4,8 @@ using System.Collections;
 public class KnockbackModule : MonoBehaviour {
 
 	//private Rigidbody2D rbody;
-	public float knockDur = 1.2f; //maximum duration of knockback in x and y axis
-	public float knockbackX = 1f;
-	public float knockbackY = 1f;
+	[SerializeField]private float upForce = 70;
+	[SerializeField]private float sideForce = 50;
 
 	private Rigidbody2D rbody;
 
@@ -15,15 +14,7 @@ public class KnockbackModule : MonoBehaviour {
 		rbody = GetComponent<Rigidbody2D> ();
 	}
 
-	public IEnumerator Knockback(float knockbackDir){
-		float timer = 0;
-		while (knockDur > timer) {
-			timer += Time.deltaTime;
-			Vector2 dir = new Vector2 (knockbackDir, 1);
-			rbody.AddForce (new Vector2 (dir.x * knockbackX, dir.y * knockbackY));
-		}
-
-		yield return 0;
+	public void Knockback(float knockDir){
+		rbody.AddForce (new Vector2 (sideForce, upForce));
 	}
-
 }

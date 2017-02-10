@@ -22,18 +22,8 @@ public class EnemyDamageManager : DamageManager {
 	}
 
 	void FixedUpdate(){
-		if (health <= 0) {
-			if (!anim.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
-				levelManager.GetComponent<LevelManager> ().enemiesToSpawn.Add (this.gameObject);
-				StartDeathAnim ();
-				itemDropper.DropItem ();
-				KnockbackWhenDead ();
-				Invoke ("DestroySelf", deathTime);
-				foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {
-					//if(tempcollider.isTrigger == true)
-					tempcollider.enabled = false;
-				}
-			}
+		if (health <= 0 && !anim.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
+			Die ();
 		}
 	}
 	
@@ -47,35 +37,55 @@ public class EnemyDamageManager : DamageManager {
 		}
 	}
 
+
+	public void Die(){
+	
+		levelManager.GetComponent<LevelManager> ().enemiesToSpawn.Add (this.gameObject);
+		StartDeathAnim ();
+
+
+		var knockbackDir = getKnockbackDir ();
+		itemDropper.DropItem (knockbackDir);
+		KnockbackWhenDead (knockbackDir);
+		Invoke ("DestroySelf", deathTime);
+		foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {
+			//if(tempcollider.isTrigger == true)
+			tempcollider.enabled = false;
+		}
+
+	}
+
 	public void Flicker(){
 		spriteRenderer.enabled = !spriteRenderer.enabled;
 		flickering = false;
 	}
 
-	private void KnockbackWhenDead(){
-		//fall back code
-		rbody.velocity = new Vector2 (0, rbody.velocity.y);
+	private int getKnockbackDir(){
 		Vector2 playerPos = GameObject.Find("Moxi").transform.position;
 		if (playerPos.x <= transform.position.x) {
 			//fall to the right
-				StartCoroutine(knockbackModule.Knockback(1));
-			
+			return 1;
+
 		} else {
 			//fall to the left
-				StartCoroutine(knockbackModule.Knockback(-1));
+			return -1;
 
 		}
 	}
 
+	private void KnockbackWhenDead(int knockbackDir){
+		//fall back code
+		rbody.velocity = new Vector2 (0, rbody.velocity.y);
+		knockbackModule.Knockback(knockbackDir);
+	}
+
 	void DestroySelf(){
-		//Destroy (gameObject);
 		gameObject.SetActive(false);
 	}
 
 	public void ResetVariables(){
 		health = maxHealth;
 		foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {
-			//if(tempcollider.isTrigger == true)
 			tempcollider.enabled = true;
 		}
 	}

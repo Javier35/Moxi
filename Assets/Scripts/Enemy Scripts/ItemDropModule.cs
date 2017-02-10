@@ -21,7 +21,7 @@ public class ItemDropModule : MonoBehaviour {
 		}
 	}
 	
-	public void DropItem(){
+	public void DropItem(int knockbackDir){
 
 		var healthRoll = Random.Range (1, 101);
 		var moneyRoll = Random.Range (1, 101);
@@ -40,7 +40,7 @@ public class ItemDropModule : MonoBehaviour {
 			spawnedItem.GetComponent<Collectible> ().setRespawnable(false);
 			var rbody = spawnedItem.GetComponent<Rigidbody2D> ();
 			rbody.bodyType = RigidbodyType2D.Dynamic;
-			rbody.AddForce (new Vector2 (35, 100));
+			rbody.AddForce (new Vector2 (35 * knockbackDir, 100));
 		}
 
 	}
