@@ -15,6 +15,6 @@ public class KnockbackModule : MonoBehaviour {
 	}
 
 	public void Knockback(float knockDir){
-		rbody.AddForce (new Vector2 (sideForce, upForce));
+		rbody.AddForce (new Vector2 (sideForce * knockDir, upForce));
 	}
 }

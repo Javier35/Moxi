@@ -69,5 +69,12 @@ public class PlayerInputController : MonoBehaviour
 			m_Character.animator.SetBool ("Run", true);
 		else
 			m_Character.animator.SetBool ("Run", false);
+
+		//if it is moving forward while jumping, switch the layer to display the forward jumping animation
+		if (Input.GetAxisRaw ("Horizontal") != 0 && !m_Character.animator.GetBool ("InGround")) {
+			m_Character.animator.SetLayerWeight (1, 1);
+		} else {
+			m_Character.animator.SetLayerWeight (1, 0);
+		}
 	}
 }
