@@ -60,6 +60,10 @@ public class PlatformerCharacter2D : MonoBehaviour
 
     public void Move(float move, bool crouch, bool jump)
     {
+
+        if (animator.GetBool("InGround") && move != 0)
+            animator.SetBool("Run", true);
+
         // If crouching, check to see if the character can stand up
         if (!crouch && animator.GetBool("Crouch"))
         {
