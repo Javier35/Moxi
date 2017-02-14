@@ -23,12 +23,18 @@ public class AttackTriggerManager : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
+		
 		if (col.gameObject.tag == "Enemy") {
 			col.gameObject.GetComponent<EnemyDamageManager> ().ReceiveDamage (damage);
 			enemyRefs.Add (col.gameObject);
 		
-			ShowHitEffect();
+			ShowHitEffect ();
 			CameraShake.Shake (0.2f, 0.025f);
+		} else {
+			var hitHandler = col.gameObject.GetComponent<HitHandler> ();
+			if (hitHandler != null) {
+				hitHandler.HitEvent ();
+			}
 		}
 	}
 

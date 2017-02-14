@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour {
 			SceneManager.LoadScene("LT1");
 			return;
 		}
+
 		player.transform.position = currentCheckpoint.transform.position;
 		player.GetComponent<PlayerDamageManager> ().Heal (99);
 		player.GetComponent<PlayerDamageManager> ().BecomeInvincible (1.5f);
