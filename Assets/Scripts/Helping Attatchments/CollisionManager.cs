@@ -4,7 +4,7 @@ using System.Collections;
 public class CollisionManager : MonoBehaviour {
 
 	private Collider2D thisCollider;
-	[SerializeField]private string[] ignoreCollisionsWith = {"Enemy"};
+	[SerializeField]private string[] ignoreCollisionsWith = {"Enemy", "Collectible", "Interactable"};
 	// Use this for initialization
 	void Start () {
 		thisCollider = gameObject.GetComponent<BoxCollider2D> ();

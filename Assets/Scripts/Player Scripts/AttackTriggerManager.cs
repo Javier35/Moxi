@@ -14,14 +14,6 @@ public class AttackTriggerManager : MonoBehaviour {
 		attackBox.enabled = false;
 	}
 
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
-
 	void OnTriggerEnter2D(Collider2D col){
 		
 		if (col.gameObject.tag == "Enemy") {
@@ -34,6 +26,7 @@ public class AttackTriggerManager : MonoBehaviour {
 			var hitHandler = col.gameObject.GetComponent<HitHandler> ();
 			if (hitHandler != null) {
 				hitHandler.HitEvent ();
+				CameraShake.Shake (0.1f, 0.015f);
 			}
 		}
 	}

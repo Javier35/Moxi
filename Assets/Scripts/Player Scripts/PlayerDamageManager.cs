@@ -6,7 +6,6 @@ public class PlayerDamageManager : DamageManager {
 	private bool flickering = false;
 
 	private LevelManager levelManager;
-
 	private PlatformerCharacter2D player;
 	public BoxCollider2D attackBox;
 
@@ -82,6 +81,7 @@ public class PlayerDamageManager : DamageManager {
 
 	public void EnableAttackBox(){
 		attackBox.enabled = true;
+		Invoke ("Nudge",0.0001f);
 	}
 	public void DisableAttackBox(){
 		attackBox.enabled = false;
@@ -90,5 +90,11 @@ public class PlayerDamageManager : DamageManager {
 
 	public void Respawn(){
 		levelManager.RespawnPlayer ();
+	}
+
+
+	//move it a little bit just to wake up the physics engine
+	public void Nudge(){
+		this.transform.position = this.transform.position + (new Vector3 (0.0001f, 0f, 0f));
 	}
 }
