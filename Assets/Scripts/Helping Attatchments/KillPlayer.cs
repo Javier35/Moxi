@@ -11,6 +11,7 @@ public class KillPlayer : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player") {
+			levelManager.fader.BeginFade (1);
 			levelManager.RespawnPlayer ();
 		}
 	}

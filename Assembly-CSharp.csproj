@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ActivateCheckpoint.cs" />
-     <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\Collectibles\Collectible.cs" />
      <Compile Include="Assets\Scripts\Collectibles\HealthCollectible.cs" />
      <Compile Include="Assets\Scripts\Collectibles\LifeCollectible.cs" />
@@ -56,6 +55,8 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyDamageManager.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyRespawn.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\ItemDropModule.cs" />
+     <Compile Include="Assets\Scripts\Globals\CameraShake.cs" />
+     <Compile Include="Assets\Scripts\Globals\Destroyable.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\CollisionManager.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\DamageManager.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\Float.cs" />

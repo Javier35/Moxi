@@ -3,11 +3,10 @@ using System.Collections;
 
 public class PlayerDamageManager : DamageManager {
 
-	private bool flickering = false;
-
 	private LevelManager levelManager;
 	private PlatformerCharacter2D player;
 	public BoxCollider2D attackBox;
+	private float invincibilityTime = 1.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -23,36 +22,17 @@ public class PlayerDamageManager : DamageManager {
 		if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Attack") && 
 			!animator.GetCurrentAnimatorStateInfo (0).IsName ("SecondAttack"))
 				DisableAttackBox ();
-		
-		FlickerWhenDamaged ();
 	}
 
-	public void BecomeInvincible(float invincibilityTime){
+	public void BecomeInvincible(){
 		invincible = true;
 		CameraShake.Shake (0.2f, 0.024f);
-		Invoke ("ResetValues", invincibilityTime);
-	}
-
-	private void FlickerWhenDamaged(){
-		if (invincible == true) {
-			if (flickering == false) {
-				flickering = true;
-				Invoke ("Flicker", 0.1f);
-			}
-		} else
-			spriteRenderer.enabled = true;
-	}
-
-	private void Flicker(){
-		spriteRenderer.enabled = !spriteRenderer.enabled;
-		flickering = false;
-	}
-
-	void ResetValues(){
-		invincible = false;
+		StartCoroutine (Flicker (invincibilityTime));
+		Invoke ("ResetInvincibility", invincibilityTime);
 	}
 
 	public void PlayerReceiveDamage(int damage){
+		
 		if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
 			if (invincible == false) {
 				health -= damage;
@@ -63,10 +43,12 @@ public class PlayerDamageManager : DamageManager {
 				}
 
 				Knockback ();
-				invincible = true;
-				CameraShake.Shake (0.2f, 0.024f);
-				Invoke ("ResetValues", 2);
+				BecomeInvincible ();
 			}
+	}
+
+	void ResetInvincibility(){
+		invincible = false;
 	}
 
 	private void Knockback(){
@@ -74,9 +56,9 @@ public class PlayerDamageManager : DamageManager {
 		rbody.velocity = new Vector2 (0, 0);
 		player.WasDamaged ();
 	}
-
-	void DestroySelf(){
-		//Destroy (transform.parent.gameObject);
+		
+	override public void DestroySelf(){
+		
 	}
 
 	public void EnableAttackBox(){
@@ -88,13 +70,12 @@ public class PlayerDamageManager : DamageManager {
 		GetComponentInChildren<AttackTriggerManager> ().ResetEnemyDamage ();
 	}
 
-	public void Respawn(){
-		levelManager.RespawnPlayer ();
-	}
-
-
 	//move it a little bit just to wake up the physics engine
 	public void Nudge(){
 		this.transform.position = this.transform.position + (new Vector3 (0.0001f, 0f, 0f));
+	}
+
+	public void Respawn(){
+		levelManager.RespawnPlayer ();
 	}
 }

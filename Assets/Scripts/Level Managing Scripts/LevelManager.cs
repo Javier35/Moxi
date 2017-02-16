@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour {
 
 		player.transform.position = currentCheckpoint.transform.position;
 		player.GetComponent<PlayerDamageManager> ().Heal (99);
-		player.GetComponent<PlayerDamageManager> ().BecomeInvincible (1.5f);
+		player.GetComponent<PlayerDamageManager> ().BecomeInvincible ();
 		RespawnEnemies ();
 		RespawnCollectibles ();
 		fader.BeginFade (-1);

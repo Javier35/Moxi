@@ -8,14 +8,14 @@ public class MoneyCollectible : Collectible {
 	void Start(){
 		collectibleType = "money";
 		SetLevelManager ();
+		spawned = true;
 	}
 
 	void OnTriggerEnter2D (Collider2D col){
 
 		if (col.gameObject.tag == "Player") {
 			Inventory.GainMoney(moneyAmmount);
-			//levelManager.collectiblesToSpawn.Add (this.gameObject);
-			gameObject.SetActive (false);
+			DestroySelf ();
 		}
 	}
 }

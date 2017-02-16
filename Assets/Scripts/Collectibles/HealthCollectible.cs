@@ -13,11 +13,7 @@ public class HealthCollectible : Collectible {
 		
 		if (col.gameObject.tag == "Player") {
 			col.gameObject.GetComponent<PlayerDamageManager> ().Heal (healAmmount);
-
-			if(respawnable)
-				levelManager.collectiblesToSpawn.Add (this.gameObject);
-			
-			gameObject.SetActive (false);
+			DestroySelf ();
 		}
 	}
 }

@@ -17,11 +17,17 @@ public class PitEffects : MonoBehaviour {
 
 		if (respawning == false) {
 			respawning = true;
+
 			if (other.tag == "Player") {
 				FreeCamera ();
 				levelManager.fader.BeginFade (1);
 				Invoke ("Respawn", 0.4f);
 				Invoke ("ToggleRespawnFlag", 0.6f);
+			} else {
+				var destroyable = other.GetComponent<Destroyable> ();
+				if (destroyable != null) {
+					destroyable.DestroySelf ();
+				}
 			}
 		}
 	}

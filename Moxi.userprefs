@@ -2,13 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Level Managing Scripts/PitEffects.cs">
     <Files>
-      <File FileName="Assets/Scripts/Helping Attatchments/HitHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets/ActivateCheckpoint.cs" Line="21" Column="3" />
-      <File FileName="Assets/Scripts/Level Managing Scripts/Checkpoint.cs" Line="19" Column="1" />
-      <File FileName="Assets/Scripts/Player Scripts/AttackTriggerManager.cs" Line="40" Column="3" />
-      <File FileName="Assets/Scripts/Helping Attatchments/CollisionManager.cs" Line="7" Column="96" />
-      <File FileName="Assets/Scripts/Level Managing Scripts/LevelManager.cs" Line="20" Column="30" />
-      <File FileName="Assets/Scripts/Level Managing Scripts/PitEffects.cs" Line="38" Column="56" />
+      <File FileName="Assets/Scripts/Enemy Scripts/ItemDropModule.cs" Line="14" Column="44" />
+      <File FileName="Assets/Scripts/Collectibles/Collectible.cs" Line="52" Column="3" />
+      <File FileName="Assets/Scripts/Collectibles/HealthCollectible.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/Collectibles/LifeCollectible.cs" Line="18" Column="3" />
+      <File FileName="Assets/Scripts/Collectibles/MoneyCollectible.cs" Line="20" Column="3" />
+      <File FileName="Assets/Scripts/Enemy Scripts/EnemyDamageManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Globals/Destroyable.cs" Line="8" Column="33" />
+      <File FileName="Assets/Scripts/Level Managing Scripts/PitEffects.cs" Line="27" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
