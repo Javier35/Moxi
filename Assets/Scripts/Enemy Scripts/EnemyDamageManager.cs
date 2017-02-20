@@ -10,9 +10,11 @@ public class EnemyDamageManager : DamageManager {
 	private KnockbackModule knockbackModule;
 	private LevelManager levelManager;
 	private bool isDamaged = false;
+	private GameObject player;
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.Find ("Moxi");
 		rbody = GetComponent<Rigidbody2D> ();
 		knockbackModule = GetComponent<KnockbackModule> ();
 		levelManager = GameObject.Find ("LevelManager").GetComponent<LevelManager>();
@@ -60,7 +62,7 @@ public class EnemyDamageManager : DamageManager {
 	}
 
 	private int getKnockbackDir(){
-		Vector2 playerPos = GameObject.Find("Moxi").transform.position;
+		Vector2 playerPos = player.transform.position;
 		if (playerPos.x <= transform.position.x) {
 			//fall to the right
 			return 1;

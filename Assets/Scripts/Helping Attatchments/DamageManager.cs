@@ -31,6 +31,7 @@ public class DamageManager : Destroyable {
 	}
 
 	Transform currentPos;
+
 	public void EnemyShake (float duration, float amount) {
 
 		currentPos = gameObject.transform;

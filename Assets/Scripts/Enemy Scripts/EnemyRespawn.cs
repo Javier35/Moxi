@@ -16,10 +16,11 @@ public class EnemyRespawn : MonoBehaviour {
 	}
 
 	public void Respawn(){
-		gameObject.SetActive(true);
+		
 		gameObject.GetComponent<EnemyDamageManager> ().ResetVariables ();
 		gameObject.transform.position = spawnPosition;
 		gameObject.GetComponent<SpriteRenderer> ().enabled = true;
+		gameObject.SetActive(true);
 		//Debug.Log (transform.position);
 	}
 }
