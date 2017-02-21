@@ -1,21 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player Scripts/AttackTriggerManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player Scripts/PlayerInputController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player Scripts/AttackTriggerManager.cs" Line="25" Column="1" />
-      <File FileName="Assets/Scripts/Enemy Scripts/EnemyDamageManager.cs" Line="28" Column="4" />
-      <File FileName="Assets/Scripts/Helping Attatchments/DamageManager.cs" Line="12" Column="2" />
-      <File FileName="Assets/Scripts/Globals/Destroyable.cs" Line="39" Column="1" />
-      <File FileName="Assets/Scripts/Enemy Scripts/Enemy1.cs" Line="69" Column="4" />
+      <File FileName="Assets/Scripts/Enemy Scripts/Enemy1_Throwing.cs" Line="25" Column="4" />
+      <File FileName="Assets/Scripts/Player Scripts/PlatformerCharacter2D.cs" Line="64" Column="6" />
+      <File FileName="Assets/Scripts/Player Scripts/PlayerInputController.cs" Line="77" Column="3" />
+      <File FileName="Assets/Scripts/Player Scripts/GroundChecker.cs" Line="7" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/jmontoya/Documents/Moxi/Assets/Scripts/Player Scripts/AttackTriggerManager.cs" line="25" column="1" />
-      <Breakpoint file="/Users/jmontoya/Documents/Moxi/Assets/Scripts/Player Scripts/AttackTriggerManager.cs" line="26" column="1" />
-      <Breakpoint file="/Users/jmontoya/Documents/Moxi/Assets/Scripts/Player Scripts/AttackTriggerManager.cs" line="39" column="1" />
-      <Breakpoint file="/Users/jmontoya/Documents/Moxi/Assets/Scripts/Player Scripts/AttackTriggerManager.cs" line="42" column="1" />
-      <Breakpoint file="/Users/jmontoya/Documents/Moxi/Assets/Scripts/Player Scripts/AttackTriggerManager.cs" line="41" column="1" />
       <Breakpoint file="/Users/jmontoya/Documents/Moxi/Assets/Scripts/Enemy Scripts/Enemy1.cs" line="69" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

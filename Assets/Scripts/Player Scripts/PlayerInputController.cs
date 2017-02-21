@@ -8,6 +8,12 @@ public class PlayerInputController : MonoBehaviour
 	private PlatformerCharacter2D m_Character;
 	private bool m_Jump;
 	public BoxCollider2D crouchBox;
+	private float accelValue = 0;
+	private Rigidbody2D rbody;
+
+	private bool slowed = false;
+	private float previousInput = 0;
+	private float slowPercent = 0.5f;
 
 	private void Awake()
 	{
@@ -17,21 +23,35 @@ public class PlayerInputController : MonoBehaviour
 
 	private void Update()
 	{
-		if (!m_Jump)
-		{
-			// Read the jump input in Update so button presses aren't missed.
-			if (Input.GetKeyDown (KeyCode.Z) || Input.GetKeyDown (KeyCode.UpArrow))
-				m_Jump = true;
-			else
-				m_Jump = false;
+		
+		InterpreteKeys ();
+	}
+		
+	private IEnumerator increaseAcceleration(){
+		if (Mathf.Abs (accelValue) < 1 && accelValue != 0) {
+			accelValue = accelValue + (0.1f * (Mathf.Sign(accelValue)));
+			yield return new WaitForSeconds (0.05f);
+			yield return StartCoroutine (increaseAcceleration());
+		}
+	}
+
+
+	float SlowDown(float inputMagnitude){
+		if(previousInput == 0 && inputMagnitude != 0 && !slowed){
+			slowed = true;
+		}
+		previousInput = inputMagnitude;
+
+		if (slowed) {
+			inputMagnitude *= slowPercent;
+			slowPercent += 0.02f;
+			if (slowPercent >= 1) {
+				slowed = false;
+				slowPercent = 0.5f;
+			}
 		}
 
-		if(Input.GetKeyDown(KeyCode.R))
-			//SceneManagement.Scene
-			SceneManager.LoadScene("LT1");
-
-		ReduceHitboxIfCrouching ();
-		InterpreteKeys ();
+		return inputMagnitude;
 	}
 
 
@@ -40,7 +60,10 @@ public class PlayerInputController : MonoBehaviour
 		// Read the inputs.
 		bool crouch = Input.GetKey(KeyCode.DownArrow);
 		float h = Input.GetAxisRaw ("Horizontal");
-		// Pass all parameters to the character control script.
+
+		//slowdown
+		h = SlowDown(h);
+
 		m_Character.Move(h, crouch, m_Jump);
 		m_Jump = false;
 	}
@@ -55,6 +78,21 @@ public class PlayerInputController : MonoBehaviour
 
 	private void InterpreteKeys () {
 
+
+		if (!m_Jump)
+		{
+			// Read the jump input in Update so button presses aren't missed.
+			if (Input.GetKeyDown (KeyCode.Z) || Input.GetKeyDown (KeyCode.UpArrow))
+				m_Jump = true;
+			else
+				m_Jump = false;
+		}
+
+		if(Input.GetKeyDown(KeyCode.R))
+			//SceneManagement.Scene
+			SceneManager.LoadScene("LT1");
+
+		ReduceHitboxIfCrouching ();
 
 		if (Input.GetKeyDown (KeyCode.X)) {
 			m_Character.animator.SetTrigger ("Attack");

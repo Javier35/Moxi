@@ -63,7 +63,7 @@ public class PlayerDamageManager : DamageManager {
 
 	public void EnableAttackBox(){
 		attackBox.enabled = true;
-		Invoke ("Nudge",0.0001f);
+		Nudge();
 	}
 	public void DisableAttackBox(){
 		attackBox.enabled = false;
