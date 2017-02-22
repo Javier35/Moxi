@@ -61,9 +61,6 @@ public class PlayerInputController : MonoBehaviour
 		bool crouch = Input.GetKey(KeyCode.DownArrow);
 		float h = Input.GetAxisRaw ("Horizontal");
 
-		//slowdown
-		h = SlowDown(h);
-
 		m_Character.Move(h, crouch, m_Jump);
 		m_Jump = false;
 	}

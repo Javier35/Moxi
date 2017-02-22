@@ -23,7 +23,7 @@ public class Camera2DFollow : MonoBehaviour
     {
 		if (allowFollow) {
 			aheadTargetPos = target.position;
-			aheadTargetPos.y = target.position.y + 0.0f;
+			aheadTargetPos.y = target.position.y + 1.0f;
 			aheadTargetPos.z = -1;
 			transform.position = aheadTargetPos;
 		}

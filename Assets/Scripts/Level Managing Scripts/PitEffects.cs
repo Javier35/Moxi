@@ -37,11 +37,11 @@ public class PitEffects : MonoBehaviour {
 	}
 
 	void LockCamera(){
-		cam.GetComponent<Camera2DFollow> ().StartFollowing ();
+		cam.GetComponent<DeadzoneFollow> ().StartFollowing ();
 	}
 
 	void FreeCamera(){
-		cam.GetComponent<Camera2DFollow> ().StopFollowing ();
+		cam.GetComponent<DeadzoneFollow> ().StopFollowing ();
 		CameraShake.Shake (0.35f, 0.04f);
 	}
 
