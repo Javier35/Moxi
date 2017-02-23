@@ -5,10 +5,10 @@ using UnityEngine;
 public class DeadzoneFollow : MonoBehaviour {
 
 	[SerializeField] GameObject character;
-	[SerializeField] Rigidbody2D rbody;
+	Rigidbody2D rbody;
 	private Vector3 moveTemp;
 
-	public float xMovementThreshold = 0.6f;
+	public float xMovementThreshold = 0.4f;
 	public float yMovementThreshold = 1.4f;
 
 	float characterDeltaX;
@@ -16,28 +16,34 @@ public class DeadzoneFollow : MonoBehaviour {
 	float difX = 0.0f;
 	float difY = 0.0f;
 
+	float lastVelX = 0;
+	float lastVelY = 0;
+
 	bool allowFollow = true;
 
 	void Awake(){
-		character = GameObject.Find ("Moxi");
 		rbody = character.GetComponent<Rigidbody2D> ();
 		moveOntoPlayer ();
 	}
 
 	void Update() {
 
-		if (allowFollow)
+		if (allowFollow) {
 			deadzoneFollow();
+		}
+			
 	}
 
 	private void deadzoneFollow(){
+		
 		characterDeltaX = character.transform.position.x - transform.position.x;
 		characterDeltaY = character.transform.position.y - transform.position.y;
 
 		if (Mathf.Abs (characterDeltaX) > xMovementThreshold) {
 			var velX = rbody.velocity.x;
 			if (velX == 0) {
-				difX = 0;
+				difX = characterDeltaX - xMovementThreshold;
+				velX = lastVelX;
 			} else {
 				difX = characterDeltaX + (Mathf.Sign (velX) * -1 * xMovementThreshold);
 			}
@@ -48,23 +54,26 @@ public class DeadzoneFollow : MonoBehaviour {
 				transform.position.z
 			);
 
+			lastVelX = velX;
 			transform.position = Vector3.MoveTowards (transform.position, targerPos, Mathf.Abs(velX) * Time.deltaTime);
 		}
 
 		if (Mathf.Abs (characterDeltaY) > yMovementThreshold) {
 			var velY = rbody.velocity.y;
 			if (velY == 0) {
-				difY = 0;
+				difY = characterDeltaY - yMovementThreshold; 
+				velY = lastVelY;
 			} else {
 				difY = characterDeltaY + (Mathf.Sign (velY) * -1 * yMovementThreshold);
 			}
 
 			var targerPos = new Vector3 (
 				transform.position.x,
-				transform.position.y + (difY + (Mathf.Sign(difY) * 0.04f)),
+				transform.position.y + (difY),
 				transform.position.z
 			);
 
+			lastVelY = velY;
 			transform.position = Vector3.MoveTowards (transform.position, targerPos, (Mathf.Abs(velY)) * Time.deltaTime);
 		}
 	}

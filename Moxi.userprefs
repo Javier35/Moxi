@@ -1,11 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player Scripts/PlayerInputController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DeadzoneFollow.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy Scripts/Enemy1_Throwing.cs" Line="25" Column="4" />
-      <File FileName="Assets/Scripts/Player Scripts/PlatformerCharacter2D.cs" Line="64" Column="6" />
-      <File FileName="Assets/Scripts/Player Scripts/PlayerInputController.cs" Line="77" Column="3" />
-      <File FileName="Assets/Scripts/Player Scripts/GroundChecker.cs" Line="7" Column="48" />
+      <File FileName="Assets/DeadzoneFollow.cs" Line="81" Column="120" />
+      <File FileName="Assets/Scripts/Level Managing Scripts/PitEffects.cs" Line="50" Column="17" />
+      <File FileName="Assets/Scripts/Level Managing Scripts/LevelManager.cs" Line="52" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
