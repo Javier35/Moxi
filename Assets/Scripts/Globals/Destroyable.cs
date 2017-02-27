@@ -15,11 +15,14 @@ public abstract class Destroyable : MonoBehaviour {
 
 			InvokeRepeating ("ToggleRenderer", 0.1f, 0.1f);
 			yield return new WaitForSeconds (duration);
-			CancelInvoke ("ToggleRenderer");
-			spriteRenderer.enabled = true;
-
-			crRunning = false;
+			stopFlicker ();
 		}
+	}
+
+	public void stopFlicker(){
+		CancelInvoke ("ToggleRenderer");
+		crRunning = false;
+		spriteRenderer.enabled = true;
 	}
 
 	public IEnumerator CustomFlicker(float duration, float rate){

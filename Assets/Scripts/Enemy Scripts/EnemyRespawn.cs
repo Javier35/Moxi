@@ -19,8 +19,8 @@ public class EnemyRespawn : MonoBehaviour {
 		
 		gameObject.GetComponent<EnemyDamageManager> ().ResetVariables ();
 		gameObject.transform.position = spawnPosition;
-		gameObject.GetComponent<SpriteRenderer> ().enabled = true;
 		gameObject.SetActive(true);
+		gameObject.GetComponent<Destroyable> ().stopFlicker ();
 		//Debug.Log (transform.position);
 	}
 }
