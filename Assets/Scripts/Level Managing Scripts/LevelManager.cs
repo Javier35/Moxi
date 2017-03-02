@@ -26,6 +26,12 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		player.transform.position = currentCheckpoint.transform.position;
+
+		player.transform.position = new Vector3 (
+			currentCheckpoint.transform.position.x, 
+			currentCheckpoint.transform.position.y - 0.35f,
+			player.transform.position.z);
+		
 		player.GetComponent<PlayerDamageManager> ().Heal (99);
 		player.GetComponent<PlayerDamageManager> ().BecomeInvincible ();
 		RespawnEnemies ();

@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Helping Attatchments\KillPlayer.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\KnockbackModule.cs" />
      <Compile Include="Assets\Scripts\Level Managing Scripts\ActivateCheckpoint.cs" />
+     <Compile Include="Assets\Scripts\Level Managing Scripts\BackgroundScroll.cs" />
      <Compile Include="Assets\Scripts\Level Managing Scripts\Camera2DFollow.cs" />
      <Compile Include="Assets\Scripts\Level Managing Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\Level Managing Scripts\Fading.cs" />
