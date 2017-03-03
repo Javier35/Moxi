@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\Player Scripts\PlatformerCharacter2D.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerDamageManager.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerInputController.cs" />
+     <Compile Include="Assets\StickToCamera.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
