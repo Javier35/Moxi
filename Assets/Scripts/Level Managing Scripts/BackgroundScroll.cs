@@ -5,7 +5,6 @@ using UnityEngine;
 public class BackgroundScroll : MonoBehaviour {
 
 	public float paralaxSpeed = 1;
-	public float backgroundSpeed;
 
 	private float backgroundSize;
 	private Transform cameraTransform;
@@ -31,7 +30,7 @@ public class BackgroundScroll : MonoBehaviour {
 	private void LateUpdate(){
 		
 		float deltaX = cameraTransform.position.x - lastCameraX;
-		transform.position += Vector3.right * (deltaX * paralaxSpeed);
+		transform.position = new Vector3 (transform.position.x + (deltaX * paralaxSpeed), transform.position.y, transform.position.z);
 		lastCameraX = cameraTransform.position.x;
 
 		if(cameraTransform.position.x < (layers[leftIndex].transform.position.x + viewZone))
