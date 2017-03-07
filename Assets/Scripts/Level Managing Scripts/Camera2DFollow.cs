@@ -5,10 +5,11 @@ using UnityEngine;
 public class Camera2DFollow : MonoBehaviour
 {
     public Transform target;
+	public float offcenterX = 0;
+	public float offcenterY = 1.0f;
 
     private Vector3 m_CurrentVelocity;
-	private Vector3 aheadTargetPos;
-
+	private Vector3 TargetPos;
 	private bool allowFollow = true;
 
     // Use this for initialization
@@ -22,10 +23,11 @@ public class Camera2DFollow : MonoBehaviour
     private void Update()
     {
 		if (allowFollow) {
-			aheadTargetPos = target.position;
-			aheadTargetPos.y = target.position.y + 1.0f;
-			aheadTargetPos.z = -1;
-			transform.position = aheadTargetPos;
+			TargetPos = target.position;
+			TargetPos.x = target.position.x + offcenterX;
+			TargetPos.y = target.position.y + offcenterY;
+			TargetPos.z = transform.position.z;
+			transform.position = TargetPos;
 		}
     }
 

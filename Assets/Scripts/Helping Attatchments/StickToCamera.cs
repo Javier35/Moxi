@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StickToCamera : MonoBehaviour {
 	
-	void Update(){
+	void LateUpdate(){
 		var cameraPos = Camera.main.transform.position;
 		this.transform.position = new Vector3 (cameraPos.x, cameraPos.y, this.transform.position.z);
 	}
