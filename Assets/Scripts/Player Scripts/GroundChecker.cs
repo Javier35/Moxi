@@ -14,37 +14,26 @@ public class GroundChecker : MonoBehaviour {
 	private PlatformerCharacter2D characterReference;
 
 	void Awake(){
-		rayLength = groundBox.size.y / 2 + 0.1f;
+		rayLength = 0.2f;
 		characterReference = GetComponentInParent<PlatformerCharacter2D> ();
 	}
 
 	void FixedUpdate(){
 		PlaceVectorStartPoints ();
 		RaycastGroundVectors ();
-		InterpreteFlags ();
+		InterpreteRayHits ();
 	}
 
 	private void PlaceVectorStartPoints(){ // main function that raycasts the 4 rays and updates the flags if they touch ground
 
-		rayStart1 = groundBox.bounds.center; //placing all the rays by default in the center of the player's hitbox
-		rayStart2 = groundBox.bounds.center;
-		rayStart3 = groundBox.bounds.center;
-		rayStart4 = groundBox.bounds.center;
-
-		rayStart1.x -= groundBox.bounds.extents.x; //moving the starting points of the rays to cover the player hitbox evenly
-		rayStart2.x -= groundBox.bounds.extents.x / 4;
-		rayStart3.x += groundBox.bounds.extents.x / 4;
-		rayStart4.x += groundBox.bounds.extents.x;
+		var centerpointX = groundBox.bounds.center.x;
+		rayStart1 = new Vector3 (centerpointX - groundBox.bounds.extents.x, groundBox.bounds.min.y + 0.1f, this.transform.position.z);
+		rayStart2 = new Vector3 (centerpointX - groundBox.bounds.extents.x/4, groundBox.bounds.min.y + 0.1f, this.transform.position.z);
+		rayStart3 = new Vector3 (centerpointX + groundBox.bounds.extents.x/4, groundBox.bounds.min.y + 0.1f, this.transform.position.z);
+		rayStart4 = new Vector3 (centerpointX + groundBox.bounds.extents.x, groundBox.bounds.min.y + 0.1f, this.transform.position.z);
 	}
 
 	private void RaycastGroundVectors(){
-
-		/*
-		Debug.DrawRay (rayStart1, Vector3.down, Color.red);
-		Debug.DrawRay (rayStart2, Vector3.down, Color.red);
-		Debug.DrawRay (rayStart3, Vector3.down, Color.red);
-		Debug.DrawRay (rayStart4, Vector3.down, Color.red);
-		*/
 
 		rayHit1 = Physics2D.Raycast (rayStart1, Vector3.down, rayLength, 1 << LayerMask.NameToLayer("Platform"));
 		rayHit2 = Physics2D.Raycast (rayStart2, Vector3.down, rayLength, 1 << LayerMask.NameToLayer("Platform"));
@@ -52,7 +41,7 @@ public class GroundChecker : MonoBehaviour {
 		rayHit4 = Physics2D.Raycast (rayStart4, Vector3.down, rayLength, 1 << LayerMask.NameToLayer("Platform"));
 	}
 
-	private void InterpreteFlags(){
+	private void InterpreteRayHits(){
 		if (rayHit1 || rayHit2 || rayHit3 || rayHit4)
 			grounded = true;
 		else

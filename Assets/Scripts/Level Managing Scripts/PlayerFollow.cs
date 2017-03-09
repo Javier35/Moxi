@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-public class Camera2DFollow : MonoBehaviour
+public class PlayerFollow : MonoBehaviour
 {
     public Transform target;
 	public float offcenterX = 0;
