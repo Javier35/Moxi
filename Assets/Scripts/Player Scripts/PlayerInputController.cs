@@ -7,7 +7,9 @@ public class PlayerInputController : MonoBehaviour
 {
 	private PlatformerCharacter2D m_Character;
 	private bool m_Jump;
-	public BoxCollider2D crouchBox;
+	public BoxCollider2D mainHitbox;
+	private Vector2 originalHitboxSize;
+	private Vector2 originalHitboxOffset;
 	private Rigidbody2D rbody;
 
 	bool crouch;
@@ -16,6 +18,8 @@ public class PlayerInputController : MonoBehaviour
 	private void Awake()
 	{
 		m_Character = GetComponent<PlatformerCharacter2D>();
+		originalHitboxSize = mainHitbox.size;
+		originalHitboxOffset = mainHitbox.offset;
 	}
 
 
@@ -32,11 +36,18 @@ public class PlayerInputController : MonoBehaviour
 	}
 
 	private void ReduceHitboxIfCrouching(){
-		if(m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("Crouch") ||
-			m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("CrouchLoop"))
-				crouchBox.enabled = false;
-		else
-				crouchBox.enabled = true;
+		if (m_Character.animator.GetCurrentAnimatorStateInfo (0).IsName ("Crouch") ||
+		    m_Character.animator.GetCurrentAnimatorStateInfo (0).IsName ("CrouchLoop")) {
+
+			mainHitbox.enabled = false;
+
+			mainHitbox.size = new Vector2 (mainHitbox.size.x, 0.6f);
+			mainHitbox.offset = new Vector2 (0.015f, -0.3f);
+
+		} else {
+			mainHitbox.size = originalHitboxSize;
+			mainHitbox.offset = originalHitboxOffset;
+		}
 	}
 
 	private void InterpreteKeys () {

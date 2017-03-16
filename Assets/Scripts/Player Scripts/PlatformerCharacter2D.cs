@@ -156,20 +156,30 @@ public class PlatformerCharacter2D : MonoBehaviour
 			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Damage")
 			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Death")) {
 
-			DoJump ();
+
+			if (terrainChecker.specialTerrain != null) {
+				var terrainAllowsNormalJump = terrainChecker.specialTerrain.JumpEvent (this.gameObject);
+
+				if (terrainAllowsNormalJump) {
+					DoJump ();
+				}
+				m_JumpForce = originalJumpForce;
+				terrainChecker.specialTerrain = null;
+			} else {
+				DoJump ();
+			}
+
 			//if the player didnt jump, but is in the air, he should be falling
-		} else if (!m_Grounded && !jump && !animator.GetBool ("InGround")) {
+		} else if (!m_Grounded && !jump && !animator.GetBool ("InGround")
+			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Damage")
+			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Death")) {
+
 			DoFall ();
 		}
 	}
 
 	void DoJump(){
 		// Add a vertical force to the player.
-
-		if (terrainChecker.specialTerrain != null) {
-			terrainChecker.specialTerrain.JumpEvent (this.gameObject);
-			terrainChecker.specialTerrain = null;
-		}
 
 		m_Grounded = false;
 		animator.SetBool ("InGround", false);
@@ -179,7 +189,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		m_JumpForce = originalJumpForce;
 	}
 
-	void DoFall(){
+	public void DoFall(){
 		m_Grounded = false;
 		animator.SetBool ("InGround", false);
 		animator.SetBool ("Fall", true);
