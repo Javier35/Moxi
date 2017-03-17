@@ -16,7 +16,10 @@ public class EnemyRespawn : MonoBehaviour {
 	}
 
 	public void Respawn(){
-		
+
+		var enemyScript = gameObject.GetComponent<Enemy> ();
+		enemyScript.faceLeft = enemyScript.originalFaceLeft;
+
 		gameObject.GetComponent<EnemyDamageManager> ().ResetVariables ();
 		gameObject.transform.position = spawnPosition;
 		gameObject.SetActive(true);

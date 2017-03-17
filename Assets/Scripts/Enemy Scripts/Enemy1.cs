@@ -17,18 +17,22 @@ public class Enemy1 : Enemy {
 
 	// Update is called once per frame
 	void Update () {
+		if (checkIfActive()) {
+		
+		
+			if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") &&
+				!animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
 
-		if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") &&
-		   !animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
+				if (!CheckFrontGround () || CheckWallCollision ())
+					Flip ();
 
-			if (!CheckFrontGround () || CheckWallCollision ())
-				Flip ();
-			
-			Move ();
+				Move ();
 
-		} else if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage")) {
-			rbody.velocity = new Vector2 (0, rbody.velocity.y);
+			} else if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage")) {
+				rbody.velocity = new Vector2 (0, rbody.velocity.y);
+			}
 
+		
 		}
 	}
 

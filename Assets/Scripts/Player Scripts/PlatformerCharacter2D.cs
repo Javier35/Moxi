@@ -73,6 +73,7 @@ public class PlatformerCharacter2D : MonoBehaviour
         }
         // If the player should jump...
 		JumpBehavior(jump);
+		animator.SetFloat ("Yspeed", m_Rigidbody2D.velocity.y);
     }
 
 

@@ -16,23 +16,30 @@ public class Enemy1_Throwing : Enemy {
 
 	void Update(){
 
-		FacePlayer ();
 
-		if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") &&
-			!animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
+		if (checkIfActive()) {
+		
+		
+			FacePlayer ();
 
-			Move ();
+			if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") &&
+				!animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
 
-			distance = Mathf.Abs(this.transform.position.x  - player.transform.position.x);
-			if(canThrow && distance <= 3.4f){
+				Move ();
 
-				canThrow = false;
-				ThrowProjectile ();
+				distance = Mathf.Abs(this.transform.position.x  - player.transform.position.x);
+				if(canThrow && distance <= 3.4f){
 
-				Invoke ("ResetThrow", 1.4f);
+					canThrow = false;
+					ThrowProjectile ();
+
+					Invoke ("ResetThrow", 1.4f);
+				}
+			}else if(animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage")){
+				rbody.velocity = new Vector2 (0, rbody.velocity.y);
 			}
-		}else if(animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage")){
-			rbody.velocity = new Vector2 (0, rbody.velocity.y);
+		
+		
 		}
 	}
 

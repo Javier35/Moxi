@@ -8,7 +8,13 @@ public class Enemy : MonoBehaviour {
 	protected Animator animator;
 	protected GameObject player;
 
-	[SerializeField] protected bool faceLeft = true;
+	protected bool visible = false;
+	protected bool near = false;
+
+	public string activationCondition = "visible";
+
+	[SerializeField] public bool faceLeft = true;
+	[HideInInspector]public bool originalFaceLeft;
 
 	void Awake () {
 		player = GameObject.Find ("Moxi");
@@ -20,6 +26,7 @@ public class Enemy : MonoBehaviour {
 			theScale.x *= -1;
 			transform.localScale = theScale;
 		}
+		originalFaceLeft = faceLeft;
 
 	}
 
@@ -37,5 +44,26 @@ public class Enemy : MonoBehaviour {
 		}else if(player.transform.position.x > this.transform.position.x && faceLeft){
 			Flip ();
 		}
+	}
+
+	void OnBecameVisible() {
+		visible = true;
+	}
+
+	void OnBecomeInvisible() {
+		visible = false;
+	}
+
+	public void SetIsNear(bool isNear){
+		near = isNear;
+	}
+
+	protected bool checkIfActive(){
+		if (activationCondition == "visible" && visible ||
+		    activationCondition == "proximity" && near ||
+		    activationCondition == "always") {
+			return true;
+		}
+		return false;
 	}
 }
