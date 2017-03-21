@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class HitHandler : MonoBehaviour {
 
-	abstract public void HitEvent ();
+	abstract public void HitEvent (int damage);
 }

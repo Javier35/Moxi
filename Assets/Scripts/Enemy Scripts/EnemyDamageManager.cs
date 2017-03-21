@@ -11,6 +11,8 @@ public class EnemyDamageManager : DamageManager {
 	private LevelManager levelManager;
 	private bool isDamaged = false;
 	private GameObject player;
+	private CollidersManager [] allHitboxManagers;
+
 
 	// Use this for initialization
 	void Start () {
@@ -19,24 +21,38 @@ public class EnemyDamageManager : DamageManager {
 		knockbackModule = GetComponent<KnockbackModule> ();
 		levelManager = GameObject.Find ("LevelManager").GetComponent<LevelManager>();
 		itemDropper = gameObject.GetComponent<ItemDropModule> ();
+		allHitboxManagers = GetComponentsInChildren<CollidersManager> ();
 	}
 
 	void FixedUpdate(){
 		if (health <= 0 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
-			Die ();
+			DestroySelf ();
 		}
 	}
 
-	public void ReceiveDamage(int damage){
+	private void disableAllHitboxes (){
+		foreach(CollidersManager hitboxManager in allHitboxManagers){
+			hitboxManager.DisableAllColliders ();
+		}
+	}
+
+	private void enableAllHitboxes (){
+		foreach(CollidersManager hitboxManager in allHitboxManagers){
+			hitboxManager.EnableAllColliders ();
+		}
+	}
+
+	public override void ReceiveDamage(int damage){
 
 		if (!isDamaged) {
 			health -= damage;
 			isDamaged = true;
-			EnemyShake (0.16f, 0.05f);
 
-			if (health > 0)
+
+			if (health > 0) {
+				ShakeSelf (0.16f, 0.05f);
 				animator.SetTrigger ("Damage");
-			else{
+			}else{
 				animator.SetTrigger("Death");
 				StartCoroutine (Flicker(deathTime));
 			}
@@ -45,20 +61,6 @@ public class EnemyDamageManager : DamageManager {
 
 	public void ResetDamage(){
 		isDamaged = false;
-	}
-
-
-	public void Die(){
-	
-		levelManager.GetComponent<LevelManager> ().enemiesToSpawn.Add (this.gameObject);
-		StartDeathAnim ();
-		var knockbackDir = getKnockbackDir ();
-		itemDropper.DropItem (knockbackDir);
-		KnockbackWhenDead (knockbackDir);
-		Invoke ("DeactivateSelf", deathTime);
-		foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {
-			tempcollider.enabled = false;
-		}
 	}
 
 	private int getKnockbackDir(){
@@ -78,27 +80,45 @@ public class EnemyDamageManager : DamageManager {
 		knockbackModule.Knockback(knockbackDir);
 	}
 
-	void DeactivateSelf(){
-		gameObject.SetActive(false);
-	}
+
 
 	public void ResetVariables(){
 		health = maxHealth;
 		foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {
 			tempcollider.enabled = true;
 		}
-	}
-
-	void OnTriggerEnter2D(Collider2D col){
-		if (col.tag == "Player" && !animator.GetCurrentAnimatorStateInfo(0).IsName("Damage")) {
-			var playersScript = col.gameObject.GetComponent<PlayerDamageManager> ();
-			playersScript.PlayerReceiveDamage (damage);
-		}
+		enableAllHitboxes ();
 	}
 
 	override public void DestroySelf(){
-		//play death particle effect?
-		levelManager.GetComponent<LevelManager> ().enemiesToSpawn.Add (this.gameObject);
+
+		if (!spawned) {
+			levelManager.GetComponent<LevelManager> ().respawnables.Add (this.gameObject);
+			StartDeathAnim ();
+			var knockbackDir = getKnockbackDir ();
+			itemDropper.DropItem (knockbackDir);
+			KnockbackWhenDead (knockbackDir);
+			Invoke ("Deactivate", deathTime);
+			foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {
+				tempcollider.enabled = false;
+			}
+			disableAllHitboxes ();
+		} else {
+			Destroy (gameObject);
+		}
+
+	}
+
+	void Deactivate(){
 		gameObject.SetActive(false);
+	}
+
+	override public void Respawn(){
+		
+		gameObject.GetComponent<EnemyDamageManager> ().ResetVariables ();
+
+		gameObject.SetActive(true);
+		gameObject.GetComponent<Destroyable> ().stopFlicker ();
+		//Debug.Log (transform.position);
 	}
 }

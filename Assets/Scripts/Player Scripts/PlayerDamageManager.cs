@@ -31,7 +31,7 @@ public class PlayerDamageManager : DamageManager {
 		Invoke ("ResetInvincibility", invincibilityTime);
 	}
 
-	public void PlayerReceiveDamage(int damage){
+	public override void ReceiveDamage(int damage){
 		
 		if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
 			if (invincible == false) {
@@ -57,9 +57,7 @@ public class PlayerDamageManager : DamageManager {
 		player.WasDamaged ();
 	}
 		
-	override public void DestroySelf(){
-		
-	}
+	override public void DestroySelf(){}
 
 	public void EnableAttackBox(){
 		attackBox.enabled = true;
@@ -75,7 +73,7 @@ public class PlayerDamageManager : DamageManager {
 		this.transform.position = this.transform.position + (new Vector3 (0.0001f, 0f, 0f));
 	}
 
-	public void Respawn(){
+	override public void Respawn(){
 		levelManager.RespawnPlayer ();
 	}
 }

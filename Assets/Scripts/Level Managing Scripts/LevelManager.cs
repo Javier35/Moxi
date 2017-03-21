@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
@@ -8,8 +9,8 @@ public class LevelManager : MonoBehaviour {
 	private GameObject player;
 	public Fading fader;
 
-	public ArrayList enemiesToSpawn  = new ArrayList(); //names of enemies that became inactive
-	public ArrayList collectiblesToSpawn = new ArrayList();
+	public ArrayList respawnables = new ArrayList ();
+	public ArrayList movables = new ArrayList ();
 
 	// Use this for initialization
 	void Start () {
@@ -34,27 +35,35 @@ public class LevelManager : MonoBehaviour {
 		
 		player.GetComponent<PlayerDamageManager> ().Heal (99);
 		player.GetComponent<PlayerDamageManager> ().BecomeInvincible ();
-		RespawnEnemies ();
-		RespawnCollectibles ();
+
+		HealAllEnemies ();
+		RespawnRespawnables ();
+		ResetMovables ();
+
 		fader.BeginFade (-1);
 	}
 
-	public void RespawnEnemies(){
-		foreach (GameObject enemy in enemiesToSpawn) {
-			var enemyObject = (GameObject)enemy;
-			enemyObject.GetComponent<EnemyRespawn> ().Respawn ();
+	public void RespawnRespawnables(){
+		foreach (GameObject respawnable in respawnables) {
+			var gameObject = (GameObject)respawnable;
+			gameObject.GetComponent<Destroyable> ().Respawn ();
 		}
-		enemiesToSpawn.Clear ();
+		respawnables.Clear ();
 	}
 
-
-	//respawns all colectibles except for money!
-	public void RespawnCollectibles(){
-		foreach (GameObject collectible in collectiblesToSpawn) {
-			var collectibleObject = (GameObject)collectible;
-			collectibleObject.SetActive (true);
+	public void ResetMovables(){
+		var movableObjects = GameObject.FindObjectsOfType<Movable> ();
+		foreach (Movable movableObject in movableObjects) {
+			movableObject.ResetPosition ();
 		}
-		collectiblesToSpawn.Clear ();
+	}
+
+	public void HealAllEnemies(){
+		var allEnemies = GameObject.FindObjectsOfType<EnemyDamageManager> ();
+
+		foreach (EnemyDamageManager enemy in allEnemies) {
+			enemy.Heal (999);
+		}
 	}
 
 	public bool checkGameOver(){

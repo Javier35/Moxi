@@ -46,25 +46,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Abstracts\Movable.cs" />
      <Compile Include="Assets\Scripts\Collectibles\Collectible.cs" />
      <Compile Include="Assets\Scripts\Collectibles\HealthCollectible.cs" />
      <Compile Include="Assets\Scripts\Collectibles\LifeCollectible.cs" />
      <Compile Include="Assets\Scripts\Collectibles\MoneyCollectible.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy1.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\Enemy1_Throwing.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Behaviors\Behavior_basic.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\Behaviors\Behavior_throwing.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyDamageManager.cs" />
-     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyRespawn.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyStuff\ProjectileDamageManager.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\ItemDropModule.cs" />
      <Compile Include="Assets\Scripts\Globals\CameraShake.cs" />
      <Compile Include="Assets\Scripts\Globals\Destroyable.cs" />
+     <Compile Include="Assets\Scripts\Helping Attatchments\CollidersManager.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\CollisionManager.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\DamageManager.cs" />
+     <Compile Include="Assets\Scripts\Helping Attatchments\DealDamage.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\Float.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\HitHandler.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\KillPlayer.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\KnockbackModule.cs" />
+     <Compile Include="Assets\Scripts\Helping Attatchments\ReceiveDamage.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\StickToCamera.cs" />
      <Compile Include="Assets\Scripts\Level Managing Scripts\ActivateCheckpoint.cs" />
      <Compile Include="Assets\Scripts\Level Managing Scripts\BackgroundScroll.cs" />

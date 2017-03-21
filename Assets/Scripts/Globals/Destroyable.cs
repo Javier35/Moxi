@@ -5,13 +5,19 @@ using UnityEngine;
 public abstract class Destroyable : MonoBehaviour {
 
 	protected SpriteRenderer spriteRenderer;
-	private bool crRunning = false;
+	private bool corutineRunning = false;
+	protected bool spawned = false;
 
 	abstract public void DestroySelf ();
+	abstract public void Respawn ();
+
+	public void setSpawned(bool isSpawned){
+		spawned = isSpawned;
+	}
 
 	public IEnumerator Flicker(float duration){
-		if (!crRunning) {
-			crRunning = true;
+		if (!corutineRunning) {
+			corutineRunning = true;
 
 			InvokeRepeating ("ToggleRenderer", 0.1f, 0.1f);
 			yield return new WaitForSeconds (duration);
@@ -21,20 +27,20 @@ public abstract class Destroyable : MonoBehaviour {
 
 	public void stopFlicker(){
 		CancelInvoke ("ToggleRenderer");
-		crRunning = false;
+		corutineRunning = false;
 		spriteRenderer.enabled = true;
 	}
 
 	public IEnumerator CustomFlicker(float duration, float rate){
-		if (!crRunning) {
-			crRunning = true;
+		if (!corutineRunning) {
+			corutineRunning = true;
 
 			InvokeRepeating ("ToggleRenderer", 0.1f, rate);
 			yield return new WaitForSeconds (duration);
 			CancelInvoke ("ToggleRenderer");
 			spriteRenderer.enabled = true;
 
-			crRunning = false;
+			corutineRunning = false;
 		}
 	}
 

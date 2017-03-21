@@ -20,7 +20,7 @@ public class ItemDropModule : MonoBehaviour {
 	}
 	
 	public void DropItem(int knockbackDir){
-
+		
 		var item = RollForItem ();
 
 		if (item != null) {

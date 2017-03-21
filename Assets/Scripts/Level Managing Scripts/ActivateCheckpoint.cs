@@ -15,7 +15,7 @@ public class ActivateCheckpoint : HitHandler {
 	}
 
 
-	override public void HitEvent(){
+	override public void HitEvent(int damage){
 		animator.SetTrigger ("Hitted");
 		levelManager.currentCheckpoint = gameObject;
 	}

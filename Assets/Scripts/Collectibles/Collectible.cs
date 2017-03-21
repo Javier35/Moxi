@@ -7,7 +7,6 @@ public class Collectible : Destroyable {
 	public LevelManager levelManager;
 	public string collectibleType = "";
 	private Collider2D thisCollider;
-	protected bool spawned = false;
 	private bool bounced = false;
 
 	public void SetLevelManager(){
@@ -31,17 +30,17 @@ public class Collectible : Destroyable {
 		}
 	}
 
-	public void setSpawned(bool isSpawned){
-		spawned = isSpawned;
-	}
-
 	override public void DestroySelf(){
 		if (!spawned) {
-			levelManager.collectiblesToSpawn.Add (this.gameObject);
+			levelManager.respawnables.Add (this.gameObject);
 			gameObject.SetActive (false);
 		} else {
 			Destroy (gameObject);
 		}
+	}
+
+	override public void Respawn(){
+		gameObject.SetActive (true);
 	}
 
 	public void startSpawnedBehavior(){

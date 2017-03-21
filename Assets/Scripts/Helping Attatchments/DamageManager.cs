@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DamageManager : Destroyable {
+public abstract class DamageManager : Destroyable {
 
 	public int health = 3;
 	public int maxHealth = 5;
@@ -15,10 +15,7 @@ public class DamageManager : Destroyable {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 	}
 
-	public override void DestroySelf ()
-	{
-		//nothing needed here?
-	}
+	public abstract void ReceiveDamage (int damage);
 	
 	public void StartDeathAnim(){
 		animator.SetTrigger("Death");
@@ -32,14 +29,15 @@ public class DamageManager : Destroyable {
 
 	Transform currentPos;
 
-	public void EnemyShake (float duration, float amount) {
+
+	public void ShakeSelf (float duration, float amount) {
 
 		currentPos = gameObject.transform;
-		StartCoroutine(cEnemyShake(duration, amount));
+		StartCoroutine(cShake(duration, amount));
 		Invoke ("ResetPos", duration);
 	}
 
-	public IEnumerator cEnemyShake (float duration, float amount) {
+	public IEnumerator cShake (float duration, float amount) {
 		float endTime = Time.time + duration;
 
 		while (Time.time < endTime) {

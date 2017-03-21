@@ -18,7 +18,7 @@ public class ProjectileDamageManager : Destroyable {
 
 			if(col.gameObject.tag == "Player"){
 				var playersScript = col.gameObject.GetComponent<PlayerDamageManager> ();
-				playersScript.PlayerReceiveDamage (damage);
+				playersScript.ReceiveDamage (damage);
 			}
 
 			DestroySelf ();
@@ -30,4 +30,6 @@ public class ProjectileDamageManager : Destroyable {
 	override public void DestroySelf(){
 		Destroy (gameObject);
 	}
+
+	override public void Respawn (){}
 }
