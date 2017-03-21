@@ -51,7 +51,6 @@ public class Collectible : Destroyable {
 	public IEnumerator configureSpawnedBehavior(){
 
 		setSpawned(true);
-		GetComponents<BoxCollider2D> ()[0].enabled = true;
 		GetComponent<Float> ().enabled = false;
 		GetComponent<Rigidbody2D> ().bodyType = RigidbodyType2D.Dynamic;
 
