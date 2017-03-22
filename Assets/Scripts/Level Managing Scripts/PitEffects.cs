@@ -13,21 +13,19 @@ public class PitEffects : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 
-		if (respawning == false) {
+		if (other.tag == "Player" && !respawning) {
 			respawning = true;
-
-			if (other.tag == "Player") {
-				StopPlayerFollows ();
-				levelManager.fader.BeginFade (1);
-				Invoke ("Respawn", 0.4f);
-				Invoke ("ToggleRespawnFlag", 0.6f);
-			} else {
-				var destroyable = other.GetComponent<Destroyable> ();
-				if (destroyable != null) {
-					destroyable.DestroySelf ();
-				}
+			StopPlayerFollows ();
+			levelManager.fader.BeginFade (1);
+			Invoke ("Respawn", 0.4f);
+			Invoke ("ToggleRespawnFlag", 0.6f);
+		} else {
+			var destroyable = other.GetComponent<Destroyable> ();
+			if (destroyable != null) {
+				destroyable.DestroySelf ();
 			}
 		}
+
 	}
 
 	void ToggleRespawnFlag(){

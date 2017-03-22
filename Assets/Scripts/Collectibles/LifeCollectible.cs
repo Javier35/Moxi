@@ -4,7 +4,6 @@ using System.Collections;
 public class LifeCollectible : Collectible {
 
 	void Start(){
-		collectibleType = "life";
 		SetLevelManager ();
 	}
 

@@ -5,7 +5,6 @@ using System.Collections;
 public class Collectible : Destroyable {
 
 	public LevelManager levelManager;
-	public string collectibleType = "";
 	private Collider2D thisCollider;
 	private bool bounced = false;
 

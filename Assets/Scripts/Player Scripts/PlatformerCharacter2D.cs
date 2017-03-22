@@ -5,18 +5,18 @@ using System.Collections;
 public class PlatformerCharacter2D : MonoBehaviour
 {
     [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
-	//private float m_StartSpeed = 5;
-
-	private float originalJumpForce;
+	private float originalMaxSpeed;
 
     public float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
-    [SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
+	private float originalJumpForce;
+
+	[SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
     [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 	[SerializeField] private float m_KnockbackHeight = 300f;
 
 //    private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
     const float k_GroundedRadius = .15f; // Radius of the overlap circle to determine if grounded
-    private bool m_Grounded;            // Whether or not the player is grounded.
+    public bool m_Grounded;            // Whether or not the player is grounded.
 
     private Transform m_CeilingCheck;   // A position marking where to check for ceilings
 	private Transform m_EdgeCheck;   // A position marking where to check for ceilings
@@ -26,6 +26,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     private Rigidbody2D m_Rigidbody2D;
     public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private bool m_Damaged = false;
+	private bool jumpLock = false;
 
 	private GroundChecker groundchecker;
 	private SpecialTerrainChecker terrainChecker;
@@ -39,6 +40,7 @@ public class PlatformerCharacter2D : MonoBehaviour
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 		groundchecker = GetComponentInChildren<GroundChecker>();
 		originalJumpForce = m_JumpForce;
+		originalMaxSpeed = m_MaxSpeed;
 		terrainChecker = GetComponent<SpecialTerrainChecker>();
     }
 		
@@ -106,7 +108,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 			move = 0;
 		}
 
-		SetVelocityX (move);
+		SetPlayerVelocityX (move);
 		FlipToFaceVelocity(move);
 
 		//If damaged, these force the movement to be a knockback motion instead of normal Movement
@@ -128,18 +130,19 @@ public class PlatformerCharacter2D : MonoBehaviour
 		}
 	}
 
-	private void SetVelocityX(float move){
+	private void SetPlayerVelocityX(float move){
 		// Move the character
 		m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+		m_MaxSpeed = originalMaxSpeed;
 	}
 
 	private void KnockBackWhileDamaged(){
 		//move back while damaged
 		if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage")) { 
 			if (m_FacingRight) {
-				m_Rigidbody2D.velocity = new Vector2 (-m_MaxSpeed, m_Rigidbody2D.velocity.y);
+				m_Rigidbody2D.velocity = new Vector2 (-originalMaxSpeed, m_Rigidbody2D.velocity.y);
 			} else {
-				m_Rigidbody2D.velocity = new Vector2(m_MaxSpeed, m_Rigidbody2D.velocity.y);
+				m_Rigidbody2D.velocity = new Vector2(originalMaxSpeed, m_Rigidbody2D.velocity.y);
 			}
 		}
 	}
@@ -157,17 +160,22 @@ public class PlatformerCharacter2D : MonoBehaviour
 			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Damage")
 			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Death")) {
 
+			if (!jumpLock) {
+				jumpLock = true;
+				Invoke ("UnlockJumping", 0.1f);
 
-			if (terrainChecker.specialTerrain != null) {
-				var terrainAllowsNormalJump = terrainChecker.specialTerrain.JumpEvent (this.gameObject);
 
-				if (terrainAllowsNormalJump) {
+				if (terrainChecker.specialTerrain != null) {
+					var terrainAllowsNormalJump = terrainChecker.specialTerrain.JumpEvent (this.gameObject);
+
+					if (terrainAllowsNormalJump) {
+						DoJump ();
+					}
+					m_JumpForce = originalJumpForce;
+					terrainChecker.specialTerrain = null;
+				} else {
 					DoJump ();
 				}
-				m_JumpForce = originalJumpForce;
-				terrainChecker.specialTerrain = null;
-			} else {
-				DoJump ();
 			}
 
 			//if the player didnt jump, but is in the air, he should be falling
@@ -212,6 +220,26 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	public void WasDamaged(){
 		m_Damaged = true;
+	}
+
+	private void UnlockJumping(){
+		jumpLock = false;
+	}
+
+	public float GetMaxSpeed(){
+		return m_MaxSpeed;
+	}
+
+	public float GetOriginalMaxSpeed(){
+		return originalMaxSpeed;
+	}
+
+	public void SetMaxSpeed(float newSpeed){
+		m_MaxSpeed = newSpeed;
+	}
+
+	public void RestoreMaxSpeed(){
+		m_MaxSpeed = originalMaxSpeed;
 	}
 }
 

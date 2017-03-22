@@ -5,7 +5,6 @@ public class HealthCollectible : Collectible {
 	[SerializeField]private int healAmmount = 1;
 
 	void Start(){
-		collectibleType = "health";
 		SetLevelManager ();
 	}
 

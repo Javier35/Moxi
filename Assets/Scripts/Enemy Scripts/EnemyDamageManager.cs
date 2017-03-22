@@ -63,7 +63,7 @@ public class EnemyDamageManager : DamageManager {
 		isDamaged = false;
 	}
 
-	private int getKnockbackDir(){
+	private int GetKnockbackDir(){
 		Vector2 playerPos = player.transform.position;
 		if (playerPos.x <= transform.position.x) {
 			//fall to the right
@@ -95,7 +95,7 @@ public class EnemyDamageManager : DamageManager {
 		if (!spawned) {
 			levelManager.GetComponent<LevelManager> ().respawnables.Add (this.gameObject);
 			StartDeathAnim ();
-			var knockbackDir = getKnockbackDir ();
+			var knockbackDir = GetKnockbackDir ();
 			itemDropper.DropItem (knockbackDir);
 			KnockbackWhenDead (knockbackDir);
 			Invoke ("Deactivate", deathTime);

@@ -10,7 +10,7 @@ public class GroundChecker : MonoBehaviour {
 
 	private RaycastHit2D rayHit1, rayHit2, rayHit3, rayHit4; //ground hit flags, are true when ray is touching ground
 	private Vector3 rayStart1, rayStart2, rayStart3, rayStart4; //starting points for the 4 rays that check if character is grounded
-	private float rayLength = 0.2f;
+	private float rayLength = 0.1f;
 
 	private PlatformerCharacter2D characterReference;
 
@@ -28,10 +28,10 @@ public class GroundChecker : MonoBehaviour {
 	private void PlaceVectorStartPoints(){ // main function that raycasts the 4 rays and updates the flags if they touch ground
 
 		var centerpointX = groundBox.bounds.center.x;
-		rayStart1 = new Vector3 (groundBox.bounds.min.x, groundBox.bounds.min.y + 0.1f, this.transform.position.z);
-		rayStart2 = new Vector3 (centerpointX - groundBox.bounds.extents.x/4, groundBox.bounds.min.y + 0.1f, this.transform.position.z);
-		rayStart3 = new Vector3 (centerpointX + groundBox.bounds.extents.x/4, groundBox.bounds.min.y + 0.1f, this.transform.position.z);
-		rayStart4 = new Vector3 (groundBox.bounds.max.x, groundBox.bounds.min.y + 0.1f, this.transform.position.z);
+		rayStart1 = new Vector3 (groundBox.bounds.min.x, groundBox.bounds.min.y + 0.05f, this.transform.position.z);
+		rayStart2 = new Vector3 (centerpointX - groundBox.bounds.extents.x/4, groundBox.bounds.min.y + 0.05f, this.transform.position.z);
+		rayStart3 = new Vector3 (centerpointX + groundBox.bounds.extents.x/4, groundBox.bounds.min.y + 0.05f, this.transform.position.z);
+		rayStart4 = new Vector3 (groundBox.bounds.max.x, groundBox.bounds.min.y + 0.05f, this.transform.position.z);
 	}
 
 

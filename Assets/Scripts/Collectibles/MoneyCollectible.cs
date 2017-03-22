@@ -6,7 +6,6 @@ public class MoneyCollectible : Collectible {
 	[SerializeField] private double moneyAmmount = 100;
 
 	void Start(){
-		collectibleType = "money";
 		SetLevelManager ();
 		spawned = true;
 	}
