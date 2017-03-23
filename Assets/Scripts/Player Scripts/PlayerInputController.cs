@@ -39,8 +39,6 @@ public class PlayerInputController : MonoBehaviour
 		if (m_Character.animator.GetCurrentAnimatorStateInfo (0).IsName ("Crouch") ||
 		    m_Character.animator.GetCurrentAnimatorStateInfo (0).IsName ("CrouchLoop")) {
 
-			mainHitbox.enabled = false;
-
 			mainHitbox.size = new Vector2 (mainHitbox.size.x, 0.6f);
 			mainHitbox.offset = new Vector2 (0.015f, -0.3f);
 
@@ -56,7 +54,7 @@ public class PlayerInputController : MonoBehaviour
 		if (!m_Jump)
 		{
 			// Read the jump input in Update so button presses aren't missed.
-			if (Input.GetKeyDown (KeyCode.Z) || Input.GetKeyDown (KeyCode.UpArrow))
+			if (Input.GetKeyDown (KeyCode.Z))
 				m_Jump = true;
 			else
 				m_Jump = false;

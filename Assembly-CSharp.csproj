@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyStuff\ProjectileDamageManager.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\ItemDropModule.cs" />
      <Compile Include="Assets\Scripts\Globals\CameraShake.cs" />
+     <Compile Include="Assets\Scripts\Helping Attatchments\BounceOnTop.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\CollidersManager.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\CollisionManager.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\DamageManager.cs" />
@@ -65,7 +66,6 @@
      <Compile Include="Assets\Scripts\Helping Attatchments\Float.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\HitHandler.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\KillOnFall.cs" />
-     <Compile Include="Assets\Scripts\Helping Attatchments\KillPlayer.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\KnockbackModule.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\Pushable.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\ReceiveDamage.cs" />

@@ -13,12 +13,16 @@ public class PitEffects : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 
-		if (other.tag == "Player" && !respawning) {
-			respawning = true;
-			StopPlayerFollows ();
-			levelManager.fader.BeginFade (1);
-			Invoke ("Respawn", 0.4f);
-			Invoke ("ToggleRespawnFlag", 0.6f);
+		if (other.tag == "Player") {
+			
+			if (!respawning) {
+				respawning = true;
+				StopPlayerFollows ();
+				levelManager.fader.BeginFade (1);
+				Invoke ("RespawnPlayer", 0.4f);
+				Invoke ("ToggleRespawnFlag", 0.6f);
+			}
+
 		} else {
 			var destroyable = other.GetComponent<Destroyable> ();
 			if (destroyable != null) {
@@ -46,7 +50,7 @@ public class PitEffects : MonoBehaviour {
 		}
 	}
 
-	void Respawn(){
+	void RespawnPlayer(){
 		levelManager.RespawnPlayer ();
 		StartPlayerFollows ();
 	}

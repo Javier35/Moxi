@@ -12,6 +12,7 @@ public class JumpDownPlatform : SpecialTerrain {
 	}
 
 	public override void StandEvent (GameObject gObject){}
+
 	public override bool JumpEvent (GameObject gObject){
 
 		if(Input.GetKey(KeyCode.DownArrow)){

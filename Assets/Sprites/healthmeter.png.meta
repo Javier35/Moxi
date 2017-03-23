@@ -16,12 +16,12 @@ TextureImporter:
     21300018: lifemeter_9
     21300020: lifemeter_10
     21300022: lifemeter_11
-  serializedVersion: 2
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -33,23 +33,19 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -57,12 +53,52 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 50
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: lifemeter_0
+    - serializedVersion: 2
+      name: lifemeter_0
       rect:
         serializedVersion: 2
         x: 0
@@ -72,16 +108,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 25, y: 7}
-        - {x: -24, y: 7}
-        - {x: -33, y: -1}
-        - {x: -33, y: -36}
-        - {x: -14, y: -45}
-        - {x: 26, y: -45}
-        - {x: 32, y: -27}
-        - {x: 32, y: 3}
-    - name: lifemeter_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_1
       rect:
         serializedVersion: 2
         x: 90
@@ -91,16 +121,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 25, y: 7}
-        - {x: -24, y: 7}
-        - {x: -33, y: -1}
-        - {x: -33, y: -36}
-        - {x: -14, y: -45}
-        - {x: 26, y: -45}
-        - {x: 32, y: -27}
-        - {x: 32, y: 3}
-    - name: lifemeter_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_2
       rect:
         serializedVersion: 2
         x: 180
@@ -110,16 +134,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 25, y: 7}
-        - {x: -24, y: 7}
-        - {x: -33, y: -1}
-        - {x: -33, y: -36}
-        - {x: -14, y: -45}
-        - {x: 26, y: -45}
-        - {x: 32, y: -27}
-        - {x: 32, y: 3}
-    - name: lifemeter_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_3
       rect:
         serializedVersion: 2
         x: 270
@@ -129,15 +147,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -33, y: 7}
-        - {x: -33, y: -34}
-        - {x: -14, y: -45}
-        - {x: 13, y: -45}
-        - {x: 32, y: -29}
-        - {x: 32, y: -2}
-        - {x: 24, y: 7}
-    - name: lifemeter_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_4
       rect:
         serializedVersion: 2
         x: 360
@@ -147,16 +160,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28, y: 7}
-        - {x: -33, y: 0}
-        - {x: -33, y: -33}
-        - {x: -21, y: -45}
-        - {x: 28, y: -45}
-        - {x: 32, y: -30}
-        - {x: 32, y: 4}
-        - {x: 30, y: 7}
-    - name: lifemeter_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_5
       rect:
         serializedVersion: 2
         x: 450
@@ -166,15 +173,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -37, y: 6}
-        - {x: -37, y: -30}
-        - {x: -20, y: -45}
-        - {x: 14, y: -45}
-        - {x: 35, y: -34}
-        - {x: 35, y: 3}
-        - {x: 31, y: 6}
-    - name: lifemeter_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_6
       rect:
         serializedVersion: 2
         x: 0
@@ -184,16 +186,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28, y: 7}
-        - {x: -33, y: 0}
-        - {x: -33, y: -33}
-        - {x: -21, y: -45}
-        - {x: 28, y: -45}
-        - {x: 32, y: -30}
-        - {x: 32, y: 4}
-        - {x: 30, y: 7}
-    - name: lifemeter_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_7
       rect:
         serializedVersion: 2
         x: 90
@@ -203,16 +199,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28, y: 7}
-        - {x: -33, y: 0}
-        - {x: -33, y: -33}
-        - {x: -21, y: -45}
-        - {x: 28, y: -45}
-        - {x: 32, y: -30}
-        - {x: 32, y: 4}
-        - {x: 30, y: 7}
-    - name: lifemeter_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_8
       rect:
         serializedVersion: 2
         x: 180
@@ -222,16 +212,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28, y: 7}
-        - {x: -33, y: 0}
-        - {x: -33, y: -33}
-        - {x: -21, y: -45}
-        - {x: 28, y: -45}
-        - {x: 32, y: -30}
-        - {x: 32, y: 4}
-        - {x: 30, y: 7}
-    - name: lifemeter_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_9
       rect:
         serializedVersion: 2
         x: 270
@@ -241,16 +225,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28, y: 7}
-        - {x: -33, y: 0}
-        - {x: -33, y: -33}
-        - {x: -21, y: -45}
-        - {x: 28, y: -45}
-        - {x: 32, y: -30}
-        - {x: 32, y: 4}
-        - {x: 30, y: 7}
-    - name: lifemeter_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_10
       rect:
         serializedVersion: 2
         x: 360
@@ -260,16 +238,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28, y: 7}
-        - {x: -33, y: 0}
-        - {x: -33, y: -33}
-        - {x: -21, y: -45}
-        - {x: 28, y: -45}
-        - {x: 32, y: -30}
-        - {x: 32, y: 4}
-        - {x: 30, y: 7}
-    - name: lifemeter_11
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lifemeter_11
       rect:
         serializedVersion: 2
         x: 450
@@ -279,15 +251,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28, y: 7}
-        - {x: -33, y: 0}
-        - {x: -33, y: -33}
-        - {x: -21, y: -45}
-        - {x: 28, y: -45}
-        - {x: 32, y: -30}
-        - {x: 32, y: 4}
-        - {x: 30, y: 7}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

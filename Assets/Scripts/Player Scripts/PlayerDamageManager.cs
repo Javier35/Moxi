@@ -77,7 +77,6 @@ public class PlayerDamageManager : DamageManager {
 	}
 
 	override public void Respawn(){
-		levelManager.fader.BeginFade (1);
-		levelManager.RespawnPlayer ();
+		DestroySelf ();
 	}
 }

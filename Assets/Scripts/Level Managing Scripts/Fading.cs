@@ -11,6 +11,7 @@ public class Fading : MonoBehaviour {
 
 	// Use this for initialization
 	void OnGUI () {
+		
 		alpha += fadeDir * fadespeed * Time.deltaTime;
 		alpha = Mathf.Clamp01 (alpha);
 
@@ -20,6 +21,7 @@ public class Fading : MonoBehaviour {
 	}
 
 	public float BeginFade(int direction){
+		Debug.Log ("fade happening");
 		fadeDir = direction;
 		return (fadespeed);
 	}

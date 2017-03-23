@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour {
 
 		Inventory.LoseALife ();
 		if (checkGameOver()) {
+			//game over logic
 			SceneManager.LoadScene("LT1");
 			return;
 		}
@@ -45,8 +46,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void RespawnRespawnables(){
 		foreach (GameObject respawnable in respawnables) {
-			var gameObject = (GameObject)respawnable;
-			gameObject.GetComponent<Destroyable> ().Respawn ();
+			respawnable.GetComponent<Destroyable> ().Respawn ();
 		}
 		respawnables.Clear ();
 	}

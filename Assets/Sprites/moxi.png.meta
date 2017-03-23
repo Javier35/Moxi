@@ -81,12 +81,12 @@ TextureImporter:
     21300148: moxi_74
     21300150: moxi_75
     21300152: moxi_76
-  serializedVersion: 2
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -98,23 +98,19 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -122,12 +118,52 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 50
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: moxi_0
+    - serializedVersion: 2
+      name: moxi_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,15 +173,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -1, y: 7}
-        - {x: -26, y: -1}
-        - {x: -26, y: -12}
-        - {x: -24, y: -15}
-        - {x: -9, y: -32}
-        - {x: 16, y: -32}
-        - {x: 16, y: 7}
-    - name: moxi_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_1
       rect:
         serializedVersion: 2
         x: 100
@@ -155,16 +186,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -2, y: 7}
-        - {x: -26, y: -2}
-        - {x: -27, y: -4}
-        - {x: -27, y: -16}
-        - {x: -12, y: -32}
-        - {x: 16, y: -32}
-        - {x: 16, y: 6}
-        - {x: 14, y: 7}
-    - name: moxi_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_2
       rect:
         serializedVersion: 2
         x: 200
@@ -174,15 +199,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 7}
-        - {x: -24, y: -2}
-        - {x: -24, y: -28}
-        - {x: -11, y: -32}
-        - {x: 17, y: -32}
-        - {x: 17, y: -3}
-        - {x: 15, y: 7}
-    - name: moxi_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_3
       rect:
         serializedVersion: 2
         x: 300
@@ -192,15 +212,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 8}
-        - {x: -24, y: -7}
-        - {x: -24, y: -27}
-        - {x: -22, y: -32}
-        - {x: 16, y: -32}
-        - {x: 16, y: 7}
-        - {x: 15, y: 8}
-    - name: moxi_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_4
       rect:
         serializedVersion: 2
         x: 400
@@ -210,18 +225,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 2, y: 7}
-        - {x: -16, y: 1}
-        - {x: -25, y: -14}
-        - {x: -25, y: -23}
-        - {x: -23, y: -28}
-        - {x: -8, y: -32}
-        - {x: 13, y: -32}
-        - {x: 16, y: -23}
-        - {x: 16, y: 1}
-        - {x: 12, y: 7}
-    - name: moxi_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_5
       rect:
         serializedVersion: 2
         x: 500
@@ -231,16 +238,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -9, y: 7}
-        - {x: -24, y: -8}
-        - {x: -24, y: -26}
-        - {x: -16, y: -32}
-        - {x: 13, y: -32}
-        - {x: 16, y: -31}
-        - {x: 16, y: -1}
-        - {x: 10, y: 7}
-    - name: moxi_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_6
       rect:
         serializedVersion: 2
         x: 0
@@ -250,18 +251,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 7}
-        - {x: -24, y: -2}
-        - {x: -26, y: -7}
-        - {x: -26, y: -19}
-        - {x: -18, y: -30}
-        - {x: -10, y: -32}
-        - {x: 14, y: -32}
-        - {x: 16, y: -30}
-        - {x: 16, y: 3}
-        - {x: 9, y: 7}
-    - name: moxi_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_7
       rect:
         serializedVersion: 2
         x: 100
@@ -271,16 +264,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -18, y: 8}
-        - {x: -28, y: 4}
-        - {x: -28, y: -15}
-        - {x: -20, y: -32}
-        - {x: 13, y: -32}
-        - {x: 15, y: -31}
-        - {x: 15, y: 4}
-        - {x: 10, y: 8}
-    - name: moxi_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_8
       rect:
         serializedVersion: 2
         x: 200
@@ -290,17 +277,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 10, y: 8}
-        - {x: -10, y: 8}
-        - {x: -35, y: -5}
-        - {x: -35, y: -25}
-        - {x: -33, y: -30}
-        - {x: -29, y: -31}
-        - {x: 15, y: -31}
-        - {x: 16, y: -29}
-        - {x: 16, y: 1}
-    - name: moxi_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_9
       rect:
         serializedVersion: 2
         x: 300
@@ -310,16 +290,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20, y: 8}
-        - {x: -35, y: 2}
-        - {x: -35, y: -14}
-        - {x: -33, y: -20}
-        - {x: -6, y: -32}
-        - {x: 18, y: -32}
-        - {x: 18, y: 1}
-        - {x: 12, y: 8}
-    - name: moxi_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_10
       rect:
         serializedVersion: 2
         x: 400
@@ -329,22 +303,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 9}
-        - {x: -13, y: 0}
-        - {x: -13, y: -3}
-        - {x: -17, y: 2}
-        - {x: -32, y: 4}
-        - {x: -33, y: 2}
-        - {x: -33, y: -10}
-        - {x: -31, y: -16}
-        - {x: -10, y: -31}
-        - {x: -6, y: -32}
-        - {x: 7, y: -32}
-        - {x: 16, y: -30}
-        - {x: 16, y: 4}
-        - {x: 2, y: 9}
-    - name: moxi_11
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_11
       rect:
         serializedVersion: 2
         x: 500
@@ -354,15 +316,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -32, y: -19}
-        - {x: -18, y: -32}
-        - {x: 15, y: -32}
-        - {x: 15, y: 1}
-        - {x: 13, y: 9}
-        - {x: -12, y: 9}
-        - {x: -32, y: -2}
-    - name: moxi_12
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_12
       rect:
         serializedVersion: 2
         x: 0
@@ -372,19 +329,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 8}
-        - {x: -5, y: 8}
-        - {x: -13, y: 3}
-        - {x: -33, y: -11}
-        - {x: -33, y: -20}
-        - {x: -30, y: -25}
-        - {x: -12, y: -31}
-        - {x: 10, y: -31}
-        - {x: 12, y: -29}
-        - {x: 17, y: -9}
-        - {x: 17, y: -3}
-    - name: moxi_13
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_13
       rect:
         serializedVersion: 2
         x: 100
@@ -394,16 +342,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11, y: 9}
-        - {x: -30, y: -5}
-        - {x: -35, y: -12}
-        - {x: -35, y: -23}
-        - {x: -26, y: -32}
-        - {x: 17, y: -32}
-        - {x: 17, y: -5}
-        - {x: 5, y: 9}
-    - name: moxi_14
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_14
       rect:
         serializedVersion: 2
         x: 200
@@ -413,16 +355,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -21, y: 9}
-        - {x: -32, y: 4}
-        - {x: -32, y: -14}
-        - {x: -9, y: -32}
-        - {x: 12, y: -32}
-        - {x: 15, y: -30}
-        - {x: 15, y: 4}
-        - {x: 12, y: 9}
-    - name: moxi_15
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_15
       rect:
         serializedVersion: 2
         x: 300
@@ -432,16 +368,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 9}
-        - {x: -33, y: -4}
-        - {x: -33, y: -15}
-        - {x: -9, y: -32}
-        - {x: 14, y: -32}
-        - {x: 15, y: -26}
-        - {x: 15, y: 4}
-        - {x: 8, y: 9}
-    - name: moxi_16
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_16
       rect:
         serializedVersion: 2
         x: 400
@@ -451,16 +381,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 7}
-        - {x: -29, y: -1}
-        - {x: -29, y: -17}
-        - {x: -20, y: -32}
-        - {x: 9, y: -32}
-        - {x: 13, y: -31}
-        - {x: 13, y: 1}
-        - {x: 9, y: 7}
-    - name: moxi_17
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_17
       rect:
         serializedVersion: 2
         x: 0
@@ -470,19 +394,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 18, y: -9}
-        - {x: 16, y: -2}
-        - {x: 5, y: 6}
-        - {x: -9, y: 9}
-        - {x: -24, y: 9}
-        - {x: -24, y: -12}
-        - {x: -10, y: -32}
-        - {x: 12, y: -32}
-        - {x: 12, y: -31}
-        - {x: 14, y: -24}
-        - {x: 18, y: -15}
-    - name: moxi_18
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_18
       rect:
         serializedVersion: 2
         x: 100
@@ -492,20 +407,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 8}
-        - {x: -5, y: 4}
-        - {x: -2, y: 8}
-        - {x: -1, y: 15}
-        - {x: -4, y: 16}
-        - {x: -12, y: 16}
-        - {x: -24, y: 12}
-        - {x: -24, y: -32}
-        - {x: 31, y: -32}
-        - {x: 37, y: -30}
-        - {x: 37, y: 0}
-        - {x: 20, y: 14}
-    - name: moxi_19
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_19
       rect:
         serializedVersion: 2
         x: 200
@@ -515,27 +420,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 15}
-        - {x: -9, y: 15}
-        - {x: -20, y: 12}
-        - {x: -24, y: 4}
-        - {x: -24, y: -3}
-        - {x: -22, y: -5}
-        - {x: -16, y: -5}
-        - {x: -13, y: -15}
-        - {x: -11, y: -17}
-        - {x: -14, y: -15}
-        - {x: -18, y: -7}
-        - {x: -20, y: -5}
-        - {x: -24, y: -5}
-        - {x: -24, y: -9}
-        - {x: -22, y: -23}
-        - {x: -12, y: -32}
-        - {x: 35, y: -32}
-        - {x: 35, y: -12}
-        - {x: 31, y: -9}
-    - name: moxi_20
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_20
       rect:
         serializedVersion: 2
         x: 300
@@ -545,15 +433,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -24, y: 10}
-        - {x: -24, y: -26}
-        - {x: -13, y: -32}
-        - {x: 12, y: -32}
-        - {x: 19, y: -25}
-        - {x: 19, y: 0}
-        - {x: -1, y: 10}
-    - name: moxi_21
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_21
       rect:
         serializedVersion: 2
         x: 400
@@ -563,18 +446,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 12, y: 9}
-        - {x: -16, y: 9}
-        - {x: -21, y: 8}
-        - {x: -25, y: 2}
-        - {x: -25, y: -8}
-        - {x: -11, y: -32}
-        - {x: 13, y: -32}
-        - {x: 19, y: -24}
-        - {x: 20, y: -20}
-        - {x: 20, y: -4}
-    - name: moxi_22
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_22
       rect:
         serializedVersion: 2
         x: 500
@@ -584,21 +459,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20, y: 15}
-        - {x: -25, y: 6}
-        - {x: -25, y: -4}
-        - {x: -19, y: -9}
-        - {x: -12, y: -12}
-        - {x: -17, y: -12}
-        - {x: -19, y: -15}
-        - {x: -14, y: -23}
-        - {x: -11, y: -25}
-        - {x: -9, y: -32}
-        - {x: 37, y: -32}
-        - {x: 37, y: 9}
-        - {x: 9, y: 15}
-    - name: moxi_23
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_23
       rect:
         serializedVersion: 2
         x: 0
@@ -608,16 +472,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -9, y: 7}
-        - {x: -11, y: 6}
-        - {x: -15, y: -12}
-        - {x: -15, y: -25}
-        - {x: -13, y: -32}
-        - {x: 35, y: -32}
-        - {x: 35, y: -8}
-        - {x: 23, y: 7}
-    - name: moxi_24
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_24
       rect:
         serializedVersion: 2
         x: 100
@@ -627,19 +485,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -22, y: 11}
-        - {x: -23, y: 0}
-        - {x: -23, y: -11}
-        - {x: -21, y: -12}
-        - {x: -14, y: -12}
-        - {x: -19, y: -13}
-        - {x: -21, y: -16}
-        - {x: -16, y: -32}
-        - {x: 20, y: -32}
-        - {x: 20, y: 0}
-        - {x: 6, y: 11}
-    - name: moxi_25
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_25
       rect:
         serializedVersion: 2
         x: 200
@@ -649,16 +498,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11, y: 7}
-        - {x: -23, y: 1}
-        - {x: -30, y: -22}
-        - {x: -30, y: -31}
-        - {x: -28, y: -32}
-        - {x: 11, y: -32}
-        - {x: 11, y: 5}
-        - {x: 8, y: 7}
-    - name: moxi_26
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_26
       rect:
         serializedVersion: 2
         x: 300
@@ -668,14 +511,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -16, y: 13}
-        - {x: -27, y: 11}
-        - {x: -27, y: -32}
-        - {x: 14, y: -32}
-        - {x: 28, y: -19}
-        - {x: 28, y: 13}
-    - name: moxi_27
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_27
       rect:
         serializedVersion: 2
         x: 400
@@ -685,17 +524,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 11, y: 10}
-        - {x: 7, y: 9}
-        - {x: -19, y: 1}
-        - {x: -25, y: -10}
-        - {x: -25, y: -32}
-        - {x: 9, y: -32}
-        - {x: 25, y: -14}
-        - {x: 25, y: 5}
-        - {x: 20, y: 10}
-    - name: moxi_28
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_28
       rect:
         serializedVersion: 2
         x: 500
@@ -705,15 +537,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 11}
-        - {x: -20, y: 7}
-        - {x: -25, y: -4}
-        - {x: -25, y: -32}
-        - {x: 14, y: -32}
-        - {x: 23, y: -16}
-        - {x: 23, y: 11}
-    - name: moxi_29
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_29
       rect:
         serializedVersion: 2
         x: 0
@@ -723,17 +550,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 11, y: 10}
-        - {x: 7, y: 9}
-        - {x: -19, y: 1}
-        - {x: -25, y: -7}
-        - {x: -25, y: -32}
-        - {x: 8, y: -32}
-        - {x: 25, y: -14}
-        - {x: 25, y: 5}
-        - {x: 20, y: 10}
-    - name: moxi_30
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_30
       rect:
         serializedVersion: 2
         x: 100
@@ -743,15 +563,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 11}
-        - {x: -20, y: 7}
-        - {x: -25, y: -4}
-        - {x: -25, y: -32}
-        - {x: 14, y: -32}
-        - {x: 23, y: -16}
-        - {x: 23, y: 11}
-    - name: moxi_31
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_31
       rect:
         serializedVersion: 2
         x: 200
@@ -761,19 +576,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 20, y: 10}
-        - {x: 11, y: 10}
-        - {x: 7, y: 9}
-        - {x: -19, y: 1}
-        - {x: -25, y: -10}
-        - {x: -25, y: -24}
-        - {x: -23, y: -32}
-        - {x: 4, y: -32}
-        - {x: 8, y: -30}
-        - {x: 25, y: -14}
-        - {x: 25, y: 5}
-    - name: moxi_32
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_32
       rect:
         serializedVersion: 2
         x: 300
@@ -783,14 +589,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: 0}
-        - {x: -22, y: -1}
-        - {x: -22, y: -32}
-        - {x: 18, y: -32}
-        - {x: 18, y: -11}
-        - {x: 10, y: 0}
-    - name: moxi_33
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_33
       rect:
         serializedVersion: 2
         x: 0
@@ -800,15 +602,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -1, y: 7}
-        - {x: -26, y: -1}
-        - {x: -26, y: -12}
-        - {x: -24, y: -15}
-        - {x: -9, y: -32}
-        - {x: 16, y: -32}
-        - {x: 16, y: 7}
-    - name: moxi_34
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_34
       rect:
         serializedVersion: 2
         x: 100
@@ -818,19 +615,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -24, y: 22}
-        - {x: -26, y: 18}
-        - {x: -26, y: -25}
-        - {x: -23, y: -25}
-        - {x: -18, y: -20}
-        - {x: -15, y: -26}
-        - {x: -6, y: -32}
-        - {x: 12, y: -32}
-        - {x: 21, y: -29}
-        - {x: 21, y: 8}
-        - {x: 16, y: 22}
-    - name: moxi_35
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_35
       rect:
         serializedVersion: 2
         x: 200
@@ -840,17 +628,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 15}
-        - {x: -19, y: 15}
-        - {x: -20, y: 11}
-        - {x: -20, y: -24}
-        - {x: -18, y: -32}
-        - {x: 17, y: -32}
-        - {x: 19, y: -28}
-        - {x: 19, y: -11}
-        - {x: 6, y: 11}
-    - name: moxi_36
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_36
       rect:
         serializedVersion: 2
         x: 300
@@ -860,22 +641,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12, y: 0}
-        - {x: -18, y: -8}
-        - {x: -20, y: -20}
-        - {x: -20, y: -30}
-        - {x: -18, y: -32}
-        - {x: 21, y: -32}
-        - {x: 21, y: -17}
-        - {x: 12, y: -6}
-        - {x: -3, y: 0}
-      - - {x: -16, y: 27}
-        - {x: -13, y: 28}
-        - {x: -13, y: 31}
-        - {x: -16, y: 32}
-        - {x: -18, y: 30}
-    - name: moxi_37
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_37
       rect:
         serializedVersion: 2
         x: 400
@@ -885,18 +654,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: -6}
-        - {x: -19, y: -8}
-        - {x: -19, y: -29}
-        - {x: -18, y: -32}
-        - {x: 18, y: -32}
-        - {x: 18, y: -22}
-        - {x: 15, y: -11}
-        - {x: 9, y: -4}
-        - {x: 2, y: -4}
-        - {x: -10, y: -5}
-    - name: moxi_38
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_38
       rect:
         serializedVersion: 2
         x: 500
@@ -906,18 +667,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: -6}
-        - {x: -19, y: -8}
-        - {x: -19, y: -29}
-        - {x: -18, y: -32}
-        - {x: 18, y: -32}
-        - {x: 18, y: -22}
-        - {x: 15, y: -11}
-        - {x: 9, y: -4}
-        - {x: 2, y: -4}
-        - {x: -10, y: -5}
-    - name: moxi_39
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_39
       rect:
         serializedVersion: 2
         x: 0
@@ -927,18 +680,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: -6}
-        - {x: -19, y: -8}
-        - {x: -19, y: -29}
-        - {x: -18, y: -32}
-        - {x: 18, y: -32}
-        - {x: 18, y: -22}
-        - {x: 15, y: -11}
-        - {x: 9, y: -4}
-        - {x: 2, y: -4}
-        - {x: -10, y: -5}
-    - name: moxi_40
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_40
       rect:
         serializedVersion: 2
         x: 100
@@ -948,18 +693,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: -6}
-        - {x: -19, y: -8}
-        - {x: -19, y: -29}
-        - {x: -18, y: -32}
-        - {x: 18, y: -32}
-        - {x: 18, y: -22}
-        - {x: 15, y: -11}
-        - {x: 9, y: -4}
-        - {x: 2, y: -4}
-        - {x: -10, y: -5}
-    - name: moxi_41
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_41
       rect:
         serializedVersion: 2
         x: 200
@@ -969,18 +706,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: -6}
-        - {x: -19, y: -8}
-        - {x: -19, y: -29}
-        - {x: -18, y: -32}
-        - {x: 18, y: -32}
-        - {x: 18, y: -22}
-        - {x: 15, y: -11}
-        - {x: 9, y: -4}
-        - {x: 2, y: -4}
-        - {x: -10, y: -5}
-    - name: moxi_42
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_42
       rect:
         serializedVersion: 2
         x: 300
@@ -990,18 +719,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: -6}
-        - {x: -19, y: -8}
-        - {x: -19, y: -29}
-        - {x: -18, y: -32}
-        - {x: 18, y: -32}
-        - {x: 18, y: -22}
-        - {x: 15, y: -11}
-        - {x: 9, y: -4}
-        - {x: 2, y: -4}
-        - {x: -10, y: -5}
-    - name: moxi_43
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_43
       rect:
         serializedVersion: 2
         x: 400
@@ -1011,18 +732,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -15, y: -6}
-        - {x: -19, y: -8}
-        - {x: -19, y: -29}
-        - {x: -18, y: -32}
-        - {x: 18, y: -32}
-        - {x: 18, y: -22}
-        - {x: 15, y: -11}
-        - {x: 9, y: -4}
-        - {x: 2, y: -4}
-        - {x: -10, y: -5}
-    - name: moxi_44
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_44
       rect:
         serializedVersion: 2
         x: 0
@@ -1032,16 +745,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 10}
-        - {x: -15, y: 4}
-        - {x: -15, y: -43}
-        - {x: -11, y: -46}
-        - {x: -1, y: -46}
-        - {x: 19, y: -29}
-        - {x: 19, y: 0}
-        - {x: 9, y: 10}
-    - name: moxi_45
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_45
       rect:
         serializedVersion: 2
         x: 100
@@ -1051,15 +758,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 9}
-        - {x: -15, y: 3}
-        - {x: -15, y: -45}
-        - {x: -13, y: -49}
-        - {x: -3, y: -49}
-        - {x: 19, y: -42}
-        - {x: 19, y: 9}
-    - name: moxi_46
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_46
       rect:
         serializedVersion: 2
         x: 200
@@ -1069,16 +771,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11, y: 9}
-        - {x: -12, y: 8}
-        - {x: -15, y: 1}
-        - {x: -15, y: -50}
-        - {x: 4, y: -50}
-        - {x: 19, y: -36}
-        - {x: 19, y: -2}
-        - {x: 11, y: 9}
-    - name: moxi_47
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_47
       rect:
         serializedVersion: 2
         x: 300
@@ -1088,16 +784,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -13, y: 11}
-        - {x: -22, y: -13}
-        - {x: -22, y: -20}
-        - {x: -8, y: -30}
-        - {x: 18, y: -30}
-        - {x: 21, y: -25}
-        - {x: 21, y: 4}
-        - {x: 10, y: 11}
-    - name: moxi_48
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_48
       rect:
         serializedVersion: 2
         x: 400
@@ -1107,17 +797,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 10, y: 14}
-        - {x: -18, y: 14}
-        - {x: -20, y: 7}
-        - {x: -20, y: -20}
-        - {x: -12, y: -29}
-        - {x: 15, y: -29}
-        - {x: 24, y: -24}
-        - {x: 24, y: -7}
-        - {x: 15, y: 13}
-    - name: moxi_49
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_49
       rect:
         serializedVersion: 2
         x: 500
@@ -1127,15 +810,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 16}
-        - {x: -21, y: 16}
-        - {x: -21, y: -9}
-        - {x: -16, y: -28}
-        - {x: 20, y: -28}
-        - {x: 25, y: -18}
-        - {x: 25, y: 0}
-    - name: moxi_50
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_50
       rect:
         serializedVersion: 2
         x: 0
@@ -1145,15 +823,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 7, y: 10}
-        - {x: -19, y: 10}
-        - {x: -23, y: -6}
-        - {x: -23, y: -47}
-        - {x: -6, y: -47}
-        - {x: 20, y: -25}
-        - {x: 20, y: 2}
-    - name: moxi_51
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_51
       rect:
         serializedVersion: 2
         x: 100
@@ -1163,14 +836,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 9}
-        - {x: -18, y: -1}
-        - {x: -18, y: -47}
-        - {x: 15, y: -47}
-        - {x: 20, y: -34}
-        - {x: 20, y: 9}
-    - name: moxi_52
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_52
       rect:
         serializedVersion: 2
         x: 200
@@ -1180,17 +849,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 6, y: 9}
-        - {x: -7, y: 9}
-        - {x: -12, y: 8}
-        - {x: -21, y: -8}
-        - {x: -21, y: -47}
-        - {x: -5, y: -47}
-        - {x: 20, y: -24}
-        - {x: 20, y: -10}
-        - {x: 18, y: 0}
-    - name: moxi_53
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_53
       rect:
         serializedVersion: 2
         x: 300
@@ -1200,15 +862,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11, y: 16}
-        - {x: -27, y: 0}
-        - {x: -27, y: -21}
-        - {x: -23, y: -29}
-        - {x: 22, y: -29}
-        - {x: 22, y: 4}
-        - {x: 3, y: 16}
-    - name: moxi_54
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_54
       rect:
         serializedVersion: 2
         x: 400
@@ -1218,20 +875,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 17}
-        - {x: -8, y: 17}
-        - {x: -13, y: 16}
-        - {x: -22, y: 12}
-        - {x: -23, y: 9}
-        - {x: -23, y: -9}
-        - {x: -15, y: -19}
-        - {x: -2, y: -31}
-        - {x: 15, y: -31}
-        - {x: 20, y: -30}
-        - {x: 24, y: -16}
-        - {x: 24, y: -4}
-    - name: moxi_55
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_55
       rect:
         serializedVersion: 2
         x: 500
@@ -1241,23 +888,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 17}
-        - {x: -5, y: 17}
-        - {x: -11, y: 16}
-        - {x: -9, y: 12}
-        - {x: -7, y: 10}
-        - {x: -4, y: 10}
-        - {x: -9, y: 10}
-        - {x: -9, y: 12}
-        - {x: -20, y: 15}
-        - {x: -21, y: 11}
-        - {x: -21, y: -18}
-        - {x: 2, y: -32}
-        - {x: 19, y: -32}
-        - {x: 24, y: -23}
-        - {x: 24, y: -2}
-    - name: moxi_56
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_56
       rect:
         serializedVersion: 2
         x: 0
@@ -1267,25 +901,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 15}
-        - {x: -8, y: 14}
-        - {x: -8, y: 7}
-        - {x: -23, y: 4}
-        - {x: -35, y: -3}
-        - {x: -35, y: -20}
-        - {x: -15, y: -32}
-        - {x: 16, y: -32}
-        - {x: 25, y: -23}
-        - {x: 25, y: 5}
-        - {x: 1, y: 15}
-      - - {x: -21, y: 30}
-        - {x: -20, y: 27}
-        - {x: -12, y: 27}
-        - {x: -10, y: 29}
-        - {x: -11, y: 32}
-        - {x: -19, y: 32}
-    - name: moxi_57
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_57
       rect:
         serializedVersion: 2
         x: 100
@@ -1295,14 +914,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 12}
-        - {x: -11, y: 11}
-        - {x: -11, y: -31}
-        - {x: -7, y: -32}
-        - {x: 25, y: -32}
-        - {x: 25, y: 12}
-    - name: moxi_58
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_58
       rect:
         serializedVersion: 2
         x: 200
@@ -1312,18 +927,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 12, y: 12}
-        - {x: -5, y: 12}
-        - {x: -6, y: 11}
-        - {x: -11, y: 1}
-        - {x: -11, y: -26}
-        - {x: -9, y: -32}
-        - {x: 18, y: -32}
-        - {x: 21, y: -29}
-        - {x: 25, y: -18}
-        - {x: 25, y: 7}
-    - name: moxi_59
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_59
       rect:
         serializedVersion: 2
         x: 300
@@ -1333,14 +940,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 12}
-        - {x: -11, y: 11}
-        - {x: -11, y: -31}
-        - {x: -7, y: -32}
-        - {x: 25, y: -32}
-        - {x: 25, y: 12}
-    - name: moxi_60
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_60
       rect:
         serializedVersion: 2
         x: 400
@@ -1350,18 +953,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 12, y: 12}
-        - {x: -5, y: 12}
-        - {x: -6, y: 11}
-        - {x: -11, y: 1}
-        - {x: -11, y: -26}
-        - {x: -9, y: -32}
-        - {x: 18, y: -32}
-        - {x: 21, y: -29}
-        - {x: 25, y: -18}
-        - {x: 25, y: 7}
-    - name: moxi_61
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_61
       rect:
         serializedVersion: 2
         x: 500
@@ -1371,14 +966,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 12}
-        - {x: -11, y: 11}
-        - {x: -11, y: -31}
-        - {x: -7, y: -32}
-        - {x: 25, y: -32}
-        - {x: 25, y: 12}
-    - name: moxi_62
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_62
       rect:
         serializedVersion: 2
         x: 0
@@ -1388,18 +979,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 12, y: 12}
-        - {x: -5, y: 12}
-        - {x: -6, y: 11}
-        - {x: -11, y: 1}
-        - {x: -11, y: -26}
-        - {x: -9, y: -32}
-        - {x: 18, y: -32}
-        - {x: 21, y: -29}
-        - {x: 25, y: -18}
-        - {x: 25, y: 7}
-    - name: moxi_63
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_63
       rect:
         serializedVersion: 2
         x: 100
@@ -1409,21 +992,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 2}
-        - {x: -11, y: -9}
-        - {x: -11, y: -17}
-        - {x: -8, y: -21}
-        - {x: -5, y: -21}
-        - {x: -7, y: -21}
-        - {x: -11, y: -23}
-        - {x: -11, y: -27}
-        - {x: -9, y: -32}
-        - {x: 19, y: -32}
-        - {x: 26, y: -25}
-        - {x: 26, y: 1}
-        - {x: 24, y: 2}
-    - name: moxi_64
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_64
       rect:
         serializedVersion: 2
         x: 200
@@ -1433,15 +1005,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 1, y: 2}
-        - {x: -11, y: -9}
-        - {x: -11, y: -31}
-        - {x: -7, y: -32}
-        - {x: 23, y: -32}
-        - {x: 26, y: -26}
-        - {x: 26, y: 2}
-    - name: moxi_65
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_65
       rect:
         serializedVersion: 2
         x: 300
@@ -1451,19 +1018,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 9, y: 1}
-        - {x: 7, y: 2}
-        - {x: 0, y: 2}
-        - {x: -15, y: -5}
-        - {x: -16, y: -11}
-        - {x: -16, y: -24}
-        - {x: -8, y: -32}
-        - {x: 19, y: -32}
-        - {x: 22, y: -27}
-        - {x: 22, y: -13}
-        - {x: 17, y: -7}
-    - name: moxi_66
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_66
       rect:
         serializedVersion: 2
         x: 400
@@ -1473,25 +1031,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 11, y: -8}
-        - {x: -5, y: 3}
-        - {x: -12, y: 3}
-        - {x: -24, y: -13}
-        - {x: -24, y: -22}
-        - {x: -19, y: -32}
-        - {x: 5, y: -32}
-        - {x: 7, y: -31}
-        - {x: 12, y: -17}
-        - {x: 12, y: -11}
-      - - {x: 7, y: -17}
-        - {x: 1, y: -20}
-        - {x: 1, y: -27}
-        - {x: 4, y: -31}
-        - {x: 24, y: -31}
-        - {x: 24, y: -21}
-        - {x: 19, y: -17}
-    - name: moxi_67
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_67
       rect:
         serializedVersion: 2
         x: 500
@@ -1501,18 +1044,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: -9}
-        - {x: -19, y: -9}
-        - {x: -23, y: -12}
-        - {x: -23, y: -21}
-        - {x: -21, y: -28}
-        - {x: -13, y: -31}
-        - {x: 20, y: -31}
-        - {x: 21, y: -26}
-        - {x: 21, y: -18}
-        - {x: 8, y: -10}
-    - name: moxi_68
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_68
       rect:
         serializedVersion: 2
         x: 0
@@ -1522,15 +1057,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 8, y: -10}
-        - {x: -21, y: -10}
-        - {x: -21, y: -32}
-        - {x: 19, y: -32}
-        - {x: 20, y: -30}
-        - {x: 20, y: -21}
-        - {x: 14, y: -14}
-    - name: moxi_69
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_69
       rect:
         serializedVersion: 2
         x: 100
@@ -1540,20 +1070,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: -10}
-        - {x: 1, y: 3}
-        - {x: -6, y: 9}
-        - {x: -23, y: 9}
-        - {x: -25, y: 8}
-        - {x: -25, y: -22}
-        - {x: -23, y: -32}
-        - {x: 20, y: -32}
-        - {x: 20, y: -19}
-        - {x: 16, y: -12}
-        - {x: -4, y: -10}
-        - {x: -15, y: -14}
-    - name: moxi_70
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_70
       rect:
         serializedVersion: 2
         x: 200
@@ -1563,24 +1083,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -14, y: -14}
-        - {x: -14, y: -17}
-        - {x: -19, y: -23}
-        - {x: -13, y: -12}
-        - {x: -11, y: -12}
-        - {x: -6, y: -10}
-        - {x: -5, y: -6}
-        - {x: -11, y: 2}
-        - {x: -19, y: 4}
-        - {x: -25, y: 4}
-        - {x: -31, y: -2}
-        - {x: -31, y: -32}
-        - {x: 20, y: -32}
-        - {x: 20, y: -19}
-        - {x: 17, y: -11}
-        - {x: -4, y: -10}
-    - name: moxi_71
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_71
       rect:
         serializedVersion: 2
         x: 300
@@ -1590,16 +1096,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -16, y: -10}
-        - {x: -34, y: -15}
-        - {x: -35, y: -21}
-        - {x: -35, y: -30}
-        - {x: -33, y: -32}
-        - {x: 20, y: -32}
-        - {x: 20, y: -17}
-        - {x: 18, y: -10}
-    - name: moxi_72
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_72
       rect:
         serializedVersion: 2
         x: 400
@@ -1609,17 +1109,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 5}
-        - {x: -9, y: 5}
-        - {x: -31, y: -1}
-        - {x: -31, y: -18}
-        - {x: -20, y: -34}
-        - {x: 5, y: -34}
-        - {x: 10, y: -30}
-        - {x: 11, y: -24}
-        - {x: 11, y: 2}
-    - name: moxi_73
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_73
       rect:
         serializedVersion: 2
         x: 4
@@ -1629,38 +1122,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 15, y: -18}
-        - {x: 17, y: -18}
-        - {x: 22, y: -13}
-        - {x: 23, y: -11}
-        - {x: 23, y: -7}
-        - {x: 16, y: 2}
-        - {x: 11, y: 4}
-        - {x: 5, y: 4}
-        - {x: -14, y: -5}
-        - {x: -18, y: -13}
-        - {x: -15, y: -16}
-        - {x: -7, y: -16}
-        - {x: -4, y: -15}
-        - {x: 1, y: -12}
-        - {x: 6, y: -11}
-        - {x: 4, y: -14}
-        - {x: 4, y: -17}
-        - {x: 4, y: -15}
-        - {x: 2, y: -12}
-        - {x: -3, y: -14}
-        - {x: -5, y: -17}
-        - {x: -8, y: -16}
-        - {x: -13, y: -16}
-        - {x: -19, y: -20}
-        - {x: -19, y: -27}
-        - {x: -17, y: -32}
-        - {x: 17, y: -32}
-        - {x: 22, y: -27}
-        - {x: 21, y: -22}
-        - {x: 17, y: -18}
-    - name: moxi_74
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_74
       rect:
         serializedVersion: 2
         x: 104
@@ -1670,33 +1135,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 15, y: 1}
-        - {x: 9, y: 2}
-        - {x: 2, y: 0}
-        - {x: -22, y: -5}
-        - {x: -24, y: -11}
-        - {x: -24, y: -20}
-        - {x: -18, y: -23}
-        - {x: -9, y: -22}
-        - {x: -2, y: -15}
-        - {x: 2, y: -14}
-        - {x: 7, y: -13}
-        - {x: 5, y: -16}
-        - {x: 5, y: -19}
-        - {x: 5, y: -17}
-        - {x: 4, y: -14}
-        - {x: 2, y: -14}
-        - {x: -5, y: -18}
-        - {x: -6, y: -22}
-        - {x: -16, y: -25}
-        - {x: -15, y: -28}
-        - {x: -11, y: -32}
-        - {x: 11, y: -32}
-        - {x: 23, y: -22}
-        - {x: 27, y: -18}
-        - {x: 27, y: -13}
-    - name: moxi_75
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_75
       rect:
         serializedVersion: 2
         x: 204
@@ -1706,18 +1148,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 1}
-        - {x: -15, y: -3}
-        - {x: -17, y: -8}
-        - {x: -17, y: -22}
-        - {x: -12, y: -32}
-        - {x: 11, y: -32}
-        - {x: 20, y: -30}
-        - {x: 24, y: -20}
-        - {x: 24, y: -3}
-        - {x: 17, y: 1}
-    - name: moxi_76
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: moxi_76
       rect:
         serializedVersion: 2
         x: 304
@@ -1727,15 +1161,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -14, y: 7}
-        - {x: -21, y: -2}
-        - {x: -21, y: -29}
-        - {x: -18, y: -32}
-        - {x: 6, y: -32}
-        - {x: 16, y: -27}
-        - {x: 16, y: 4}
-        - {x: 15, y: 7}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

@@ -4,11 +4,11 @@ using System.Collections;
 
 public class PlatformerCharacter2D : MonoBehaviour
 {
-    [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
+	[SerializeField] private float m_MaxSpeed = 3.9f;                    // The fastest the player can travel in the x axis.
 	private float originalMaxSpeed;
 
-    public float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
-	private float originalJumpForce;
+    public float m_JumpForce = 95f;                  // Amount of force added when the player jumps.
+	//private float originalJumpForce;
 
 	[SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
     [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
@@ -39,7 +39,7 @@ public class PlatformerCharacter2D : MonoBehaviour
         animator = GetComponent<Animator>();
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 		groundchecker = GetComponentInChildren<GroundChecker>();
-		originalJumpForce = m_JumpForce;
+		//originalJumpForce = m_JumpForce;
 		originalMaxSpeed = m_MaxSpeed;
 		terrainChecker = GetComponent<SpecialTerrainChecker>();
     }
@@ -161,20 +161,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Death")) {
 
 			if (!jumpLock) {
-				jumpLock = true;
-				Invoke ("UnlockJumping", 0.1f);
-
-
 				if (terrainChecker.specialTerrain != null) {
-					var terrainAllowsNormalJump = terrainChecker.specialTerrain.JumpEvent (this.gameObject);
-
-					if (terrainAllowsNormalJump) {
-						DoJump ();
-					}
-					m_JumpForce = originalJumpForce;
+					terrainChecker.specialTerrain.JumpEvent (this.gameObject);
 					terrainChecker.specialTerrain = null;
 				} else {
-					DoJump ();
+					DoJump (m_JumpForce);
 				}
 			}
 
@@ -187,15 +178,16 @@ public class PlatformerCharacter2D : MonoBehaviour
 		}
 	}
 
-	void DoJump(){
+	public void DoJump(float jumpForce){
 		// Add a vertical force to the player.
+		jumpLock = true;
+		Invoke ("UnlockJumping", 0.1f);
 
 		m_Grounded = false;
 		animator.SetBool ("InGround", false);
 		animator.SetBool ("Jump", true);
 		animator.SetBool ("Crouch", false);
-		m_Rigidbody2D.AddForce (new Vector2 (0f, m_JumpForce));
-		m_JumpForce = originalJumpForce;
+		m_Rigidbody2D.AddForce (new Vector2 (0f, jumpForce));
 	}
 
 	public void DoFall(){

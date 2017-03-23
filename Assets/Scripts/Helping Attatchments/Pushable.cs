@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pushable : Movable {
 
 	PlatformerCharacter2D playerBehaviorReference;
+	public float pushSpeed = 1.7f;
 
 	void Start(){
 		playerBehaviorReference = GameObject.Find ("Moxi").GetComponent<PlatformerCharacter2D> ();
@@ -12,22 +13,18 @@ public class Pushable : Movable {
 
 	void OnCollisionStay2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Player") {
+		if (collision.gameObject.tag == "Player" && playerBehaviorReference.m_Grounded) {
 
 			ContactPoint2D contact = collision.contacts [0];
+			if (Vector3.Dot (contact.normal, Vector3.left) > 0.1 && !playerBehaviorReference.m_FacingRight) {
 
-			if (playerBehaviorReference.m_Grounded) {
-				if (Vector3.Dot (contact.normal, Vector3.left) > 0.1 && !playerBehaviorReference.m_FacingRight) {
+				playerBehaviorReference.SetMaxSpeed (pushSpeed);
+				rbody.velocity = new Vector2 (-pushSpeed, rbody.velocity.y);
 
-					var newSpeed = playerBehaviorReference.GetOriginalMaxSpeed() * 0.3f;
-					playerBehaviorReference.SetMaxSpeed (newSpeed);
-					rbody.velocity = new Vector2 (-newSpeed, rbody.velocity.y);
+			}else if(Vector3.Dot (contact.normal, Vector3.right) > 0.1 && playerBehaviorReference.m_FacingRight){
 
-				}else if(Vector3.Dot (contact.normal, Vector3.right) > 0.1 && playerBehaviorReference.m_FacingRight){
-					var newSpeed = playerBehaviorReference.GetOriginalMaxSpeed() * 0.3f;
-					playerBehaviorReference.SetMaxSpeed (newSpeed);
-					rbody.velocity = new Vector2 (newSpeed, rbody.velocity.y);
-				}
+				playerBehaviorReference.SetMaxSpeed (pushSpeed);
+				rbody.velocity = new Vector2 (pushSpeed, rbody.velocity.y);
 			}
 		}
 	}
