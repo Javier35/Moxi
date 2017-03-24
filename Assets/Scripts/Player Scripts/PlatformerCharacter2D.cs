@@ -38,10 +38,9 @@ public class PlatformerCharacter2D : MonoBehaviour
         m_CeilingCheck = transform.Find("CeilingCheck");
         animator = GetComponent<Animator>();
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-		groundchecker = GetComponentInChildren<GroundChecker>();
-		//originalJumpForce = m_JumpForce;
 		originalMaxSpeed = m_MaxSpeed;
-		terrainChecker = GetComponent<SpecialTerrainChecker>();
+		groundchecker = GetComponentInChildren<GroundChecker>();
+		terrainChecker = GetComponentInChildren<SpecialTerrainChecker>();
     }
 		
     private void FixedUpdate()

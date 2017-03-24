@@ -17,8 +17,8 @@ public class DealDamage : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		if (damageableByMe.Contains(col.tag)) {
-			var playersScript = col.gameObject.GetComponent<PlayerDamageManager> ();
-			playersScript.ReceiveDamage (damage);
+			var damageManager = col.gameObject.GetComponentInParent<DamageManager> ();
+			damageManager.ReceiveDamage (damage);
 		}
 	}
 }

@@ -3,13 +3,10 @@ using System.Collections;
 
 public class AttackTriggerManager : MonoBehaviour {
 
-	private int damage;
 	private BoxCollider2D attackBox;
-
 	private ArrayList enemyRefs = new ArrayList();
 
 	void Awake(){
-		damage = gameObject.GetComponentInParent<PlayerDamageManager> ().damage;
 		attackBox = gameObject.GetComponent<BoxCollider2D> ();
 		attackBox.enabled = false;
 	}
@@ -19,7 +16,7 @@ public class AttackTriggerManager : MonoBehaviour {
 
 		var hitHandler = col.gameObject.GetComponent<HitHandler> ();
 		if (hitHandler != null) {
-			hitHandler.HitEvent (damage);
+			hitHandler.HitEvent (gameObject.GetComponentInParent<PlayerDamageManager> ().damage);
 			CameraShake.Shake (0.1f, 0.015f);
 
 			if (col.gameObject.tag == "Enemy") {

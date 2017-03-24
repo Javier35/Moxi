@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GroundChecker : MonoBehaviour {
 
-	[SerializeField] private BoxCollider2D groundBox;
+	private BoxCollider2D groundBox;
 	[HideInInspector] public bool grounded = true;
 	[HideInInspector] public bool teetering = false;
 
@@ -16,6 +16,7 @@ public class GroundChecker : MonoBehaviour {
 
 	void Awake(){
 		characterReference = GetComponentInParent<PlatformerCharacter2D> ();
+		groundBox = GetComponent<BoxCollider2D> ();
 	}
 
 	void FixedUpdate(){
