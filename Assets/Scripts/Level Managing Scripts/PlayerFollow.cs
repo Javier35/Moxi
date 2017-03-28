@@ -49,11 +49,14 @@ public class PlayerFollow : MonoBehaviour
 		minBounds = GetVertexWorldPosition (bounds.min, currentLevel.transform);
 		maxBounds = GetVertexWorldPosition (bounds.max, currentLevel.transform);
 
-		var halfHeight = Camera.main.orthographicSize;
-		var halfWidth = halfHeight * Screen.width / Screen.height;
+		float height = 2f * Camera.main.orthographicSize;
+		float width = height * Camera.main.aspect;
 
-		minBounds = new Vector3 (minBounds.x + halfWidth, minBounds.y + halfHeight);
-		maxBounds = new Vector3 (maxBounds.x - halfWidth, maxBounds.y);
+		minBounds = new Vector3 (minBounds.x + width/2, minBounds.y + height/2);
+		maxBounds = new Vector3 (maxBounds.x - width/2, maxBounds.y);
+
+		Debug.Log (minBounds);
+		Debug.Log (maxBounds);
 	}
 
 	public Vector3 GetVertexWorldPosition(Vector3 vertex, Transform owner)

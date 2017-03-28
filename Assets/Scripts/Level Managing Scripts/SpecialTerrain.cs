@@ -5,5 +5,5 @@ using UnityEngine;
 public abstract class SpecialTerrain : MonoBehaviour {
 
 	abstract public void StandEvent (GameObject gObject);
-	abstract public bool JumpEvent (GameObject gObject);
+	abstract public void JumpEvent (GameObject gObject);
 }

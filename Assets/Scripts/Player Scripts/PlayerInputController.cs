@@ -44,7 +44,7 @@ public class PlayerInputController : MonoBehaviour
 
 		if(Input.GetKeyDown(KeyCode.R))
 			//SceneManagement.Scene
-			SceneManager.LoadScene("LT1");
+			SceneManager.LoadScene("AlphaLayout");
 
 		if (Input.GetKeyDown (KeyCode.X)) {
 			m_Character.animator.SetTrigger ("Attack");

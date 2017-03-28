@@ -13,23 +13,21 @@ public class JumpDownPlatform : SpecialTerrain {
 
 	public override void StandEvent (GameObject gObject){}
 
-	public override bool JumpEvent (GameObject gObject){
+	public override void JumpEvent (GameObject gObject){
 
 		if(Input.GetKey(KeyCode.DownArrow)){
 			var characterComponent = gObject.GetComponent<PlatformerCharacter2D> ();
-			characterComponent.DoFall ();
 			var playerCollider = gObject.GetComponent<Collider2D> ();
 			Physics2D.IgnoreCollision (playerCollider, thisCollider);
+			characterComponent.DoFall ();
 			passable = true;
+			StartCoroutine (BecomeSolid(playerCollider));
 		}
-		return false;
 	}
 
-	void OnTriggerExit2D(Collider2D other){
-		if(other.gameObject.tag == "Player"){
-			var playerCollider = other.gameObject.GetComponent<Collider2D> ();
-			Physics2D.IgnoreCollision (playerCollider, thisCollider, false);
-			passable = false;
-		}
+	private IEnumerator BecomeSolid(Collider2D col){
+		yield return new WaitForSeconds (1f);
+		Physics2D.IgnoreCollision (col, thisCollider, false);
+		passable = false;
 	}
 }
