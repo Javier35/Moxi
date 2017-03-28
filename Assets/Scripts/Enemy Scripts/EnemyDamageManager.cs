@@ -50,7 +50,7 @@ public class EnemyDamageManager : DamageManager {
 
 
 			if (health > 0) {
-				ShakeSelf (0.16f, 0.05f);
+				//ShakeSelf (0.16f, 0.05f);
 				animator.SetTrigger ("Damage");
 			}else{
 				animator.SetTrigger("Death");

@@ -52,4 +52,7 @@ public abstract class DamageManager : Destroyable {
 	void ResetPos(){
 		gameObject.transform.position.Set (currentPos.transform.position.x, currentPos.transform.position.y, currentPos.transform.position.z);
 	}
+
+	public void ShakeSprite(){
+	}
 }

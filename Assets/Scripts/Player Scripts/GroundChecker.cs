@@ -19,7 +19,7 @@ public class GroundChecker : MonoBehaviour {
 		groundBox = GetComponent<BoxCollider2D> ();
 	}
 
-	void FixedUpdate(){
+	void Update(){
 		PlaceVectorStartPoints ();
 		RaycastGroundVectors ();
 		InterpreteRayHits ();
@@ -46,26 +46,15 @@ public class GroundChecker : MonoBehaviour {
 
 
 	private void InterpreteRayHits(){
-
-		if(
-			(rayHit1 && !CheckIfPlatformIsPassable(rayHit1))|| 
-			(rayHit2 && !CheckIfPlatformIsPassable(rayHit2))|| 
-			(rayHit3 && !CheckIfPlatformIsPassable(rayHit3))|| 
-			(rayHit4 && !CheckIfPlatformIsPassable(rayHit4))
-		)
-			grounded = true;
-		else
-			grounded = false;
-
-
 		teetering = false;
-		if (characterReference.m_FacingRight) {
-			if (rayHit1 && !rayHit2)
-				teetering = true;
-		} else {
-			if (rayHit4 && !rayHit3)
-				teetering = true;
-		}
+		if(grounded)
+			if (characterReference.m_FacingRight) {
+				if (rayHit1 && !rayHit2 )
+					teetering = true;
+			} else {
+				if (rayHit4 && !rayHit3)
+					teetering = true;
+			}
 	}
 
 	private bool CheckIfPlatformIsPassable(RaycastHit2D rHit){
@@ -76,6 +65,34 @@ public class GroundChecker : MonoBehaviour {
 			}
 		}
 		return false;
+	}
+
+	void OnCollisionEnter2D(Collision2D col){
+		
+		if (col.gameObject.tag == "Platform") {
+
+			ContactPoint2D contact = col.contacts [0];
+			if (Vector3.Dot (contact.normal, Vector3.up) > 0.5) {
+
+				//collision was from below
+				grounded = true;
+				Debug.Log ("enter");
+			}
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D col){
+		
+		if (col.gameObject.tag == "Platform") {
+
+			ContactPoint2D contact = col.contacts [0];
+			if (Vector3.Dot (contact.normal, Vector3.up) > 0.5) {
+
+				//collision was from below
+				grounded = false;
+				Debug.Log ("enter");
+			}
+		}
 	}
 
 }
