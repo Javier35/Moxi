@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ReduceHitboxWhileCrouching.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level Managing Scripts\PlayerFollow.cs">
     <Files>
-      <File FileName="Assets/ReduceHitboxWhileCrouching.cs" Line="7" Column="31" />
-      <File FileName="Assets/Scripts/Player Scripts/PlayerInputController.cs" Line="16" Column="3" />
+      <File FileName="Assets\ReduceHitboxWhileCrouching.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player Scripts\PlayerInputController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Level Managing Scripts\PlayerFollow.cs" Line="56" Column="64" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
