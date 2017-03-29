@@ -54,9 +54,6 @@ public class PlayerFollow : MonoBehaviour
 
 		minBounds = new Vector3 (minBounds.x + width/2, minBounds.y + height/2);
 		maxBounds = new Vector3 (maxBounds.x - width/2, maxBounds.y);
-
-		Debug.Log (minBounds);
-		Debug.Log (maxBounds);
 	}
 
 	public Vector3 GetVertexWorldPosition(Vector3 vertex, Transform owner)

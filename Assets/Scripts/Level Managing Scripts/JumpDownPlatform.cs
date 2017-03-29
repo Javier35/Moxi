@@ -8,7 +8,7 @@ public class JumpDownPlatform : SpecialTerrain {
 	public bool passable = false;
 
 	void Start () {
-		thisCollider = gameObject.GetComponent<BoxCollider2D> ();
+		thisCollider = GetComponent<BoxCollider2D> ();
 	}
 
 	public override void StandEvent (GameObject gObject){}
@@ -17,11 +17,19 @@ public class JumpDownPlatform : SpecialTerrain {
 
 		if(Input.GetKey(KeyCode.DownArrow)){
 			var characterComponent = gObject.GetComponent<PlatformerCharacter2D> ();
-			var playerCollider = gObject.GetComponent<Collider2D> ();
-			Physics2D.IgnoreCollision (playerCollider, thisCollider);
-			characterComponent.DoFall ();
-			passable = true;
-			StartCoroutine (BecomeSolid(playerCollider));
+
+			var childHitboxContainer = gObject.transform.FindChild ("PhysicalColliders");
+
+			if (childHitboxContainer != null) {
+				var otherCollider = childHitboxContainer.GetComponent<BoxCollider2D> ();
+				Physics2D.IgnoreCollision (otherCollider, thisCollider);
+				characterComponent.DoFall ();
+				passable = true;
+				StartCoroutine (BecomeSolid(otherCollider));
+			} else {
+				Debug.Log ("no physical colliders in child gameobject");
+			}
+
 		}
 	}
 

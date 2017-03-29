@@ -50,11 +50,11 @@ public class EnemyDamageManager : DamageManager {
 
 
 			if (health > 0) {
-				//ShakeSelf (0.16f, 0.05f);
+				spriteEffector.FlashRedOnce ();
 				animator.SetTrigger ("Damage");
 			}else{
 				animator.SetTrigger("Death");
-				StartCoroutine (Flicker(deathTime));
+				StartCoroutine (spriteEffector.Flicker(deathTime));
 			}
 		}
 	}
@@ -118,7 +118,7 @@ public class EnemyDamageManager : DamageManager {
 		gameObject.GetComponent<EnemyDamageManager> ().ResetVariables ();
 
 		gameObject.SetActive(true);
-		gameObject.GetComponent<Destroyable> ().stopFlicker ();
+		gameObject.GetComponent<EnemyDamageManager> ().spriteEffector.stopFlicker ();
 		//Debug.Log (transform.position);
 	}
 }

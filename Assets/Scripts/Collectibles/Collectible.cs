@@ -8,10 +8,13 @@ public class Collectible : Destroyable {
 	private Collider2D thisCollider;
 	private bool bounced = false;
 
+	void Start(){
+		spriteEffector = GetComponent<SpriteEffector> ();
+	}
+
 	public void SetLevelManager(){
 		levelManager = GameObject.Find ("LevelManager").GetComponent<LevelManager>();
 		thisCollider = gameObject.GetComponent<BoxCollider2D> ();
-		spriteRenderer = gameObject.GetComponent<SpriteRenderer> ();
 	}
 
 	void OnCollisionEnter2D (Collision2D col){
@@ -53,7 +56,7 @@ public class Collectible : Destroyable {
 		GetComponent<Rigidbody2D> ().bodyType = RigidbodyType2D.Dynamic;
 
 		yield return new WaitForSeconds (3.5f);
-		StartCoroutine (Flicker (2.2f));
+		StartCoroutine (spriteEffector.Flicker (2.2f));
 		yield return new WaitForSeconds (2.2f);
 		DestroySelf ();
 	}

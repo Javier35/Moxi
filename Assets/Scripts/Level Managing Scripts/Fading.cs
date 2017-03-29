@@ -21,7 +21,6 @@ public class Fading : MonoBehaviour {
 	}
 
 	public float BeginFade(int direction){
-		Debug.Log ("fade happening");
 		fadeDir = direction;
 		return (fadespeed);
 	}

@@ -196,16 +196,12 @@ public class PlatformerCharacter2D : MonoBehaviour
 		animator.SetBool ("Crouch", false);
 	}
 
-
     private void Flip()
     {
-        // Switch the way the player is labelled as facing.
-
         // Multiply the player's x local scale by -1.
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-
 		m_FacingRight = !m_FacingRight;
     }
 

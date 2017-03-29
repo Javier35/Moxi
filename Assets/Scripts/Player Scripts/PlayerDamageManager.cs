@@ -27,7 +27,7 @@ public class PlayerDamageManager : DamageManager {
 	public void BecomeInvincible(){
 		invincible = true;
 		CameraShake.Shake (0.2f, 0.024f);
-		StartCoroutine (Flicker (invincibilityTime));
+		StartCoroutine (spriteEffector.Flicker (invincibilityTime));
 		Invoke ("ResetInvincibility", invincibilityTime);
 	}
 
