@@ -10,8 +10,7 @@ public class PlatformerCharacter2D : MonoBehaviour
     public float m_JumpForce = 95f;                  // Amount of force added when the player jumps.
 	//private float originalJumpForce;
 
-	[SerializeField] private bool m_AirControl = false;                 // Whether or not a player can steer while jumping;
-    [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
+	[SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 	[SerializeField] private float m_KnockbackHeight = 300f;
 
 //    private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
@@ -30,6 +29,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	private GroundChecker groundchecker;
 	private SpecialTerrainChecker terrainChecker;
+	private float lastMove = 0;
 
     private void Awake()
     {
@@ -58,20 +58,15 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 		//check if there is ceiling on top, if not, the character may stand up
 		SetCrouch (crouch);
-
-        //only control the player if grounded or airControl is turned on
-        if (m_Grounded || m_AirControl)
-        {
             
-			if(move !=0){
-				animator.SetBool("Crouch",false);
-				if (animator.GetBool("Attack")){
-					animator.SetBool ("Run", false);
-				}
+		if(move !=0){
+			animator.SetBool("Crouch",false);
+			if (animator.GetBool("Attack")){
+				animator.SetBool ("Run", false);
 			}
+		}
 
-			MovementBehavior (move);
-        }
+		MovementBehavior (move);
         // If the player should jump...
 		JumpBehavior(jump);
 		animator.SetFloat ("Yspeed", m_Rigidbody2D.velocity.y);
@@ -99,6 +94,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 		if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") || animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
 			move = 0;
+			StopAllCoroutines();
 		}
 
 		//if he is attacking, he shouldnt move
@@ -130,9 +126,17 @@ public class PlatformerCharacter2D : MonoBehaviour
 	}
 
 	private void SetPlayerVelocityX(float move){
+
+		if(move == 0 && lastMove != 0){
+			StartCoroutine("Decelerate", lastMove);
+		}else if(move != 0){
+			StopAllCoroutines();
+		}
+
 		// Move the character
 		m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
 		m_MaxSpeed = originalMaxSpeed;
+		lastMove = move;
 	}
 
 	private void KnockBackWhileDamaged(){
@@ -228,5 +232,23 @@ public class PlatformerCharacter2D : MonoBehaviour
 	public void RestoreMaxSpeed(){
 		m_MaxSpeed = originalMaxSpeed;
 	}
+
+	float airDeceleration = 0.05f;
+	float groundDeceleration = 0.15f;
+	IEnumerator Decelerate (float speed)
+    {
+		float sign = (speed >= 0) ? sign = 1 : sign = -1;
+		while(speed != 0)
+		{
+			var decelerationSpeed = m_Grounded ? groundDeceleration : airDeceleration;
+			speed -= decelerationSpeed * sign;
+
+			if ((speed > 0 && sign < 0) || (speed < 0 && sign > 0) || speed == 0)
+				break;
+
+			m_Rigidbody2D.velocity = new Vector2(speed * m_MaxSpeed, m_Rigidbody2D.velocity.y);
+			yield return new WaitForSeconds(0.01f);
+		}
+    }
 }
 

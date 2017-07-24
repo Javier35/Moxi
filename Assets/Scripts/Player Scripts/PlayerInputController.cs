@@ -8,6 +8,9 @@ public class PlayerInputController : MonoBehaviour
 	private PlatformerCharacter2D m_Character;
 	private bool m_Jump;
 	private Rigidbody2D rbody;
+	float startTimer;
+	float pressTime;
+	float finalPressTime;
 
 	bool crouch;
 	float h;
@@ -42,14 +45,12 @@ public class PlayerInputController : MonoBehaviour
 				m_Jump = false;
 		}
 
-		if(Input.GetKeyDown(KeyCode.R))
-			//SceneManagement.Scene
-			SceneManager.LoadScene("AlphaLayout");
-
-		if (Input.GetKeyDown (KeyCode.X)) {
-			m_Character.animator.SetTrigger ("Attack");
-			m_Character.animator.SetBool ("Run", false);
+		if(Input.GetKeyDown(KeyCode.R)){
+			var scene = SceneManager.GetActiveScene().buildIndex;
+			SceneManager.LoadScene(scene, LoadSceneMode.Single);
 		}
+
+		InterpreteAttackInput();
 
 		if (Input.GetKeyUp (KeyCode.DownArrow)) {
 			m_Character.animator.SetBool ("Crouch", false);
@@ -65,6 +66,32 @@ public class PlayerInputController : MonoBehaviour
 			m_Character.animator.SetLayerWeight (1, 1);
 		} else {
 			m_Character.animator.SetLayerWeight (1, 0);
+		}
+	}
+
+	void InterpreteAttackInput(){
+		if (Input.GetKeyDown (KeyCode.X)) {
+			startTimer = Time.time;
+		}else if (Input.GetKey (KeyCode.X)) {
+			pressTime = Time.time - startTimer;
+		}else if (Input.GetKeyUp (KeyCode.X)) {
+
+			if(!m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("Damage") && 
+			!m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("Death")){
+
+				if( !m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && 
+				!m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("SecondAttack")){
+
+					m_Character.animator.SetTrigger ("Attack");
+					m_Character.animator.SetBool ("Run", false);
+
+				}else if(m_Character.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f){
+						//f it is attacking but its halfway done
+					m_Character.animator.SetTrigger ("Attack");
+					m_Character.animator.SetBool ("Run", false);
+					//behavoir depending on time
+				}
+			}
 		}
 	}
 }

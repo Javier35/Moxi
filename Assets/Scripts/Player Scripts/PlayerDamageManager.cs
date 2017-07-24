@@ -14,14 +14,8 @@ public class PlayerDamageManager : DamageManager {
 		player = GetComponent<PlatformerCharacter2D> ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-
+	void LateUpdate () {
 		GameObject.Find ("Canvas").GetComponentInChildren<Animator> ().SetInteger ("Health", health);
-
-		if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Attack") && 
-			!animator.GetCurrentAnimatorStateInfo (0).IsName ("SecondAttack"))
-				DisableAttackBox ();
 	}
 
 	public void BecomeInvincible(){
@@ -60,15 +54,6 @@ public class PlayerDamageManager : DamageManager {
 	override public void DestroySelf(){
 		levelManager.fader.BeginFade (1);
 		levelManager.RespawnPlayer ();
-	}
-
-	public void EnableAttackBox(){
-		attackBox.enabled = true;
-		Nudge();
-	}
-	public void DisableAttackBox(){
-		attackBox.enabled = false;
-		GetComponentInChildren<AttackTriggerManager> ().ResetEnemyDamage ();
 	}
 
 	//move it a little bit just to wake up the physics engine

@@ -56,7 +56,7 @@ public class Collectible : Destroyable {
 		GetComponent<Rigidbody2D> ().bodyType = RigidbodyType2D.Dynamic;
 
 		yield return new WaitForSeconds (3.5f);
-		StartCoroutine (spriteEffector.Flicker (2.2f));
+		//StartCoroutine (spriteEffector.Flicker (2.2f));
 		yield return new WaitForSeconds (2.2f);
 		DestroySelf ();
 	}

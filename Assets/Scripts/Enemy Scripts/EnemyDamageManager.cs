@@ -9,7 +9,6 @@ public class EnemyDamageManager : DamageManager {
 	private Rigidbody2D rbody;
 	private KnockbackModule knockbackModule;
 	private LevelManager levelManager;
-	private bool isDamaged = false;
 	private GameObject player;
 	private CollidersManager [] allHitboxManagers;
 
@@ -44,23 +43,15 @@ public class EnemyDamageManager : DamageManager {
 
 	public override void ReceiveDamage(int damage){
 
-		if (!isDamaged) {
-			health -= damage;
-			isDamaged = true;
-
-
-			if (health > 0) {
-				spriteEffector.FlashRedOnce ();
-				animator.SetTrigger ("Damage");
-			}else{
-				animator.SetTrigger("Death");
-				StartCoroutine (spriteEffector.Flicker(deathTime));
-			}
+		health -= damage;
+		if (health > 0) {
+			spriteEffector.FlashRedOnce ();
+			animator.SetTrigger ("Damage");
+		}else{
+			animator.SetTrigger("Death");
+			StartCoroutine (spriteEffector.Flicker(deathTime));
 		}
-	}
-
-	public void ResetDamage(){
-		isDamaged = false;
+		
 	}
 
 	private int GetKnockbackDir(){

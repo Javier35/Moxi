@@ -1,26 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class AttackTriggerManager : MonoBehaviour {
 
 	private BoxCollider2D attackBox;
-	private ArrayList enemyRefs = new ArrayList();
+	private List<int> objectsHit = new List<int>();
+	[SerializeField] int damageStrength = 1;
+
+
 
 	void Awake(){
 		attackBox = gameObject.GetComponent<BoxCollider2D> ();
 		attackBox.enabled = false;
 	}
 
+	void Update (){
+		if(attackBox.enabled == false){
+			ClearHittedList();
+		}
+	}
+
 	void OnTriggerEnter2D(Collider2D col){
-		
 
 		var hitHandler = col.gameObject.GetComponent<HitHandler> ();
 		if (hitHandler != null) {
-			hitHandler.HitEvent (gameObject.GetComponentInParent<PlayerDamageManager> ().damage);
-			CameraShake.Shake (0.1f, 0.015f);
 
-			if (col.gameObject.tag == "Enemy") {
-				enemyRefs.Add (col.gameObject.transform.parent.gameObject);
+			int hittedObjectId = col.gameObject.GetInstanceID ();
+
+			if (!objectsHit.Contains (hittedObjectId)) {
+				hitHandler.HitEvent (damageStrength);
+				objectsHit.Add (hittedObjectId);
 			}
 		}
 
@@ -30,14 +40,7 @@ public class AttackTriggerManager : MonoBehaviour {
 		GetComponentInChildren<Animator> ().SetTrigger ("Hit1");
 	}
 
-	public void ResetEnemyDamage(){
-		if (enemyRefs.Count > 0) {
-			foreach(var item in enemyRefs)
-			{
-				var go = (GameObject)item;
-				go.GetComponent<EnemyDamageManager> ().ResetDamage ();
-			}
-			enemyRefs.Clear ();
-		}
+	public void ClearHittedList (){
+		objectsHit.Clear ();
 	}
 }
