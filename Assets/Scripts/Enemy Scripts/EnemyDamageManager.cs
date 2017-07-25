@@ -11,7 +11,7 @@ public class EnemyDamageManager : DamageManager {
 	private LevelManager levelManager;
 	private GameObject player;
 	private CollidersManager [] allHitboxManagers;
-
+	private DealDamage dealDamageModule;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +21,17 @@ public class EnemyDamageManager : DamageManager {
 		levelManager = GameObject.Find ("LevelManager").GetComponent<LevelManager>();
 		itemDropper = gameObject.GetComponent<ItemDropModule> ();
 		allHitboxManagers = GetComponentsInChildren<CollidersManager> ();
+		dealDamageModule = GetComponentInChildren<DealDamage>();
+	}
+
+	void Update()
+	{
+		if(animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") ||
+		animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")){
+			dealDamageModule.enabled = false;
+		}else{
+			dealDamageModule.enabled = true;
+		}
 	}
 
 	void FixedUpdate(){

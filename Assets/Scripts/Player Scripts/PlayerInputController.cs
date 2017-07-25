@@ -85,7 +85,7 @@ public class PlayerInputController : MonoBehaviour
 					m_Character.animator.SetTrigger ("Attack");
 					m_Character.animator.SetBool ("Run", false);
 
-				}else if(m_Character.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f){
+				}else if(m_Character.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.2f){
 						//f it is attacking but its halfway done
 					m_Character.animator.SetTrigger ("Attack");
 					m_Character.animator.SetBool ("Run", false);
