@@ -23,6 +23,7 @@ public class PlayerInputController : MonoBehaviour
 
 	private void Update()
 	{
+		BreakChargeOnStates ();
 		InterpreteKeys ();
 
 		// Read the inputs.
@@ -69,6 +70,13 @@ public class PlayerInputController : MonoBehaviour
 		}
 	}
 
+	void BreakChargeOnStates(){
+		if (m_Character.animator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack") ||
+		m_Character.animator.GetCurrentAnimatorStateInfo(0).IsTag("Damage")) {
+			pressTime = 0;
+		}
+	}
+
 	void InterpreteAttackInput(){
 		if (Input.GetKeyDown (KeyCode.X)) {
 			startTimer = Time.time;
@@ -76,19 +84,21 @@ public class PlayerInputController : MonoBehaviour
 			pressTime = Time.time - startTimer;
 		}else if (Input.GetKeyUp (KeyCode.X)) {
 
-			if(!m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("Damage") && 
-			!m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("Death")){
+			if(!m_Character.animator.GetCurrentAnimatorStateInfo(0).IsTag("Damage")){
 
-				if( !m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && 
-				!m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("SecondAttack")){
+				if( !m_Character.animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack")){
 
 					m_Character.animator.SetTrigger ("Attack");
 					m_Character.animator.SetBool ("Run", false);
+					m_Character.animator.SetFloat ("PressTime", pressTime);
+					pressTime = 0;
 
-				}else if(m_Character.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.2f){
+				}else if(m_Character.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f){
 						//f it is attacking but its halfway done
 					m_Character.animator.SetTrigger ("Attack");
 					m_Character.animator.SetBool ("Run", false);
+					m_Character.animator.SetFloat ("PressTime", pressTime);
+					pressTime = 0;
 					//behavoir depending on time
 				}
 			}

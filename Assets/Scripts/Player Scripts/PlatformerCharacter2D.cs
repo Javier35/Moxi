@@ -81,7 +81,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 			// If the character has a ceiling preventing them from standing up, keep them crouching
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
 			{
-				if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Jump") || !animator.GetCurrentAnimatorStateInfo(0).IsName("Fall"))
+				if(!animator.GetCurrentAnimatorStateInfo(0).IsTag("Airborne"))
 					crouch = true;
 			}
 		}
@@ -92,14 +92,13 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	void MovementBehavior(float move){
 
-		if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") || animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
+		if (animator.GetCurrentAnimatorStateInfo (0).IsTag ("Damage")) {
 			move = 0;
 			StopAllCoroutines();
 		}
 
 		//if he is attacking, he shouldnt move
-		if ((animator.GetCurrentAnimatorStateInfo(0).IsName ("Attack") || animator.GetCurrentAnimatorStateInfo(0).IsName ("SecondAttack")) 
-			&& animator.GetBool ("InGround")){
+		if (animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && animator.GetBool ("InGround")){
 			move = 0;
 		}
 
@@ -160,8 +159,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 	private void JumpBehavior(bool jump){
 		
 		if (m_Grounded && jump && animator.GetBool ("InGround")
-			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Damage")
-			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Death")) {
+			&& !animator.GetCurrentAnimatorStateInfo(0).IsTag("Damage")) {
 
 			if (!jumpLock) {
 				if (terrainChecker.specialTerrain != null) {
@@ -174,8 +172,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 			//if the player didnt jump, but is in the air, he should be falling
 		} else if (!m_Grounded && !jump && !animator.GetBool ("InGround")
-			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Damage")
-			&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Death")) {
+			&& !animator.GetCurrentAnimatorStateInfo(0).IsTag("Damage")) {
 
 			DoFall ();
 		}
