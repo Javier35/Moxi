@@ -98,8 +98,11 @@ public class PlatformerCharacter2D : MonoBehaviour
 		}
 
 		//if he is attacking, he shouldnt move
-		if (animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && animator.GetBool ("InGround")){
-			move = 0;
+		float direction = m_FacingRight ? 1 : -1;
+		if (animator.GetCurrentAnimatorStateInfo(0).IsName("SecondAttack")){
+			move = 0.3f * direction;
+		}else if(animator.GetCurrentAnimatorStateInfo(0).IsName("ThirdAttack")){
+			move = 2f * direction;
 		}
 
 		SetPlayerVelocityX (move);
@@ -126,7 +129,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	private void SetPlayerVelocityX(float move){
 
-		if(move == 0 && lastMove != 0){
+		if(move == 0 && lastMove != 0 && lastMove <= 1 && lastMove >= -1){
 			StartCoroutine("Decelerate", lastMove);
 		}else if(move != 0){
 			StopAllCoroutines();

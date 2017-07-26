@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof (PlatformerCharacter2D))]
 public class PlayerInputController : MonoBehaviour
 {
+	private SpriteEffector spriteEffector;
 	private PlatformerCharacter2D m_Character;
+	private PlayerDamageManager damageManager;
 	private bool m_Jump;
 	private Rigidbody2D rbody;
+	private RigidbodyConstraints2D originalConstraints;
 	float startTimer;
 	float pressTime;
 	float finalPressTime;
@@ -18,15 +21,19 @@ public class PlayerInputController : MonoBehaviour
 	private void Awake()
 	{
 		m_Character = GetComponent<PlatformerCharacter2D>();
+		spriteEffector = GetComponent<SpriteEffector>();
+		rbody = GetComponent<Rigidbody2D>();
+		originalConstraints = rbody.constraints;
+		damageManager = GetComponent<PlayerDamageManager>();
 	}
 
 
 	private void Update()
 	{
-		BreakChargeOnStates ();
 		InterpreteKeys ();
-
-		// Read the inputs.
+		TintOnCharge();
+		ThirdChageBehavior();
+		
 		crouch = Input.GetKey(KeyCode.DownArrow);
 		h = Input.GetAxisRaw ("Horizontal");
 
@@ -52,6 +59,7 @@ public class PlayerInputController : MonoBehaviour
 		}
 
 		InterpreteAttackInput();
+		BreakAttackChargeOnStates ();
 
 		if (Input.GetKeyUp (KeyCode.DownArrow)) {
 			m_Character.animator.SetBool ("Crouch", false);
@@ -70,7 +78,7 @@ public class PlayerInputController : MonoBehaviour
 		}
 	}
 
-	void BreakChargeOnStates(){
+	void BreakAttackChargeOnStates(){
 		if (m_Character.animator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack") ||
 		m_Character.animator.GetCurrentAnimatorStateInfo(0).IsTag("Damage")) {
 			pressTime = 0;
@@ -102,6 +110,26 @@ public class PlayerInputController : MonoBehaviour
 					//behavoir depending on time
 				}
 			}
+		}
+	}
+
+	void TintOnCharge(){
+		if(pressTime > 0.5f && pressTime < 1.5f){
+			spriteEffector.TintPink();
+		}else if(pressTime > 1.5f){
+			spriteEffector.TintRed();
+		}else{
+			spriteEffector.RestoreColor();
+		}
+	}
+
+	void ThirdChageBehavior(){
+		if(m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("ThirdAttack")){
+			rbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+			damageManager.SetInvincibility();
+		}else{
+			rbody.constraints = originalConstraints;
+			damageManager.ResetInvincibility();
 		}
 	}
 }

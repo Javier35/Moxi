@@ -41,7 +41,11 @@ public class PlayerDamageManager : DamageManager {
 			}
 	}
 
-	void ResetInvincibility(){
+	public void SetInvincibility(){
+		invincible = true;
+	}
+
+	public void ResetInvincibility(){
 		invincible = false;
 	}
 

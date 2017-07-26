@@ -41,4 +41,16 @@ public class SpriteEffector : MonoBehaviour {
 	public void RestoreColor(){
 		spriteRenderer.material.color = Color.white;
 	}
+
+	public void TintRed(){
+		spriteRenderer.material.color = Color.red;
+	}
+
+	public void TintPink(){
+		spriteRenderer.material.color = new Color32(114, 255, 160, 237);
+	}
+
+	public void TinGreen(){
+		spriteRenderer.material.color = Color.green;
+	}
 }
