@@ -95,6 +95,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		if (animator.GetCurrentAnimatorStateInfo (0).IsTag ("Damage")) {
 			move = 0;
 			StopAllCoroutines();
+			accelerating = false;
 		}
 
 		//if he is attacking, he shouldnt move
@@ -129,10 +130,23 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 	private void SetPlayerVelocityX(float move){
 
-		if(move == 0 && lastMove != 0 && lastMove <= 1 && lastMove >= -1){
-			StartCoroutine("Decelerate", lastMove);
-		}else if(move != 0){
+		if(move > 1 || move < -1){
 			StopAllCoroutines();
+			accelerating = false;
+		}else{
+			if(move == 0 && lastMove != 0 && lastMove <= 1 && lastMove >= -1){
+				StopCoroutine("Accelerate");
+				accelerating = false;
+				StartCoroutine("Decelerate", lastMove);
+			}else if(move != 0 && lastMove == 0){
+				StopCoroutine("Decelerate");
+				StartCoroutine("Accelerate", move);
+			}
+		}
+		
+
+		if(accelerating){
+			move = acceleratingSpeed;
 		}
 
 		// Move the character
@@ -249,6 +263,28 @@ public class PlatformerCharacter2D : MonoBehaviour
 			m_Rigidbody2D.velocity = new Vector2(speed * m_MaxSpeed, m_Rigidbody2D.velocity.y);
 			yield return new WaitForSeconds(0.01f);
 		}
+    }
+	bool accelerating;
+	float acceleratingSpeed = 0;
+	IEnumerator Accelerate (float speed)
+    {
+		accelerating = true;
+		float sign = (speed >= 0) ? sign = 1 : sign = -1;
+		acceleratingSpeed = 0.3f * sign;
+
+		while(true)
+		{
+			acceleratingSpeed += 0.15f * sign;
+			Mathf.Clamp(acceleratingSpeed, -1, 1);
+
+			if (acceleratingSpeed >= 1 || acceleratingSpeed <= -1 || !m_Grounded){
+				accelerating = false;
+				break;
+			}
+
+			yield return new WaitForSeconds(0.01f);
+		}
+		accelerating = false;
     }
 }
 
