@@ -274,7 +274,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 
 		while(true)
 		{
-			acceleratingSpeed += 0.15f * sign;
+			acceleratingSpeed += 0.14f * sign;
 			Mathf.Clamp(acceleratingSpeed, -1, 1);
 
 			if (acceleratingSpeed >= 1 || acceleratingSpeed <= -1 || !m_Grounded){
