@@ -27,18 +27,15 @@ public class PlayerDamageManager : DamageManager {
 
 	public override void ReceiveDamage(int damage){
 		
-		if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
-			if (invincible == false) {
-				health -= damage;
-				animator.SetTrigger("Damage");
-
-				if (health <= 0) {
-					animator.SetTrigger("Death");
-				}
-
-				Knockback ();
-				BecomeInvincible ();
+		if(!animator.GetCurrentAnimatorStateInfo(0).IsTag("Damage") && !invincible){
+			health -= damage;
+			BecomeInvincible ();
+			animator.SetTrigger("Damage");
+			if (health <= 0) {
+				animator.SetTrigger("Death");
 			}
+			Knockback ();
+		}
 	}
 
 	public void SetInvincibility(){

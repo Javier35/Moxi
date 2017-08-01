@@ -52,7 +52,7 @@ public class Behavior_basic : Movable {
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(FrontGroundCheck.position, 0.1f, WhatIsPlatform);
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (colliders[i].gameObject.tag == "Platform"){
+			if (colliders[i].gameObject.layer == 8){
 				//Flip ();
 				found = true;
 				break;

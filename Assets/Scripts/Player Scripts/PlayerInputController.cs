@@ -123,13 +123,18 @@ public class PlayerInputController : MonoBehaviour
 		}
 	}
 
+	bool charged;
 	void ThirdChageBehavior(){
 		if(m_Character.animator.GetCurrentAnimatorStateInfo(0).IsName("ThirdAttack")){
 			rbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 			damageManager.SetInvincibility();
+			charged = true;
 		}else{
-			rbody.constraints = originalConstraints;
-			damageManager.ResetInvincibility();
+			if(charged){
+				rbody.constraints = originalConstraints;
+				damageManager.ResetInvincibility();
+				charged = false;
+			}
 		}
 	}
 }
