@@ -4,19 +4,18 @@ using System.Collections.Generic;
 
 public class AttackTriggerManager : MonoBehaviour {
 
-	private BoxCollider2D attackBox;
+	private BoxCollider2D [] attackBoxes;
 	private List<int> objectsHit = new List<int>();
 	[SerializeField] int damageStrength = 1;
 
 
 
 	void Awake(){
-		attackBox = gameObject.GetComponent<BoxCollider2D> ();
-		attackBox.enabled = false;
+		attackBoxes = gameObject.GetComponentsInChildren<BoxCollider2D> ();
 	}
 
 	void Update (){
-		if(attackBox.enabled == false){
+		if(!CheckAttackBoxesForActive()){
 			ClearHittedList();
 		}
 	}
@@ -43,4 +42,13 @@ public class AttackTriggerManager : MonoBehaviour {
 	public void ClearHittedList (){
 		objectsHit.Clear ();
 	}
+
+	private bool CheckAttackBoxesForActive(){
+		foreach (BoxCollider2D collider in attackBoxes) {
+			if (collider.enabled == true)
+				return true;
+		}
+		return false;
+	}
+
 }

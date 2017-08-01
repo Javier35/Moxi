@@ -14,6 +14,7 @@ public class PlayerInputController : MonoBehaviour
 	float startTimer;
 	float pressTime;
 	float finalPressTime;
+	bool attackEnabled = true;
 
 	bool crouch;
 	float h;
@@ -94,20 +95,16 @@ public class PlayerInputController : MonoBehaviour
 
 			if(!m_Character.animator.GetCurrentAnimatorStateInfo(0).IsTag("Damage")){
 
-				if( !m_Character.animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack")){
+				var inAttackState = m_Character.animator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack");
 
-					m_Character.animator.SetTrigger ("Attack");
-					m_Character.animator.SetBool ("Run", false);
-					m_Character.animator.SetFloat ("PressTime", pressTime);
-					pressTime = 0;
-
-				}else if(m_Character.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f){
-						//f it is attacking but its halfway done
-					m_Character.animator.SetTrigger ("Attack");
-					m_Character.animator.SetBool ("Run", false);
-					m_Character.animator.SetFloat ("PressTime", pressTime);
-					pressTime = 0;
-					//behavoir depending on time
+				if(!inAttackState || ( inAttackState && m_Character.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f) ){
+					if (attackEnabled ||  (!attackEnabled && pressTime >= 0.5f)) {
+						m_Character.animator.SetTrigger ("Attack");
+						m_Character.animator.SetBool ("Run", false);
+						m_Character.animator.SetFloat ("PressTime", pressTime);
+						pressTime = 0;
+						DisableAttackingForTime (0.6f);
+					}
 				}
 			}
 		}
@@ -136,5 +133,18 @@ public class PlayerInputController : MonoBehaviour
 				charged = false;
 			}
 		}
+	}
+
+	public void EnableAttacking(){
+		attackEnabled = true;
+	}
+
+	public void DisableAttacking(){
+		attackEnabled = false;
+	}
+
+	public void DisableAttackingForTime(float time){
+		attackEnabled = false;
+		Invoke ("EnableAttacking", time);
 	}
 }
