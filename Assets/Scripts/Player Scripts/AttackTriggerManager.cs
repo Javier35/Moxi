@@ -7,6 +7,7 @@ public class AttackTriggerManager : MonoBehaviour {
 	private BoxCollider2D attackBox1;
 	private CapsuleCollider2D attackBox2;
 	private List<int> objectsHit = new List<int>();
+	private Animator anim;
 	[SerializeField] int damageStrength = 1;
 
 
@@ -14,6 +15,7 @@ public class AttackTriggerManager : MonoBehaviour {
 	void Awake(){
 		attackBox1 = gameObject.GetComponent<BoxCollider2D> ();
 		attackBox2 = gameObject.GetComponent<CapsuleCollider2D> ();
+		anim = gameObject.GetComponentInParent<Animator> ();
 	}
 
 	void Update (){
@@ -30,6 +32,15 @@ public class AttackTriggerManager : MonoBehaviour {
 			int hittedObjectId = col.gameObject.GetInstanceID ();
 
 			if (!objectsHit.Contains (hittedObjectId)) {
+
+				if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Attack")) {
+					damageStrength = 1;
+				} else if (anim.GetCurrentAnimatorStateInfo (0).IsName ("SecondAttack")) {
+					damageStrength = 2;
+				}else if(anim.GetCurrentAnimatorStateInfo (0).IsName ("ThirdAttack")) {
+					damageStrength = 7;
+				}
+
 				hitHandler.HitEvent (damageStrength);
 				objectsHit.Add (hittedObjectId);
 			}

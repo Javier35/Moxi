@@ -9,16 +9,25 @@ public class DealDamage : MonoBehaviour {
 
 	[SerializeField]private string[] damageableByMe = new string[] {"Player"};
 	int damage;
+	bool ableToDamage = true;
 
-	void Start(){
+	void Awake(){
 		damageManager = GetComponentInParent<DamageManager> ();
 		damage = damageManager.damage;
 	}
 
 	void OnTriggerStay2D(Collider2D col){
-		if (damageableByMe.Contains(col.tag)) {
+		if (damageableByMe.Contains(col.tag) && ableToDamage) {
 			var damageManager = col.gameObject.GetComponentInParent<DamageManager> ();
 			damageManager.ReceiveDamage (damage);
 		}
+	}
+
+	public void EnableDamaging(){
+		ableToDamage = true;
+	}
+
+	public void DisableDamaging(){
+		ableToDamage = false;
 	}
 }

@@ -85,6 +85,7 @@
      <Compile Include="Assets\Scripts\Enemy Scripts\Behaviors\Behavior_basic.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\Behaviors\Behavior_throwing.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyDamageManager.cs" />
+     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyDealDamage.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyStuff\ProjectileDamageManager.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\ItemDropModule.cs" />
      <Compile Include="Assets\Scripts\Globals\CameraShake.cs" />
