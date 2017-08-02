@@ -103,7 +103,7 @@ public class PlayerInputController : MonoBehaviour
 						m_Character.animator.SetBool ("Run", false);
 						m_Character.animator.SetFloat ("PressTime", pressTime);
 						pressTime = 0;
-						DisableAttackingForTime (0.6f);
+						DisableAttackingForTime (0.4f);
 					}
 				}
 			}
