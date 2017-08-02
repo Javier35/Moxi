@@ -94,16 +94,18 @@ public class PlayerInputController : MonoBehaviour
 		}else if (Input.GetKeyUp (KeyCode.X)) {
 
 			if(!m_Character.animator.GetCurrentAnimatorStateInfo(0).IsTag("Damage")){
-
+				Debug.Log("1");
 				var inAttackState = m_Character.animator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack");
 
 				if(!inAttackState || ( inAttackState && m_Character.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f) ){
+					Debug.Log("2");
 					if (attackEnabled ||  (!attackEnabled && pressTime >= 0.5f)) {
+						Debug.Log("3");
 						m_Character.animator.SetTrigger ("Attack");
 						m_Character.animator.SetBool ("Run", false);
 						m_Character.animator.SetFloat ("PressTime", pressTime);
 						pressTime = 0;
-						DisableAttackingForTime (0.4f);
+						DisableAttackingForTime (0.45f);
 					}
 				}
 			}
