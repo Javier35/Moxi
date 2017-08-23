@@ -13,7 +13,7 @@ public class AttackTriggerManager : MonoBehaviour {
 
 
 	void Awake(){
-		attackBox1 = gameObject.GetComponent<BoxCollider2D> ();
+		// attackBox1 = gameObject.GetComponent<BoxCollider2D> ();
 		attackBox2 = gameObject.GetComponent<CapsuleCollider2D> ();
 		anim = gameObject.GetComponentInParent<Animator> ();
 	}
@@ -21,6 +21,14 @@ public class AttackTriggerManager : MonoBehaviour {
 	void Update (){
 		if(!CheckAttackBoxesForActive()){
 			ClearHittedList();
+		}
+
+		if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Attack")) {
+			damageStrength = 1;
+		} else if (anim.GetCurrentAnimatorStateInfo (0).IsName ("SecondAttack")) {
+			damageStrength = 3;
+		}else if(anim.GetCurrentAnimatorStateInfo (0).IsName ("ThirdAttack")) {
+			damageStrength = 7;
 		}
 	}
 
@@ -32,15 +40,6 @@ public class AttackTriggerManager : MonoBehaviour {
 			int hittedObjectId = col.gameObject.GetInstanceID ();
 
 			if (!objectsHit.Contains (hittedObjectId)) {
-
-				if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Attack")) {
-					damageStrength = 1;
-				} else if (anim.GetCurrentAnimatorStateInfo (0).IsName ("SecondAttack")) {
-					damageStrength = 2;
-				}else if(anim.GetCurrentAnimatorStateInfo (0).IsName ("ThirdAttack")) {
-					damageStrength = 7;
-				}
-
 				hitHandler.HitEvent (damageStrength);
 				objectsHit.Add (hittedObjectId);
 			}
@@ -57,7 +56,7 @@ public class AttackTriggerManager : MonoBehaviour {
 	}
 
 	private bool CheckAttackBoxesForActive(){
-		if(attackBox1.enabled && attackBox2.enabled){
+		if( attackBox2.enabled){
 			return true;
 		}
 		return false;
