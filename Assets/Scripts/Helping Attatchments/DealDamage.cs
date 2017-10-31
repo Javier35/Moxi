@@ -5,15 +5,12 @@ using System.Linq;
 
 public class DealDamage : MonoBehaviour {
 
-	DamageManager damageManager;
 
 	[SerializeField]private string[] damageableByMe = new string[] {"Player"};
-	int damage;
-	bool ableToDamage = true;
+	public int damage = 1;
+	public bool ableToDamage = true;
 
 	void Awake(){
-		damageManager = GetComponentInParent<DamageManager> ();
-		damage = damageManager.damage;
 	}
 
 	void OnTriggerStay2D(Collider2D col){

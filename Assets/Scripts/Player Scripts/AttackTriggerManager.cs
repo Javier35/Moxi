@@ -28,7 +28,7 @@ public class AttackTriggerManager : MonoBehaviour {
 		} else if (anim.GetCurrentAnimatorStateInfo (0).IsName ("SecondAttack")) {
 			damageStrength = 3;
 		}else if(anim.GetCurrentAnimatorStateInfo (0).IsName ("ThirdAttack")) {
-			damageStrength = 7;
+			damageStrength = 5;
 		}
 	}
 

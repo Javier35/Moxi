@@ -5,7 +5,6 @@ public class PlayerDamageManager : DamageManager {
 
 	private LevelManager levelManager;
 	private PlatformerCharacter2D player;
-	public BoxCollider2D attackBox;
 	private float invincibilityTime = 1.5f;
 
 	// Use this for initialization

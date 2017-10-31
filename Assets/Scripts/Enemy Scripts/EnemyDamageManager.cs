@@ -28,13 +28,13 @@ public class EnemyDamageManager : DamageManager {
 		}
 	}
 
-	private void disableAllHitboxes (){
+	private void DisableAllHitboxes (){
 		foreach(CollidersManager hitboxManager in allHitboxManagers){
 			hitboxManager.DisableAllColliders ();
 		}
 	}
 
-	private void enableAllHitboxes (){
+	private void EnableAllHitboxes (){
 		foreach(CollidersManager hitboxManager in allHitboxManagers){
 			hitboxManager.EnableAllColliders ();
 		}
@@ -77,7 +77,7 @@ public class EnemyDamageManager : DamageManager {
 		foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {
 			tempcollider.enabled = true;
 		}
-		enableAllHitboxes ();
+		EnableAllHitboxes ();
 	}
 
 	override public void DestroySelf(){
@@ -92,11 +92,19 @@ public class EnemyDamageManager : DamageManager {
 			foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {
 				tempcollider.enabled = false;
 			}
-			disableAllHitboxes ();
+			DisableAllHitboxes ();
 		} else {
 			Destroy (gameObject);
 		}
+	}
 
+	public void InstantDestroy(){
+		if (!spawned) {
+			levelManager.GetComponent<LevelManager> ().respawnables.Add (this.gameObject);
+			Deactivate ();
+		} else {
+			Destroy (gameObject);
+		}
 	}
 
 	void Deactivate(){

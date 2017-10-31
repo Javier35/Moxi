@@ -11,6 +11,8 @@ public class PlayerInputController : MonoBehaviour
 	private bool m_Jump;
 	private Rigidbody2D rbody;
 	private RigidbodyConstraints2D originalConstraints;
+	private Transform enemyHolder;
+
 	float startTimer;
 	float pressTime;
 	float finalPressTime;
@@ -26,6 +28,7 @@ public class PlayerInputController : MonoBehaviour
 		rbody = GetComponent<Rigidbody2D>();
 		originalConstraints = rbody.constraints;
 		damageManager = GetComponent<PlayerDamageManager>();
+		enemyHolder = this.transform.Find ("EnemyHolder");
 	}
 
 
@@ -111,10 +114,12 @@ public class PlayerInputController : MonoBehaviour
 		}
 	}
 
+
 	void TintOnCharge(){
-		if(pressTime > 0.5f && pressTime < 1.5f){
+		
+		if(pressTime > 0.5f && pressTime < 1.5f && enemyHolder.childCount == 0){
 			spriteEffector.TintPink();
-		}else if(pressTime > 1.5f){
+		}else if(pressTime > 1.5f && enemyHolder.childCount == 0){
 			spriteEffector.TintRed();
 		}else{
 			spriteEffector.RestoreColor();
