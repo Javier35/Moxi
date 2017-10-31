@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class AttackTriggerManager : MonoBehaviour {
 
-	private BoxCollider2D attackBox1;
-	private CapsuleCollider2D attackBox2;
 	private List<int> objectsHit = new List<int>();
 	private Animator anim;
 	[SerializeField] int damageStrength = 1;
@@ -13,26 +11,25 @@ public class AttackTriggerManager : MonoBehaviour {
 
 
 	void Awake(){
-		// attackBox1 = gameObject.GetComponent<BoxCollider2D> ();
-		attackBox2 = gameObject.GetComponent<CapsuleCollider2D> ();
+		
 		anim = gameObject.GetComponentInParent<Animator> ();
 	}
 
 	void Update (){
-		if(!CheckAttackBoxesForActive()){
+		if(! anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack")){
 			ClearHittedList();
 		}
 
 		if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Attack")) {
 			damageStrength = 1;
 		} else if (anim.GetCurrentAnimatorStateInfo (0).IsName ("SecondAttack")) {
-			damageStrength = 3;
+			damageStrength = 5;
 		}else if(anim.GetCurrentAnimatorStateInfo (0).IsName ("ThirdAttack")) {
 			damageStrength = 5;
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D col){
+	public void ParentTriggerEnter(Collider2D col){
 
 		var hitHandler = col.gameObject.GetComponent<HitHandler> ();
 		if (hitHandler != null) {
@@ -53,13 +50,6 @@ public class AttackTriggerManager : MonoBehaviour {
 
 	public void ClearHittedList (){
 		objectsHit.Clear ();
-	}
-
-	private bool CheckAttackBoxesForActive(){
-		if( attackBox2.enabled){
-			return true;
-		}
-		return false;
 	}
 
 }

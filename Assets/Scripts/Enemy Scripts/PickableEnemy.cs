@@ -5,25 +5,25 @@ using UnityEngine;
 public class PickableEnemy : Pickable {
 
 
-	//this script must be accompanied by a "Receive Damage" script
 	DealDamage siblingDamageObject;
 	EnemyDamageManager damageManager;
 
 	private Transform playerEnemyHolder;
 
 	void Start () {
+		siblingDamageObject = this.GetComponent<EnemyDealDamage> ();
 		damageManager = GetComponentInParent<EnemyDamageManager> ();
-		siblingDamageObject = this.transform.parent.GetComponentInChildren<EnemyDealDamage> ();
 	}
 
 	void Update(){
-		if (siblingDamageObject.ableToDamage)
-			SetPickable(false);
-		else
-			SetPickable(true);
-	}
 
-	override public void DestroySelf(){
-		damageManager.InstantDestroy ();
+		if (transform.root.name == "Moxi") {
+			damageManager.ResetStunTime ();
+		} else {
+			if (siblingDamageObject.ableToDamage)
+				SetPickable(false);
+			else
+				SetPickable(true);
+		}
 	}
 }

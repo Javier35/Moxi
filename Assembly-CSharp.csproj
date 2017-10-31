@@ -51,7 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ClearHittedList.cs" />
+     <Compile Include="Assets\CallParentAttackTrigger.cs" />
      <Compile Include="Assets\CreativeSpore\SuperTilemapEditor\Scripts\Data\ParameterContainer.cs" />
      <Compile Include="Assets\CreativeSpore\SuperTilemapEditor\Scripts\Tilemap\Brush\A2X2Brush.cs" />
      <Compile Include="Assets\CreativeSpore\SuperTilemapEditor\Scripts\Tilemap\Brush\AnimBrush.cs" />
@@ -81,11 +81,10 @@
      <Compile Include="Assets\CreativeSpore\SuperTilemapEditor\Scripts\Utils\TilemapDrawingUtils.cs" />
      <Compile Include="Assets\CreativeSpore\SuperTilemapEditor\Scripts\Utils\TilemapUtils.cs" />
      <Compile Include="Assets\DestroyOnCollision.cs" />
-     <Compile Include="Assets\HittedReferences.cs" />
+     <Compile Include="Assets\HoldInPlace.cs" />
      <Compile Include="Assets\PhysicsThrow.cs" />
      <Compile Include="Assets\Scripts\Abstracts\Destroyable.cs" />
      <Compile Include="Assets\Scripts\Abstracts\Movable.cs" />
-     <Compile Include="Assets\Scripts\Abstracts\Pickable.cs" />
      <Compile Include="Assets\Scripts\Collectibles\Collectible.cs" />
      <Compile Include="Assets\Scripts\Collectibles\HealthCollectible.cs" />
      <Compile Include="Assets\Scripts\Collectibles\LifeCollectible.cs" />
@@ -107,6 +106,7 @@
      <Compile Include="Assets\Scripts\Helping Attatchments\HitHandler.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\KillOnFall.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\KnockbackModule.cs" />
+     <Compile Include="Assets\Scripts\Helping Attatchments\Pickable.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\Pushable.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\ReceiveDamage.cs" />
      <Compile Include="Assets\Scripts\Helping Attatchments\SpriteEffector.cs" />

@@ -11,6 +11,7 @@ public class EnemyDamageManager : DamageManager {
 	private LevelManager levelManager;
 	private GameObject player;
 	private CollidersManager [] allHitboxManagers;
+	private float stunTime = 1.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -45,12 +46,38 @@ public class EnemyDamageManager : DamageManager {
 		health -= damage;
 		if (health > 0) {
 			spriteEffector.FlashRedOnce ();
-			animator.SetTrigger ("Damage");
+			animator.SetBool ("Damage", true);
+			StartStunTimer ();
 		}else{
 			animator.SetTrigger("Death");
 			StartCoroutine (spriteEffector.Flicker(deathTime));
 		}
-		
+	}
+
+	float startTime;
+	float timeCounter = 0;
+
+	public void StartStunTimer(){
+		startTime = Time.time;
+		timeCounter = 0;
+		StartCoroutine ("StopStun");
+	}
+
+	public IEnumerator StopStun(){
+
+		if (timeCounter >= stunTime) {
+			animator.SetBool ("Damage", false);
+			yield return null;
+		} else {
+			yield return new WaitForSeconds (0.1f);
+			timeCounter = Time.time - startTime;
+			yield return StartCoroutine ("StopStun");
+		}
+	}
+
+	public void ResetStunTime(){
+		startTime = Time.time;
+		timeCounter = 0;
 	}
 
 	private int GetKnockbackDir(){
