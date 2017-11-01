@@ -90,6 +90,19 @@ public class PlayerInputController : MonoBehaviour
 	}
 
 	void InterpreteAttackInput(){
+
+		//check if its holding something
+		if (enemyHolder.childCount == 0) {
+			MeleeAttack ();
+		} else {
+			//lose all charge
+			spriteEffector.RestoreColor ();
+			pressTime = 0;
+			ThrowAttack ();
+		}
+	}
+
+	void MeleeAttack(){
 		if (Input.GetKeyDown (KeyCode.X)) {
 			startTimer = Time.time;
 		}else if (Input.GetKey (KeyCode.X)) {
@@ -97,7 +110,7 @@ public class PlayerInputController : MonoBehaviour
 		}else if (Input.GetKeyUp (KeyCode.X)) {
 
 			if(!m_Character.animator.GetCurrentAnimatorStateInfo(0).IsTag("Damage")){
-				
+
 				var inAttackState = m_Character.animator.GetCurrentAnimatorStateInfo (0).IsTag ("Attack");
 
 				if(!inAttackState || ( inAttackState && m_Character.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f) ){
@@ -111,6 +124,26 @@ public class PlayerInputController : MonoBehaviour
 					}
 				}
 			}
+		}
+	}
+
+	void ThrowAttack(){
+		if (Input.GetKeyUp (KeyCode.X)) {
+			var heldEnemy = enemyHolder.transform.GetChild (0);
+			heldEnemy.transform.parent = null;
+			var pickableComponent = heldEnemy.GetComponent<Pickable> ();
+//			var throwDir = m_Character.m_FacingRight ? 1 : -1;
+			pickableComponent.BecomeThrown (50, m_Character.m_FacingRight, false);
+			//TODO: set throw animation state
+		}
+	}
+
+	void DropHeld(){
+		if (enemyHolder.childCount != 0) {
+			var heldEnemy = enemyHolder.transform.GetChild (0);
+			heldEnemy.transform.parent = null;
+			var pickableComponent = heldEnemy.GetComponent<Pickable> ();
+			pickableComponent.BecomeDropped ();
 		}
 	}
 
@@ -132,12 +165,10 @@ public class PlayerInputController : MonoBehaviour
 			rbody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 			damageManager.SetInvincibility();
 			charged = true;
-		}else{
-			if(charged){
-				rbody.constraints = originalConstraints;
-				damageManager.ResetInvincibility();
-				charged = false;
-			}
+		}else if(charged){
+			rbody.constraints = originalConstraints;
+			damageManager.ResetInvincibility();
+			charged = false;
 		}
 	}
 

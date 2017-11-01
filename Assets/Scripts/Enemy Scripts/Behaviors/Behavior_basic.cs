@@ -16,20 +16,19 @@ public class Behavior_basic : Movable {
 		FrontGroundCheck = transform.Find("FrontGroundCheck");
 	}
 
+	bool lastWasDamage = false;
 	// Update is called once per frame
 	void Update () {
 		if (checkIfActive()) {
 
-			if (!animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage") &&
-				!animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
-
+			if (!animator.GetCurrentAnimatorStateInfo (0).IsTag ("Damage")) {
+				lastWasDamage = false;
 				if (!CheckFrontGround () || CheckWallCollision ())
 					Flip ();
-
 				Move ();
-
-			} else if (animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage")) {
-				rbody.velocity = new Vector2 (0, rbody.velocity.y);
+			} else if(!lastWasDamage && animator.GetCurrentAnimatorStateInfo (0).IsName ("Damage")){
+				lastWasDamage = true;
+				rbody.velocity = Vector3.zero;
 			}
 
 		}

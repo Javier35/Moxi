@@ -29,28 +29,18 @@ public class EnemyDamageManager : DamageManager {
 		}
 	}
 
-	private void DisableAllHitboxes (){
-		foreach(CollidersManager hitboxManager in allHitboxManagers){
-			hitboxManager.DisableAllColliders ();
-		}
-	}
-
-	private void EnableAllHitboxes (){
-		foreach(CollidersManager hitboxManager in allHitboxManagers){
-			hitboxManager.EnableAllColliders ();
-		}
-	}
-
 	public override void ReceiveDamage(int damage){
 
-		health -= damage;
-		if (health > 0) {
-			spriteEffector.FlashRedOnce ();
-			animator.SetBool ("Damage", true);
-			StartStunTimer ();
-		}else{
-			animator.SetTrigger("Death");
-			StartCoroutine (spriteEffector.Flicker(deathTime));
+		if (!invincible) {
+			health -= damage;
+			if (health > 0) {
+				spriteEffector.FlashRedOnce ();
+				animator.SetBool ("Damage", true);
+				StartStunTimer ();
+			}else{
+				animator.SetTrigger("Death");
+				StartCoroutine (spriteEffector.Flicker(deathTime));
+			}
 		}
 	}
 
@@ -83,18 +73,17 @@ public class EnemyDamageManager : DamageManager {
 	private int GetKnockbackDir(){
 		Vector2 playerPos = player.transform.position;
 		if (playerPos.x <= transform.position.x) {
-			//fall to the right
 			return 1;
 
 		} else {
-			//fall to the left
 			return -1;
 		}
 	}
 
 	private void KnockbackWhenDead(int knockbackDir){
 		rbody.velocity = new Vector2 (0, rbody.velocity.y);
-		knockbackModule.Knockback(knockbackDir);
+		rbody.AddForce (new Vector2(100 * knockbackDir, 30));
+//		knockbackModule.Knockback(knockbackDir);
 	}
 
 
@@ -104,22 +93,17 @@ public class EnemyDamageManager : DamageManager {
 		foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {
 			tempcollider.enabled = true;
 		}
-		EnableAllHitboxes ();
 	}
 
 	override public void DestroySelf(){
 
 		if (!spawned) {
+			var knockbackDir = GetKnockbackDir ();
 			levelManager.GetComponent<LevelManager> ().respawnables.Add (this.gameObject);
 			StartDeathAnim ();
-			var knockbackDir = GetKnockbackDir ();
 			itemDropper.DropItem (knockbackDir);
 			KnockbackWhenDead (knockbackDir);
 			Invoke ("Deactivate", deathTime);
-			foreach (Collider2D tempcollider in gameObject.GetComponents<Collider2D> ()) {
-				tempcollider.enabled = false;
-			}
-			DisableAllHitboxes ();
 		} else {
 			Destroy (gameObject);
 		}

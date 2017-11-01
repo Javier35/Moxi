@@ -6,7 +6,7 @@ public class AttackTriggerManager : MonoBehaviour {
 
 	private List<int> objectsHit = new List<int>();
 	private Animator anim;
-	[SerializeField] int damageStrength = 1;
+	int damageStrength = 1;
 
 
 

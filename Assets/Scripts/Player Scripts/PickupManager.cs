@@ -18,9 +18,6 @@ public class PickupManager : MonoBehaviour {
 		if (enemyHolder.childCount == 0 && !anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack") && !anim.GetCurrentAnimatorStateInfo (0).IsTag ("Damage")) {
 			var pickable = col.gameObject.GetComponent<Pickable> ();
 
-			if(pickable == null)
-				pickable = col.gameObject.GetComponentInParent<Pickable> ();
-
 			if (pickable != null) {
 				if (pickable.IsPickable ()) {
 

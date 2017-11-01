@@ -20,6 +20,10 @@ public abstract class DamageManager : Destroyable {
 		animator.SetTrigger("Death");
 	}
 
+	public void SetInvincible(bool invincibleVal){
+		invincible = invincibleVal;
+	}
+
 	public void Heal(int healing){
 		health += healing;
 		if (health > maxHealth)
