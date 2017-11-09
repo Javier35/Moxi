@@ -12,7 +12,7 @@ public class HealthCollectible : Collectible {
 		
 		if (col.gameObject.tag == "Player") {
 			col.gameObject.GetComponent<PlayerDamageManager> ().Heal (healAmmount);
-			DestroySelf ();
+			DestroySelf ("");
 		}
 	}
 }

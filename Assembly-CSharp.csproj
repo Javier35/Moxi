@@ -131,6 +131,7 @@
      <Compile Include="Assets\Scripts\Player Scripts\PlayerInputController.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\PlayerReceiveDamage.cs" />
      <Compile Include="Assets\Scripts\Player Scripts\SpecialTerrainChecker.cs" />
+     <Compile Include="Assets\StopThrowOnCollision.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>/Users/jmontoya/Documents/GitHub/Moxi/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>

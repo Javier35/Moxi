@@ -7,25 +7,21 @@ public class EnemyDamageManager : DamageManager {
 
 	private ItemDropModule itemDropper;
 	private Rigidbody2D rbody;
-	private KnockbackModule knockbackModule;
 	private LevelManager levelManager;
 	private GameObject player;
-	private CollidersManager [] allHitboxManagers;
 	private float stunTime = 1.5f;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Moxi");
 		rbody = GetComponent<Rigidbody2D> ();
-		knockbackModule = GetComponent<KnockbackModule> ();
 		levelManager = GameObject.Find ("LevelManager").GetComponent<LevelManager>();
 		itemDropper = gameObject.GetComponent<ItemDropModule> ();
-		allHitboxManagers = GetComponentsInChildren<CollidersManager> ();
 	}
 
 	void FixedUpdate(){
 		if (health <= 0 && !animator.GetCurrentAnimatorStateInfo (0).IsName ("Death")) {
-			DestroySelf ();
+			DestroySelf ("");
 		}
 	}
 
@@ -95,8 +91,15 @@ public class EnemyDamageManager : DamageManager {
 		}
 	}
 
-	override public void DestroySelf(){
+	override public void DestroySelf(string cause){
 
+		if (cause == "throw")
+			InstantDestroy ();
+		else
+			KnockbackDestroy ();
+	}
+
+	void KnockbackDestroy(){
 		if (!spawned) {
 			var knockbackDir = GetKnockbackDir ();
 			levelManager.GetComponent<LevelManager> ().respawnables.Add (this.gameObject);

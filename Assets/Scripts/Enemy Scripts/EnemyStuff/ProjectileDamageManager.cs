@@ -21,15 +21,14 @@ public class ProjectileDamageManager : Destroyable {
 				playersScript.ReceiveDamage (damage);
 			}
 
-			DestroySelf ();
+			DestroySelf ("");
 		}else{
 			Physics2D.IgnoreCollision (col.collider, thisCollider);
 		}
 	}
 
-	override public void DestroySelf(){
+	override public void DestroySelf(string cause){
 		Destroy (gameObject);
 	}
-
 	override public void Respawn (){}
 }

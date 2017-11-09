@@ -51,7 +51,7 @@ public class PlayerDamageManager : DamageManager {
 		player.WasDamaged ();
 	}
 		
-	override public void DestroySelf(){
+	override public void DestroySelf(string cause){
 		levelManager.fader.BeginFade (1);
 		levelManager.RespawnPlayer ();
 	}
@@ -62,6 +62,6 @@ public class PlayerDamageManager : DamageManager {
 	}
 
 	override public void Respawn(){
-		DestroySelf ();
+		DestroySelf ("");
 	}
 }

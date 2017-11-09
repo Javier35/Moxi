@@ -14,7 +14,7 @@ public class MoneyCollectible : Collectible {
 
 		if (col.gameObject.tag == "Player") {
 			Inventory.GainMoney(moneyAmmount);
-			DestroySelf ();
+			DestroySelf ("");
 		}
 	}
 }

@@ -12,7 +12,7 @@ public class LifeCollectible : Collectible {
 
 		if (col.gameObject.tag == "Player") {
 			Inventory.GainALife();
-			DestroySelf ();
+			DestroySelf ("");
 		}
 	}
 }

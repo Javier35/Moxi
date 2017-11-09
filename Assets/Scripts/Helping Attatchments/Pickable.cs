@@ -62,14 +62,17 @@ public class Pickable : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D col){
-		
+//		Debug.Log (col.transform.root.name);
 		if (beingThrown) {
-			
 			if (col.tag == "Enemy" ||  col.tag == "Interactable") {
-				Debug.Log ("i do something");
-				var targetDamageManager = col.gameObject.GetComponentInParent<DamageManager> ();
+				beingThrown = false;
+
+				var targetDamageManager = col.gameObject.GetComponent<DamageManager> ();
+				if(targetDamageManager == null)
+					targetDamageManager = col.gameObject.GetComponentInParent<DamageManager> ();
+
 				targetDamageManager.ReceiveDamage (throwDamage);
-				damageManager.DestroySelf ();
+				damageManager.DestroySelf ("throw");
 			}
 		}
 	}

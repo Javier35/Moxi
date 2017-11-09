@@ -32,6 +32,9 @@ public class AttackTriggerManager : MonoBehaviour {
 	public void ParentTriggerEnter(Collider2D col){
 
 		var hitHandler = col.gameObject.GetComponent<HitHandler> ();
+		if(hitHandler == null)
+			hitHandler = col.gameObject.GetComponentInParent<HitHandler> ();
+		
 		if (hitHandler != null) {
 
 			int hittedObjectId = col.gameObject.GetInstanceID ();

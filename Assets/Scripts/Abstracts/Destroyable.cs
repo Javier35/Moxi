@@ -7,7 +7,7 @@ public abstract class Destroyable : MonoBehaviour {
 	protected SpriteEffector spriteEffector;
 	protected bool spawned = false;
 
-	abstract public void DestroySelf ();
+	abstract public void DestroySelf (string cause);
 	abstract public void Respawn ();
 
 	public void setSpawned(bool isSpawned){

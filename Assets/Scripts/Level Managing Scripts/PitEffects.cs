@@ -26,7 +26,7 @@ public class PitEffects : MonoBehaviour {
 		} else {
 			var destroyable = other.GetComponent<Destroyable> ();
 			if (destroyable != null) {
-				destroyable.DestroySelf ();
+				destroyable.DestroySelf ("");
 			}
 		}
 

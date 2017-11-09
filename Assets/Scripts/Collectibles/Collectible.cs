@@ -32,7 +32,7 @@ public class Collectible : Destroyable {
 		}
 	}
 
-	override public void DestroySelf(){
+	override public void DestroySelf(string cause){
 		if (!spawned) {
 			levelManager.respawnables.Add (this.gameObject);
 			gameObject.SetActive (false);
@@ -58,6 +58,6 @@ public class Collectible : Destroyable {
 		yield return new WaitForSeconds (3.5f);
 		//StartCoroutine (spriteEffector.Flicker (2.2f));
 		yield return new WaitForSeconds (2.2f);
-		DestroySelf ();
+		DestroySelf ("");
 	}
 }

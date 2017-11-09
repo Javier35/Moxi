@@ -12,7 +12,7 @@ public class KillOnFall : MonoBehaviour {
 		if (Vector3.Dot (contact.normal, Vector3.up) > 0.5) {
 			var destroyable = collision.gameObject.GetComponent<Destroyable> ();
 			if (destroyable != null) {
-				destroyable.DestroySelf ();
+				destroyable.DestroySelf ("");
 			}
 		}
 	}

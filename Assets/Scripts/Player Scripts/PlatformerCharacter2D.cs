@@ -31,6 +31,8 @@ public class PlatformerCharacter2D : MonoBehaviour
 	private SpecialTerrainChecker terrainChecker;
 	private float lastMove = 0;
 
+	GameObject enemyHolder;
+
     private void Awake()
     {
         // Setting up references.
@@ -41,6 +43,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		originalMaxSpeed = m_MaxSpeed;
 		groundchecker = GetComponentInChildren<GroundChecker>();
 		terrainChecker = GetComponentInChildren<SpecialTerrainChecker>();
+		enemyHolder = transform.Find ("EnemyHolder").gameObject;
     }
 		
     private void FixedUpdate()
@@ -221,6 +224,11 @@ public class PlatformerCharacter2D : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
 		m_FacingRight = !m_FacingRight;
+
+		if (enemyHolder.transform.childCount > 0) {
+			var pickableComponent = enemyHolder.transform.GetChild (0).GetComponent<Movable> ();
+			pickableComponent.faceLeft = !pickableComponent.faceLeft;
+		}
     }
 
 	public void WasDamaged(){
