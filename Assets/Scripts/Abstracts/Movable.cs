@@ -15,7 +15,7 @@ public class Movable : MonoBehaviour {
 
 	public string activationCondition = "visible";
 
-	[SerializeField] public bool faceLeft = true;
+	public bool faceLeft = true;
 	[HideInInspector]public bool originalFaceLeft;
 
 	void Awake () {
