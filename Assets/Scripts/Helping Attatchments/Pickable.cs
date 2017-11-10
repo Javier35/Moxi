@@ -37,6 +37,7 @@ public class Pickable : MonoBehaviour {
 		rbody.isKinematic = false;
 		rbody.velocity = Vector2.zero;
 		beingThrown = true;
+		SetPickable (false);
 		isHardThrown = hardThrow;
 
 		if (right)
@@ -46,6 +47,8 @@ public class Pickable : MonoBehaviour {
 	}
 
 	public void BecomeDropped(){
+		rbody.isKinematic = false;
+		rbody.velocity = Vector2.zero;
 	}
 
 	public void CollisionBehavior(){

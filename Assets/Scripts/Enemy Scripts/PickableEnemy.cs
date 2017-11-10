@@ -19,14 +19,15 @@ public class PickableEnemy : Pickable {
 		
 		if (transform.root.name == "Moxi" || beingThrown == true) {
 			enemyDamageManager.ResetStunTime ();
-			enemyDamageManager.SetInvincible (!beingThrown);
-			SetPickable(false);
+			enemyDamageManager.SetInvincible (true);
 		} else {
 			enemyDamageManager.SetInvincible (false);
-			if (anim.GetCurrentAnimatorStateInfo(0).IsName("Damage"))
-				SetPickable(true);
-			else
-				SetPickable(false);
+		}
+			
+		if (anim.GetCurrentAnimatorStateInfo (0).IsName ("Damage") && (!beingThrown)) {
+			SetPickable (true);
+		} else {
+			SetPickable (false);
 		}
 	}
 }

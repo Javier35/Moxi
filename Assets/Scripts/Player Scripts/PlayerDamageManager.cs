@@ -6,11 +6,13 @@ public class PlayerDamageManager : DamageManager {
 	private LevelManager levelManager;
 	private PlatformerCharacter2D player;
 	private float invincibilityTime = 1.5f;
+	GameObject enemyHolder;
 
 	// Use this for initialization
 	void Start () {
 		levelManager = FindObjectOfType<LevelManager> ();
 		player = GetComponent<PlatformerCharacter2D> ();
+		enemyHolder = transform.Find ("EnemyHolder").gameObject;
 	}
 	
 	void LateUpdate () {
@@ -30,6 +32,7 @@ public class PlayerDamageManager : DamageManager {
 			health -= damage;
 			BecomeInvincible ();
 			animator.SetTrigger("Damage");
+			DropHeld ();
 			if (health <= 0) {
 				animator.SetTrigger("Death");
 			}
@@ -43,6 +46,13 @@ public class PlayerDamageManager : DamageManager {
 
 	public void ResetInvincibility(){
 		invincible = false;
+	}
+
+	public void DropHeld(){
+		if (enemyHolder.transform.childCount > 0) {
+			var pickableComponent = enemyHolder.transform.GetChild (0).GetComponent<Movable> ();
+			pickableComponent.faceLeft = !pickableComponent.faceLeft;
+		}
 	}
 
 	private void Knockback(){

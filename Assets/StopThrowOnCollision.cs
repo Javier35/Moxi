@@ -14,10 +14,9 @@ public class StopThrowOnCollision : MonoBehaviour {
 	}
 
 
-	void OnCollisionEnter2D(Collision2D col){
-		if(col.gameObject.layer == LayerMask.NameToLayer ("Platform")){
-			if(pickable.beingThrown)
-				pickable.beingThrown = false;
+	void OnCollisionStay2D(Collision2D col){
+		if(pickable.beingThrown && col.gameObject.layer == LayerMask.NameToLayer ("Platform")){
+			pickable.beingThrown = false;
 		}
 	}
 }
