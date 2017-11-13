@@ -133,7 +133,7 @@ public class PlayerInputController : MonoBehaviour
 			heldEnemy.transform.parent = null;
 			var pickableComponent = heldEnemy.GetComponent<Pickable> ();
 //			var throwDir = m_Character.m_FacingRight ? 1 : -1;
-			pickableComponent.BecomeThrown (100, m_Character.m_FacingRight, false);
+			pickableComponent.BecomeThrown (120, m_Character.m_FacingRight, false);
 			//TODO: set throw animation state
 		}
 	}

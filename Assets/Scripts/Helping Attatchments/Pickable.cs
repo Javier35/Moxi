@@ -10,6 +10,9 @@ public class Pickable : MonoBehaviour {
 	private int throwDamage = 5;
 	Rigidbody2D rbody;
 
+	public BoxCollider2D overlappingTerrainChecker;
+	[SerializeField] private LayerMask WhatIsPlatform;
+
 	[HideInInspector]public bool beingThrown = false;
 	[HideInInspector]public bool isHardThrown = false;
 
@@ -78,6 +81,19 @@ public class Pickable : MonoBehaviour {
 				damageManager.DestroySelf ("throw");
 			}
 		}
+	}
+
+	public bool checkOverlapping(){
+
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(overlappingTerrainChecker.transform.position, 0.1f, WhatIsPlatform);
+		for (int i = 0; i < colliders.Length; i++)
+		{
+			if (colliders[i].gameObject != gameObject){
+				return true;
+			}
+		}
+		return false;
+
 	}
 }
 
