@@ -33,25 +33,35 @@ public class Pickable : MonoBehaviour {
 
 	public virtual GameObject BecomeHeld(){
 		rbody.isKinematic = false;
+
 		return this.transform.root.gameObject;
 	}
 
 	public void BecomeThrown(float throwStrength, bool right, bool hardThrow){
 		rbody.isKinematic = false;
 		rbody.velocity = Vector2.zero;
-		beingThrown = true;
-		SetPickable (false);
-		isHardThrown = hardThrow;
 
-		if (right)
-			rbody.AddForce (Vector2.right * throwStrength);
-		else
-			rbody.AddForce (Vector2.left * throwStrength);
+		if (checkOverlapping ()) {
+			damageManager.DestroySelf ("throw");
+		} else {
+			beingThrown = true;
+			SetPickable (false);
+			isHardThrown = hardThrow;
+
+			if (right)
+				rbody.AddForce (Vector2.right * throwStrength);
+			else
+				rbody.AddForce (Vector2.left * throwStrength);
+		}
 	}
 
 	public void BecomeDropped(){
 		rbody.isKinematic = false;
 		rbody.velocity = Vector2.zero;
+
+		if (checkOverlapping ()) {
+			damageManager.DestroySelf ("throw");
+		}
 	}
 
 	public void CollisionBehavior(){
@@ -85,7 +95,7 @@ public class Pickable : MonoBehaviour {
 
 	public bool checkOverlapping(){
 
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(overlappingTerrainChecker.transform.position, 0.1f, WhatIsPlatform);
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.root.position, 0.32f, WhatIsPlatform);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject){
@@ -93,7 +103,7 @@ public class Pickable : MonoBehaviour {
 			}
 		}
 		return false;
-
 	}
+
 }
 

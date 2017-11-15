@@ -150,9 +150,9 @@ public class PlayerInputController : MonoBehaviour
 
 	void TintOnCharge(){
 		
-		if(pressTime > 0.5f && pressTime < 1.5f && enemyHolder.childCount == 0){
+		if(pressTime > 0.24f && pressTime < 1.0f && enemyHolder.childCount == 0){
 			spriteEffector.TintPink();
-		}else if(pressTime > 1.5f && enemyHolder.childCount == 0){
+		}else if(pressTime > 1.0f && enemyHolder.childCount == 0){
 			spriteEffector.TintRed();
 		}else{
 			spriteEffector.RestoreColor();

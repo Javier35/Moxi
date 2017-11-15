@@ -23,7 +23,8 @@ public class StopThrowOnCollision : MonoBehaviour {
 
 	void OnCollisionStay2D(Collision2D col){
 		if(pickable.beingThrown && col.gameObject.layer == LayerMask.NameToLayer ("Platform")){
-			pickable.beingThrown = false;
+			if(rbody.velocity.x == 0 && rbody.velocity.y == 0)
+				pickable.beingThrown = false;
 //			rbody.velocity = Vector3.zero;
 		}
 	}
